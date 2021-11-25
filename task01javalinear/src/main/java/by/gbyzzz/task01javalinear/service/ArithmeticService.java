@@ -3,7 +3,7 @@ package by.gbyzzz.task01javalinear.service;
 
 public class ArithmeticService {
 
-
+    //task01
     public double average(double a, double b) {
         return (a + b) / 2;
     }
@@ -19,7 +19,7 @@ public class ArithmeticService {
     public double expr(double x, double y) {
         return 2 * x + (y - 2) * 5;
     }
-
+// task02
     public int positiveNum(double a, double b, double c) {
         int i = 0;
         if (a > 0)
@@ -63,11 +63,20 @@ public class ArithmeticService {
         res[1] = b;
         return res;
     }
-public String[] mult3(){
-        String[] mult = new String[10];
-        for(int i = 0; i<10; i++){
-            mult[i] = "3 x " + (i+1) + " = " + 3*(i+1);
-        }
-        return mult;
-    }
+
+//    public boolean compareWThree(double a) {
+//        boolean res;
+//        a>3 ? res=true : res=false;
+//        return res;
+//    }
+
+
+    //task03
+//public String[] mult3(){
+//        String[] mult = new String[10];
+//        for(int i = 0; i<10; i++){
+//            mult[i] = "3 x " + (i+1) + " = " + 3*(i+1);
+//        }
+//        return mult;
+//    }
 }

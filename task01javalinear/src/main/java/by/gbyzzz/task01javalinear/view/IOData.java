@@ -29,7 +29,7 @@ public class IOData {
     public void output (String label, double arg){
 
         System.out.print(label);
-        System.out.print(arg);
+        System.out.println(arg);
 
     }
         public int input ( int a, int b){

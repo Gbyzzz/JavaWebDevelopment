@@ -14,6 +14,6 @@ public class Triangle {
         io.output("Height: ", gs.triangleHeight(a));
         io.output("R: ", gs.triangleSr(a));
         io.output("r: ", gs.triangleCr(a));
-        io.output("S: ", gs.triangleS(a));
+        io.output("S: ", gs.triangleSq(a));
     }
 }

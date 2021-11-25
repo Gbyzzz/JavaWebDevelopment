@@ -7,7 +7,7 @@ shelf/
 .idea/
 out/
 /.project
-/.classpath
+/.classpathqw
 
 *.log
 *.ctxt
