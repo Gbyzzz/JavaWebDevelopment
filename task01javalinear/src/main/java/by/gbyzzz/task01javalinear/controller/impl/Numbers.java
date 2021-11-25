@@ -1,4 +1,4 @@
-package by.gbyzzz.task01javalinear.entity;
+package by.gbyzzz.task01javalinear.controller.impl;
 
 import by.gbyzzz.task01javalinear.service.ArithmeticService;
 import by.gbyzzz.task01javalinear.view.IOData;
@@ -48,15 +48,5 @@ public final class Numbers {
         d = io.input();
         io.output("Total distance is ", as.boat(a, b, c, d));
     }
-    public void positive() {
-        io.output("Enter speed in still water: ");
-        a = io.input();
-        io.output("Enter speed of river's flow: ");
-        b = io.input();
-        io.output("Enter first time: ");
-        c = io.input();
-        io.output("Enter second time: ");
-        d = io.input();
-        io.output("Total distance is ", as.boat(a, b, c, d));
-    }
+
 }

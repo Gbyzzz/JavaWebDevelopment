@@ -1,8 +1,8 @@
 package by.gbyzzz.task01javalinear.controller;
 
 
-import by.gbyzzz.task01javalinear.entity.Numbers;
-import by.gbyzzz.task01javalinear.entity.Triangle;
+import by.gbyzzz.task01javalinear.controller.impl.Numbers;
+import by.gbyzzz.task01javalinear.controller.impl.Triangle;
 import by.gbyzzz.task01javalinear.view.IOData;
 import by.gbyzzz.task01javalinear.view.Menu;
 
@@ -13,12 +13,12 @@ public class Runner {
 
     public static void main(String[] args) throws IOException {
         startMenu();
-   }
+    }
     static void startMenu() throws IOException {
 
         Menu menu = new Menu();
         menu.mainMenu();
-        int select[] = new int[3];
+        int[] select = new int[3];
         select[0] = io.input(1, 4);
         if (select[0] == 4)
             System.exit(0);

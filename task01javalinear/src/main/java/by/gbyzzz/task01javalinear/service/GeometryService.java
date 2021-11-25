@@ -8,12 +8,12 @@ public class GeometryService {
         ans =  a * Math.sqrt(3) / 2;
         return ans;
     }
-    public double triangleSr(double a){
+    public double triangleDesR(double a){
         double ans;
         ans =  a * Math.sqrt(3)/3;
         return ans;
     }
-    public double triangleCr(double a){
+    public double triangleInR(double a){
         double ans;
         ans =  a * Math.sqrt(3)/6;
         return ans;

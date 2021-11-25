@@ -40,7 +40,7 @@ public class GeometryServiceTest {
 
     @Test(dataProvider = "triangleSr")
     public void triangleSrTest(double arg[], double expected) {
-        double actual = gs.triangleSr(arg[0]);
+        double actual = gs.triangleDesR(arg[0]);
         assertEquals(actual, expected, 0.001);
     }
     @DataProvider(name = "triangleCr")
@@ -57,7 +57,7 @@ public class GeometryServiceTest {
 
     @Test(dataProvider = "triangleCr")
     public void triangleCrTest(double arg[], double expected) {
-        double actual = gs.triangleCr(arg[0]);
+        double actual = gs.triangleInR(arg[0]);
         assertEquals(actual, expected, 0.001);
     }
     @DataProvider(name = "triangleSq")

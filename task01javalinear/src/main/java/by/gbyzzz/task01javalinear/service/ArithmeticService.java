@@ -48,21 +48,21 @@ public class ArithmeticService {
             return false;
     }
 
-    public double[] zadacha17(double a, double b) {
-        double[] res = new double[2];
-        if (a != b) {
-            if (a > b)
-                b = a;
-            else
-                b = a;
-        } else {
-            b = 0;
-            a = 0;
-        }
-        res[0] = a;
-        res[1] = b;
-        return res;
-    }
+//    public double[] zadacha17(double a, double b) {
+//        double[] res = new double[2];
+//        if (a != b) {
+//            if (a > b)
+//                b = a;
+//            else
+//                b = a;
+//        } else {
+//            b = 0;
+//            a = 0;
+//        }
+//        res[0] = a;
+//        res[1] = b;
+//        return res;
+//    }
 
 //    public boolean compareWThree(double a) {
 //        boolean res;

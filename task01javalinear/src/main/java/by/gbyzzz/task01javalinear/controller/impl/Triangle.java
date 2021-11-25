@@ -1,4 +1,4 @@
-package by.gbyzzz.task01javalinear.entity;
+package by.gbyzzz.task01javalinear.controller.impl;
 
 import by.gbyzzz.task01javalinear.service.GeometryService;
 import by.gbyzzz.task01javalinear.view.IOData;
@@ -12,8 +12,8 @@ public class Triangle {
         io.output("Enter the side of the triangle:");
         a = io.input();
         io.output("Height: ", gs.triangleHeight(a));
-        io.output("R: ", gs.triangleSr(a));
-        io.output("r: ", gs.triangleCr(a));
+        io.output("R: ", gs.triangleDesR(a));
+        io.output("r: ", gs.triangleInR(a));
         io.output("S: ", gs.triangleSq(a));
     }
 }
