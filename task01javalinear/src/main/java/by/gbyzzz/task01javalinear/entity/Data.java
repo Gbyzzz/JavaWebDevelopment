@@ -4,15 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Data {
-    private List<Double> arr = new ArrayList<>();
+    private List<Object> arr = new ArrayList<>();
 
     public double getArr(int i) {
-        return arr.get(i);
+        return (double) arr.get(i);
     }
+
 
     public void add(double num) {
         arr.add(num);
     }
+
+    public void add(boolean arg) {
+        arr.add(arg);
+    }
+
+    public void add(String arg) {
+        arr.add(arg);
+    }
+
     public void clear(){
         arr.clear();
     }

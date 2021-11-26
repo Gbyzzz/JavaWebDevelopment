@@ -23,4 +23,12 @@ public class GeometryService {
         ans =  a * a * Math.sqrt(3) / 4;
         return ans;
     }
+    public double passOrNot(double a, double b, double x, double y, double z) {
+        if (x < a && y < b || y < a && x < b ||
+                x < a && z < b || z < a && x < b ||
+                z < a && y < b || y < a && z < b)
+            return 1;
+        else
+            return 0;
+    }
 }

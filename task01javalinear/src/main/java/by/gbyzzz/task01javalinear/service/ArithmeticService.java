@@ -20,7 +20,7 @@ public class ArithmeticService {
         return 2 * x + (y - 2) * 5;
     }
 // task02
-    public int positiveNum(double a, double b, double c) {
+    public int positiveNumCount(double a, double b, double c) {
         int i = 0;
         if (a > 0)
             i++;
@@ -32,46 +32,53 @@ public class ArithmeticService {
         return i;
     }
 
-    public double compare(double a, double b) {
+    public double compareTwoNums(double a, double b) {
         if (a > b)
-            return a;
-        else
             return b;
-    }
-
-    public boolean proidetNeProidet(double a, double b, double x, double y, double z) {
-        if (x < a && y < b || y < a && x < b ||
-                x < a && z < b || z < a && x < b ||
-                z < a && y < b || y < a && z < b)
-            return true;
         else
-            return false;
+            return a;
     }
 
-//    public double[] zadacha17(double a, double b) {
-//        double[] res = new double[2];
-//        if (a != b) {
-//            if (a > b)
-//                b = a;
-//            else
-//                b = a;
-//        } else {
-//            b = 0;
-//            a = 0;
-//        }
-//        res[0] = a;
-//        res[1] = b;
-//        return res;
-//    }
 
-//    public boolean compareWThree(double a) {
-//        boolean res;
-//        a>3 ? res=true : res=false;
-//        return res;
-//    }
+
+    public double taskWithTwoNums(double a, double b) {
+        double res;
+        if (a != b) {
+            if (a > b)
+                res = a;
+            else
+                res = b;
+        } else {
+            res = 0;
+        }
+
+        return res;
+    }
+
+    public double compareWithThree(double a) {
+        double res;
+       res = a<3 ? 1 : 0;
+        return res;
+    }
 
 
     //task03
+    public double rowOfNums(){
+        double sum = 0;
+        return sum;
+    }
+    public int summNinetyNine(){
+        int sum = 0;
+        int i=1;
+        while (i<=99){
+            sum+=i;
+            i+=2;
+        }
+        return sum;
+    }
+    public int guess(){
+
+    }
 //public String[] mult3(){
 //        String[] mult = new String[10];
 //        for(int i = 0; i<10; i++){

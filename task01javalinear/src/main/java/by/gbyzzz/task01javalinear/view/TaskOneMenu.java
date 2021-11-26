@@ -1,6 +1,6 @@
 package by.gbyzzz.task01javalinear.view;
 
-import by.gbyzzz.task01javalinear.controller.taskone.*;
+import by.gbyzzz.task01javalinear.controller.taskoneimpl.*;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ public class TaskOneMenu {
         switch (taskSelect) {
             case 1:
                 triangle.input(sourceSelect);
-                triangle.triangleCalc();
+                triangle.calculations();
                 triangle.consoleOutput();
                 break;
             case 2:

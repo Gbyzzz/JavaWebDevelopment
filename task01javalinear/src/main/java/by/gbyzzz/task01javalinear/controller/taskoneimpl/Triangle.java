@@ -1,4 +1,4 @@
-package by.gbyzzz.task01javalinear.controller.taskone;
+package by.gbyzzz.task01javalinear.controller.taskoneimpl;
 
 import by.gbyzzz.task01javalinear.dal.FileReader;
 import by.gbyzzz.task01javalinear.dal.XMLReader;
@@ -28,7 +28,7 @@ public class Triangle {
 
     }
 
-    public void triangleCalc(){
+    public void calculations (){
         out.add(gs.triangleHeight(in.getArr(0)));
         out.add(gs.triangleDesR(in.getArr(0)));
         out.add(gs.triangleInR(in.getArr(0)));
