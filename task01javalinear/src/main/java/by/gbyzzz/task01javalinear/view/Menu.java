@@ -43,7 +43,8 @@ public class Menu {
         io.output("Please choose the source:");
         io.output("1. Manual input");
         io.output("2. Input data from file");
-        io.output("3. Go back to previous menu");
+        io.output("3. Input data from xml file");
+        io.output("4. Go back to previous menu");
         io.output("Please enter a valid number between 1 and 3: ");
     }
 }

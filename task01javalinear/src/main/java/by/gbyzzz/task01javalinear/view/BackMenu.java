@@ -1,0 +1,23 @@
+package by.gbyzzz.task01javalinear.view;
+
+
+import java.io.IOException;
+
+public class BackMenu {
+    static IOData io = new IOData();
+    static StartMenu startMenu = new StartMenu();
+    public void start() throws IOException {
+
+
+        io.output("");
+        io.output("1. Return to main menu");
+        io.output("2. Exit");
+        int select = io.input(1,2);
+        if(select == 1) {
+            startMenu.start();
+        }
+        else {
+            System.exit(0);
+        }
+    }
+}
