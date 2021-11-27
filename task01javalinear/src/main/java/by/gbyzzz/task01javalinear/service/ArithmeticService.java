@@ -63,11 +63,19 @@ public class ArithmeticService {
 
 
     //task03
-    public double rowOfNums(){
+    public double rowOfNums(double e, int n){
         double sum = 0;
+        for (int i = 0; i < n; i++) {
+            double a = (1 / (Math.pow(2, i))) + (1 / (Math.pow(3, i)));
+            if (Math.abs(a) >= e) {
+                sum += a;
+                n++;
+            }
+            return sum;
+        }
         return sum;
     }
-    public int summNinetyNine(){
+    public int sumNinetyNine(){
         int sum = 0;
         int i=1;
         while (i<=99){
@@ -76,14 +84,23 @@ public class ArithmeticService {
         }
         return sum;
     }
-    public int guess(){
 
+    public int[] guess(int guess[], int max){
+        int[] rand = new int[5];
+        for(int i = 0; i<5; i++)
+       rand[i] = (int) (Math.random() * max);
+        return res;
     }
-//public String[] mult3(){
-//        String[] mult = new String[10];
-//        for(int i = 0; i<10; i++){
-//            mult[i] = "3 x " + (i+1) + " = " + 3*(i+1);
-//        }
-//        return mult;
-//    }
+
+    public double rowMultiply(double a, int n){
+        double sum = a;
+        for(int i = 1; i<=(n-1);i++){
+            sum*=(a+i);
+        }
+        return sum;
+    }
+    public double multiply(double a, int b){
+        return a*b;
+    }
+
 }

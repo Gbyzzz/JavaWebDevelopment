@@ -7,6 +7,7 @@ public class StartMenu {
         IOData io = new IOData();
         TaskOneMenu taskOneMenu = new TaskOneMenu();
         TaskTwoMenu taskTwoMenu = new TaskTwoMenu();
+        TaskThreeMenu taskThreeMenu = new TaskThreeMenu();
         BackMenu backMenu = new BackMenu();
 
         Menu menu = new Menu();
@@ -33,7 +34,10 @@ public class StartMenu {
             case 3:
                 menu.taskThreeMenu();
                 select[1] = io.input(1, 6);
-                break;
+                menu.sourceMenu();
+                select[2] = io.input(1, 4);
+                taskThreeMenu.start(select[1], select[2]);
+                backMenu.start();
                 }
         }
     }

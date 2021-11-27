@@ -3,12 +3,17 @@ package by.gbyzzz.task01javalinear.dal;
 import by.gbyzzz.task01javalinear.entity.Data;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.*;
 import java.io.File;
 
 public class XMLReader {
+
+    public XMLReader() throws ParserConfigurationException, SAXException {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser parser = factory.newSAXParser();
+    }
 //    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 //    DocumentBuilder builder = factory.newDocumentBuilder();
 //    Document document = builder.parse(new File("src/main/resources/data/number.xml"));

@@ -1,23 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<library>
-          <printing section="science" type="book" title="Science 1" pages="512"/>
-          <printing section="science" type="mag" title="Science 2" pages="612" />
-	  <printing section="fiction" type="book" title="Fiction 4" pages="531" />
-	  <printing section="science" type="mag" title="Science 4" pages="612" />
-	  <printing section="science" type="article" title="Science 3" pages="162" />
-	  <printing section="fiction" type="article" title="Fiction 7" pages="61" />
-	  <printing section="science" type="book" title="Science 5" pages="515" />
-	  <printing section="art" type="book" title="Art 1" pages="108" />
-	  <printing section="art" type="mag" title="Art 2" pages="63" />
-	  <printing section="art" type="article" title="Art 4" pages="35" />
-          <printing section="science" type="article" title="Science 6" pages="32" />
-	  <printing section="art" type="mag" title="Art 5" pages="87" />
-	  <printing section="fiction" type="article" title="Fiction 6" pages="51" />
-	  <printing section="art" type="book" title="Art 6" pages="135" />
-	  <printing section="fiction" type="book" title="Fiction 1" pages="382" />
-          <printing section="science" type="mag" title="Science 7" pages="162" />
-	  <printing section="fiction" type="mag" title="Fiction 2" pages="124" />
-	  <printing section="fiction" type="article" title="Fiction 3" pages="35" />
-	  <printing section="art" type="article" title="Art 3" pages="23" />
-	  <printing section="fiction" type="mag" title="Fiction 5" pages="143" />
-</library>
+<numbers>
+          <number num1 = "science" num2 = "book"/>
+</numbers>
