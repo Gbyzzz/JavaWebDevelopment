@@ -29,12 +29,12 @@ public class RowMultiply {
 
     public void calculations() {
 
-        out.add(as.rowMultiply(in.getArr(0), (int) in.getArr(1)));
+        out.add(as.rowMultiply(in.get(0), (int) in.get(1)));
 
     }
 
     public void consoleOutput() {
-        io.output("Result is - ", out.getArr(0));
+        io.output("Result is - ", out.get(0));
         out.clear();
         in.clear();
     }

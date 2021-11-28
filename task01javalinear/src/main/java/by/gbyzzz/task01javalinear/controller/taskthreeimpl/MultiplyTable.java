@@ -27,14 +27,14 @@ public class MultiplyTable {
     }
 
     public void calculations() {
-        for(int i = 1; i<=in.getArr(1); i++){
-            out.add(as.multiply(in.getArr(0), i));
+        for(int i = 1; i<=in.get(1); i++){
+            out.add(as.multiply(in.get(0), i));
         }
     }
 
     public void consoleOutput() {
-        for(int i = 0; i<in.getArr(1); i++){
-        io.output(in.getArr(0) + "x" + in.getArr(1) + " = ", out.getArr(0));
+        for(int i = 0; i<in.get(1); i++){
+        io.output(in.get(0) + "x" + in.get(1) + " = ", out.get(0));
         }
         out.clear();
         in.clear();

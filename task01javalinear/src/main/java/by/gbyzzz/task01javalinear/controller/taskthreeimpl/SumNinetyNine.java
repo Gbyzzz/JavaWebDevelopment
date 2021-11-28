@@ -18,7 +18,7 @@ public class SumNinetyNine {
     }
 
     public void consoleOutput() {
-        io.output("Sum of all even numbers from 1 to 99  - ", out.getArr(0));
+        io.output("Sum of all even numbers from 1 to 99  - ", out.get(0));
         out.clear();
     }
 }

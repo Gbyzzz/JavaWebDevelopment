@@ -26,12 +26,12 @@ public class CompareWithThree {
 
     public void calculations() {
 
-        out.add(as.compareWithThree(in.getArr(0)));
+        out.add(as.compareWithThree(in.get(0)));
 
     }
 
     public void consoleOutput() {
-        if(out.getArr(0) == 1) {
+        if(out.get(0) == 1) {
             io.output("Your number is less than '3'.");
         }else {
             io.output("Your number is bigger than '3'.");

@@ -29,13 +29,13 @@ public class Expression {
 
     public void calculations() {
 
-        out.add(as.expr(in.getArr(0), in.getArr(1)));
+        out.add(as.expr(in.get(0), in.get(1)));
 
     }
 
     public void consoleOutput() {
 
-        io.output("z = ", out.getArr(0));
+        io.output("z = ", out.get(0));
         out.clear();
         in.clear();
     }

@@ -28,13 +28,13 @@ public class AverageCubed {
 
     public void calculations() {
 
-        out.add(as.average3(in.getArr(0), in.getArr(1)));
+        out.add(as.average3(in.get(0), in.get(1)));
 
     }
 
     public void consoleOutput() {
-        io.output("The average value of cubed values of " + in.getArr(0) + " and " + in.getArr(1) + ":");
-        io.output(out.getArr(0));
+        io.output("The average value of cubed values of " + in.get(0) + " and " + in.get(1) + ":");
+        io.output(out.get(0));
         in.clear();
         out.clear();
     }

@@ -1,6 +1,8 @@
 package by.gbyzzz.task01javalinear.service;
 
 
+import by.gbyzzz.task01javalinear.entity.Data;
+
 public class ArithmeticService {
 
     //task01
@@ -83,13 +85,6 @@ public class ArithmeticService {
             i+=2;
         }
         return sum;
-    }
-
-    public int[] guess(int guess[], int max){
-        int[] rand = new int[5];
-        for(int i = 0; i<5; i++)
-       rand[i] = (int) (Math.random() * max);
-        return res;
     }
 
     public double rowMultiply(double a, int n){

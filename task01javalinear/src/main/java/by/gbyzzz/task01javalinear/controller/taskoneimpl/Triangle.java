@@ -21,7 +21,7 @@ public class Triangle {
                 break;
             case 2:
                 break;
-            case 3: //in.add(XMLIn);
+            case 3: //XMLIn.XMLReader();
                 break;
             default: break;
         }
@@ -29,18 +29,18 @@ public class Triangle {
     }
 
     public void calculations (){
-        out.add(gs.triangleHeight(in.getArr(0)));
-        out.add(gs.triangleDesR(in.getArr(0)));
-        out.add(gs.triangleInR(in.getArr(0)));
-        out.add(gs.triangleSq(in.getArr(0)));
+        out.add(gs.triangleHeight(in.get(0)));
+        out.add(gs.triangleDesR(in.get(0)));
+        out.add(gs.triangleInR(in.get(0)));
+        out.add(gs.triangleSq(in.get(0)));
         in.clear();
     }
     public void consoleOutput() {
         io.output("Results:");
-        io.output("Height = ", out.getArr(0));
-        io.output("R = ", out.getArr(1));
-        io.output("r = ", out.getArr(2));
-        io.output("S = ", out.getArr(3));
+        io.output("Height = ", out.get(0));
+        io.output("R = ", out.get(1));
+        io.output("r = ", out.get(2));
+        io.output("S = ", out.get(3));
         out.clear();
     }
 }

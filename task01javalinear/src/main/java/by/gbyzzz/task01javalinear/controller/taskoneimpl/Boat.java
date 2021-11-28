@@ -33,13 +33,13 @@ public class Boat {
 
     public void calculations() {
 
-        out.add(as.boat(in.getArr(0), in.getArr(1), in.getArr(2), in.getArr(3)));
+        out.add(as.boat(in.get(0), in.get(1), in.get(2), in.get(3)));
 
     }
 
     public void consoleOutput() {
 
-        io.output("Total distance is ", out.getArr(0));
+        io.output("Total distance is ", out.get(0));
         out.clear();
         in.clear();
 

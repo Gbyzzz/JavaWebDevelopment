@@ -28,12 +28,12 @@ public class RowOfNums {
     }
 
     public void calculations() {
-            out.add(as.multiply(in.getArr(0), (int) in.getArr(1)));
+            out.add(as.multiply(in.get(0), (int) in.get(1)));
 
     }
 
     public void consoleOutput() {
-            io.output("The sum is ", out.getArr(0));
+            io.output("The sum is ", out.get(0));
         out.clear();
         in.clear();
     }

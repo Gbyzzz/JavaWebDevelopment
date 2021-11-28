@@ -31,12 +31,12 @@ public class PositiveNumCount {
 
     public void calculations() {
 
-        out.add(as.positiveNumCount(in.getArr(0), in.getArr(1), in.getArr(2)));
+        out.add(as.positiveNumCount(in.get(0), in.get(1), in.get(2)));
 
     }
 
     public void consoleOutput() {
-        io.output("Quantity of positive numbers: ", out.getArr(0));
+        io.output("Quantity of positive numbers: ", out.get(0));
         out.clear();
         in.clear();
     }

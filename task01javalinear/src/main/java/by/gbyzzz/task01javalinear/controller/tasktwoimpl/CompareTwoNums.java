@@ -29,12 +29,12 @@ public class CompareTwoNums {
 
     public void calculations() {
 
-        out.add(as.compareTwoNums(in.getArr(0), in.getArr(1)));
+        out.add(as.compareTwoNums(in.get(0), in.get(1)));
 
     }
 
     public void consoleOutput() {
-        io.output("Minimum number is - ", out.getArr(0));
+        io.output("Minimum number is - ", out.get(0));
         out.clear();
         in.clear();
     }

@@ -30,12 +30,12 @@ public class TaskWithTwoNums {
 
     public void calculations() {
 
-        out.add(as.taskWithTwoNums(in.getArr(0), in.getArr(1)));
+        out.add(as.taskWithTwoNums(in.get(0), in.get(1)));
 
     }
 
     public void consoleOutput() {
-        io.output("Both numbers equals ", out.getArr(0));
+        io.output("Both numbers equals ", out.get(0));
         out.clear();
         in.clear();
     }

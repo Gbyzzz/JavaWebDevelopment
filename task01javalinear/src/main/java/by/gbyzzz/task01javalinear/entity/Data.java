@@ -6,11 +6,12 @@ import java.util.List;
 public class Data {
     private List<Object> arr = new ArrayList<>();
 
-    public double getArr(int i) {
+    public double get(int i) {
         return (double) arr.get(i);
     }
-    public double getArr(int i, int j) {
-        return (double) arr.get(i);
+
+    public int getInt(int i) {
+        return (int) arr.get(i);
     }
 
     public void add(double num) {
@@ -29,7 +30,20 @@ public class Data {
         arr.add(arg);
     }
 
+    public void add(int num) {
+        arr.add(num);
+    }
+
     public void clear(){
         arr.clear();
+    }
+
+    public int size(){
+      return   arr.size();
+    }
+
+
+    public boolean contains(int a){
+        return arr.contains(a);
     }
 }

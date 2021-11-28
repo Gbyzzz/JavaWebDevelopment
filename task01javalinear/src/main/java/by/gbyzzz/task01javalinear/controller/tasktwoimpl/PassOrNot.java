@@ -1,7 +1,6 @@
 package by.gbyzzz.task01javalinear.controller.tasktwoimpl;
 
 import by.gbyzzz.task01javalinear.entity.Data;
-import by.gbyzzz.task01javalinear.service.ArithmeticService;
 import by.gbyzzz.task01javalinear.service.GeometryService;
 import by.gbyzzz.task01javalinear.view.IOData;
 
@@ -36,12 +35,12 @@ public class PassOrNot {
 
     public void calculations() {
 
-        out.add(gs.passOrNot(in.getArr(0), in.getArr(1), in.getArr(2), in.getArr(3), in.getArr(4)));
+        out.add(gs.passOrNot(in.get(0), in.get(1), in.get(2), in.get(3), in.get(4)));
 
     }
 
     public void consoleOutput() {
-        if(out.getArr(0) == 1) {
+        if(out.get(0) == 1) {
         io.output("The brick will pass through the hole.");
         }else {
             io.output("The brick will not pass through the hole.");

@@ -1,9 +1,6 @@
 package by.gbyzzz.task01javalinear.view;
 
-import by.gbyzzz.task01javalinear.controller.taskthreeimpl.MultiplyTable;
-import by.gbyzzz.task01javalinear.controller.taskthreeimpl.RowMultiply;
-import by.gbyzzz.task01javalinear.controller.taskthreeimpl.RowOfNums;
-import by.gbyzzz.task01javalinear.controller.taskthreeimpl.SumNinetyNine;
+import by.gbyzzz.task01javalinear.controller.taskthreeimpl.*;
 
 import java.io.IOException;
 
@@ -12,6 +9,7 @@ public class TaskThreeMenu {
     RowMultiply rowMultiply = new RowMultiply();
     MultiplyTable multiplyTable = new MultiplyTable();
     RowOfNums rowOfNums = new RowOfNums();
+    Guess guess = new Guess();
 
     public void start(int taskSelect, int sourceSelect) throws IOException {
         switch (taskSelect) {
@@ -25,7 +23,9 @@ public class TaskThreeMenu {
                 sumNinetyNine.consoleOutput();
                 break;
             case 3:
-
+                guess.input(sourceSelect);
+                guess.calculations();
+                guess.consoleOutput();
                 break;
             case 4:
                 rowMultiply.input(sourceSelect);
