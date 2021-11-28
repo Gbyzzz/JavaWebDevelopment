@@ -1,9 +1,12 @@
 package by.gbyzzz.task01javalinear.view;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class StartMenu {
-    public void start() throws IOException {
+    public void start() throws IOException, ParserConfigurationException, SAXException {
         IOData io = new IOData();
         TaskOneMenu taskOneMenu = new TaskOneMenu();
         TaskTwoMenu taskTwoMenu = new TaskTwoMenu();

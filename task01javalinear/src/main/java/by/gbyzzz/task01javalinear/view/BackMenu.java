@@ -1,12 +1,15 @@
 package by.gbyzzz.task01javalinear.view;
 
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class BackMenu {
     static IOData io = new IOData();
     static StartMenu startMenu = new StartMenu();
-    public void start() throws IOException {
+    public void start() throws IOException, ParserConfigurationException, SAXException {
 
 
         io.output("");

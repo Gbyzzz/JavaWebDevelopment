@@ -1,7 +1,9 @@
 package by.gbyzzz.task01javalinear.view;
 
 import by.gbyzzz.task01javalinear.controller.taskoneimpl.*;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 
@@ -11,7 +13,7 @@ public class TaskOneMenu {
     AverageCubed averageCubed = new AverageCubed();
     Expression expression = new Expression();
     Boat boat = new Boat();
-    public void start(int taskSelect, int sourceSelect) throws IOException {
+    public void start(int taskSelect, int sourceSelect) throws IOException, ParserConfigurationException, SAXException {
         switch (taskSelect) {
             case 1:
                 triangle.input(sourceSelect);
