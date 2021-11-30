@@ -1,6 +1,6 @@
 package by.gbyzzz.task01javalinear.controller.taskoneimpl;
 
-import by.gbyzzz.task01javalinear.dal.FileReader;
+import by.gbyzzz.task01javalinear.dal.FileIO;
 import by.gbyzzz.task01javalinear.dal.IOXML;
 import by.gbyzzz.task01javalinear.entity.Data;
 import by.gbyzzz.task01javalinear.service.GeometryService;
@@ -16,16 +16,16 @@ public class Triangle {
     IOData io = new IOData();
     GeometryService gs = new GeometryService();
     IOXML XMLIn = new IOXML();
-    FileReader FileIn = new FileReader();
+    FileIO FileIn = new FileIO();
 
     public void input(int i) throws ParserConfigurationException, SAXException, IOException {
         io.output("Enter the side of the triangle:");
         switch (i){
             case 1: in.add(io.input());
                 break;
-            case 2:
+            case 2: // in.add(FileIn.readFile().get(0));
                 break;
-            case 3: in.add(XMLIn.readXML().get(0));
+            case 3: in.add(XMLIn.readXML("double").get(0));
                 break;
             default: break;
         }

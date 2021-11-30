@@ -1,6 +1,6 @@
 package by.gbyzzz.task01javalinear.controller;
 
-import by.gbyzzz.task01javalinear.view.StartMenu;
+import by.gbyzzz.task01javalinear.controller.menu.StartMenu;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

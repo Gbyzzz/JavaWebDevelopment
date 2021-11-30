@@ -12,16 +12,25 @@ import java.io.File;
 import java.io.IOException;
 
 public class IOXML {
-    public Data readXML() throws ParserConfigurationException, SAXException, IOException {
+    public Data readXML(String arg) throws ParserConfigurationException, SAXException, IOException {
         final Data num = new Data();
-    DefaultHandler handler = new DefaultHandler(){
-    @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        if (qName.equals("number")) {
-            num.add(Double.parseDouble(attributes.getValue("num")));
-           }
-        }
-    };
+        DefaultHandler handler = new DefaultHandler(){
+            @Override
+            public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+                if (qName.equals("number")) {
+                    switch (arg){
+                        case "int":
+                            num.add(Integer.parseInt(attributes.getValue("num")));
+                            break;
+                        case "double":
+                            num.add(Double.parseDouble(attributes.getValue("num")));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        };
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
@@ -31,4 +40,3 @@ public class IOXML {
         return num;
     }
 }
-

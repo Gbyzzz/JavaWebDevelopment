@@ -1,17 +1,19 @@
-package by.gbyzzz.task01javalinear.view;
+package by.gbyzzz.task01javalinear.controller.menu;
 
 import by.gbyzzz.task01javalinear.controller.taskthreeimpl.*;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class TaskThreeMenu {
-    SumNinetyNine sumNinetyNine = new SumNinetyNine();
+    SumMinMax sumMinMax = new SumMinMax();
     RowMultiply rowMultiply = new RowMultiply();
     MultiplyTable multiplyTable = new MultiplyTable();
     RowOfNums rowOfNums = new RowOfNums();
     Guess guess = new Guess();
 
-    public void start(int taskSelect, int sourceSelect) throws IOException {
+    public void start(int taskSelect, int sourceSelect) throws IOException, ParserConfigurationException, SAXException {
         switch (taskSelect) {
             case 1:
                 rowOfNums.input(sourceSelect);
@@ -19,8 +21,9 @@ public class TaskThreeMenu {
                 rowOfNums.consoleOutput();
                 break;
             case 2:
-                sumNinetyNine.calculations();
-                sumNinetyNine.consoleOutput();
+                sumMinMax.input(sourceSelect);
+                sumMinMax.calculations();
+                sumMinMax.consoleOutput();
                 break;
             case 3:
                 guess.input(sourceSelect);

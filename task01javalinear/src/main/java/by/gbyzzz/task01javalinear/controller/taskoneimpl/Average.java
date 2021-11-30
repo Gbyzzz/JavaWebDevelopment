@@ -13,8 +13,8 @@ public class Average {
     static Data in = new Data();
     static Data out = new Data();
     IOData io = new IOData();
-    IOXML XMLIn = new IOXML();
     ArithmeticService as = new ArithmeticService();
+    IOXML XMLIn = new IOXML();
 
     public void input(int i) throws ParserConfigurationException, IOException, SAXException {
         switch (i){
@@ -25,9 +25,8 @@ public class Average {
                 break;
             case 2:
                 break;
-            case 3:
-                for(int j = 0; j < 2; j++)
-                in.add(XMLIn.readXML().get(j));
+            case 3: for(int j = 0; j < 2; j++)
+                in.add(XMLIn.readXML("double").get(j));
                 break;
             default: break;
         }

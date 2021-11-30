@@ -1,32 +1,39 @@
 package by.gbyzzz.task01javalinear.controller.tasktwoimpl;
 
+import by.gbyzzz.task01javalinear.dal.IOXML;
 import by.gbyzzz.task01javalinear.entity.Data;
 import by.gbyzzz.task01javalinear.service.GeometryService;
 import by.gbyzzz.task01javalinear.view.IOData;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 public class PassOrNot {
     static Data in = new Data();
     static Data out = new Data();
     IOData io = new IOData();
+    IOXML XMLIn = new IOXML();
     GeometryService gs = new GeometryService();
 
-    public void input(int i){
+    public void input(int i) throws ParserConfigurationException, IOException, SAXException {
         io.output("Please input info");
         switch (i){
             case 1: io.output("Enter first side of the hole:");
-                in.add(io.input());
+                in.add(io.input(0));
                 io.output("Enter second side of the hole:");
-                in.add(io.input());
+                in.add(io.input(0));
                 io.output("Enter first side of the brick:");
-                in.add(io.input());
+                in.add(io.input(0));
                 io.output("Enter second side of the brick:");
-                in.add(io.input());
+                in.add(io.input(0));
                 io.output("Enter third side of the brick:");
-                in.add(io.input());
+                in.add(io.input(0));
                 break;
             case 2:
                 break;
-            case 3: //in.add(XMLIn);
+            case 3: for(int j = 0; j < 5; j++)
+                in.add(XMLIn.readXML("double").get(j));
                 break;
             default: break;
         }

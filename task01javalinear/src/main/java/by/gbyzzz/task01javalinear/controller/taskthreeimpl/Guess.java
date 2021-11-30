@@ -1,8 +1,13 @@
 package by.gbyzzz.task01javalinear.controller.taskthreeimpl;
 
+import by.gbyzzz.task01javalinear.dal.IOXML;
 import by.gbyzzz.task01javalinear.entity.Data;
 import by.gbyzzz.task01javalinear.service.GuessService;
 import by.gbyzzz.task01javalinear.view.IOData;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 public class Guess {
     Data in = new Data();
@@ -12,23 +17,25 @@ public class Guess {
     Data notGuessed = new Data();
     IOData io = new IOData();
     GuessService gs = new GuessService();
+    IOXML XMLIn = new IOXML();
 
-    public void input(int i){
+    public void input(int i) throws ParserConfigurationException, IOException, SAXException {
         switch (i){
             case 1: io.output("Enter your first guess:");
-                in.add(io.input(1,15));
+                in.add(io.input("range", 1,15));
                 io.output("Enter your second guess:");
-                in.add(io.input(1,15));
+                in.add(io.input("range", 1,15));
                 io.output("Enter your third guess:");
-                in.add(io.input(1,15));
+                in.add(io.input("range", 1,15));
                 io.output("Enter your forth guess:");
-                in.add(io.input(1,15));
+                in.add(io.input("range", 1,15));
                 io.output("Enter your fifth guess:");
-                in.add(io.input(1,15));
+                in.add(io.input("range", 1,15));
                 break;
             case 2:
                 break;
-            case 3: //in.add(XMLIn);
+            case 3: for(int j = 0; j < 5; j++)
+                in.add(XMLIn.readXML("int").get(j));
                 break;
             default: break;
         }
@@ -37,7 +44,7 @@ public class Guess {
 
     public void calculations() {
         for(int i = 0; i<5; i++){
-        rand.add(gs.random(15));
+            rand.add(gs.random(15));
         }
 
         for(int i = 0; i<5; i++){

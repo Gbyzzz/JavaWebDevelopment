@@ -1,4 +1,4 @@
-package test.gbyzzz.task01javalinear;
+package test.gbyzzz.task01javalinear.taskone;
 
 import by.gbyzzz.task01javalinear.service.GeometryService;
 import org.testng.annotations.DataProvider;
@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class GeometryServiceTest {
+public class TriangleTest {
     GeometryService gs = new GeometryService();
     @DataProvider(name = "triangleHeight")
     public Object[][] triangleHeightCorrectData() {

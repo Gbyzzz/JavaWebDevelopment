@@ -31,11 +31,11 @@ public class Menu {
 
     }
     public void taskThreeMenu() {
-        io.output("1. Isosceles triangle");
-        io.output("2. The arithmetic mean of two numbers (5)");
-        io.output("3. Boat (31)/n");
-        io.output("4. The arithmetic mean of two qubed numbers (17)");
-        io.output("5. z = 2 * x + ( y – 2 ) * 5 (3)");
+        io.output("1. a = 1 / 2^n + 1 / 3^n compare with 'e'(19)");
+        io.output("2. Sum from 1 to 99 (5)");
+        io.output("3. Guess game (31)/n");
+        io.output("4. a(a+1)...(a+n-1) (17)");
+        io.output("5. Table of multiply(3)");
         io.output("6. Exit");
         io.output(correctImputMsg);
     }

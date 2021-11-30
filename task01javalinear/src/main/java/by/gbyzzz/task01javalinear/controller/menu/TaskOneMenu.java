@@ -1,4 +1,4 @@
-package by.gbyzzz.task01javalinear.view;
+package by.gbyzzz.task01javalinear.controller.menu;
 
 import by.gbyzzz.task01javalinear.controller.taskoneimpl.*;
 import org.xml.sax.SAXException;

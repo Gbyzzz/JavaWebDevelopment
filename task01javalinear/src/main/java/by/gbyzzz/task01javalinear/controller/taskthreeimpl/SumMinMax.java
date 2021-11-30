@@ -1,4 +1,4 @@
-package by.gbyzzz.task01javalinear.controller.taskoneimpl;
+package by.gbyzzz.task01javalinear.controller.taskthreeimpl;
 
 import by.gbyzzz.task01javalinear.dal.IOXML;
 import by.gbyzzz.task01javalinear.entity.Data;
@@ -9,7 +9,8 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class AverageCubed {
+public class SumMinMax {
+
     static Data in = new Data();
     static Data out = new Data();
     IOData io = new IOData();
@@ -17,32 +18,33 @@ public class AverageCubed {
     ArithmeticService as = new ArithmeticService();
 
     public void input(int i) throws ParserConfigurationException, IOException, SAXException {
-        switch (i){
-            case 1: io.output("Enter first number:");
-                in.add(io.input());
-                io.output("Enter second number:");
-                in.add(io.input());
+        io.output("Enter min and max number:");
+        switch (i) {
+            case 1:
+                io.output("Enter min:");
+                in.add(io.input("odd", 1, 99));
+                io.output("Enter max:");
+                in.add(io.input("odd", 1, 99));
                 break;
             case 2:
                 break;
-            case 3: for(int j = 0; j < 2; j++)
-                in.add(XMLIn.readXML("double").get(j));
+            case 3:
+                for (int j = 0; j < 2; j++)
+                    in.add(XMLIn.readXML("int").getInt(j));
                 break;
-            default: break;
+            default:
+                break;
+        }
+    }
+        public void calculations() {
+            out.add(as.sumMaxMin(in.getInt(0), in.getInt(1)));
         }
 
-    }
-
-    public void calculations() {
-
-        out.add(as.averageCubed(in.get(0), in.get(1)));
-
-    }
-
     public void consoleOutput() {
-        io.output("The average value of cubed values of " + in.get(0) + " and " + in.get(1) + ":");
-        io.output(out.get(0));
+        io.output("Sum of all odd numbers from " + in.getInt(0) + " to " + in.getInt(1) + " - ", out.getInt(0));
         in.clear();
         out.clear();
     }
 }
+
+
