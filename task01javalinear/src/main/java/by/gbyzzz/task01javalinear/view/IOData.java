@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class IOData {
 
-    Validator validator = new Validator();
+    InputValidator inputValidator = new InputValidator();
 
     public void output(String arg) {
         System.out.println(arg);
@@ -44,10 +44,10 @@ public class IOData {
         Scanner in = new Scanner(System.in);
         switch (arg) {
             case "odd":
-                res = validator.oddInt(in);
+                res = inputValidator.oddInt(in);
                 break;
             case "range":
-                res = validator.rangeInt(in, a, b);
+                res = inputValidator.rangeInt(in, a, b);
                 break;
             default:
                 break;
@@ -59,13 +59,18 @@ public class IOData {
 
     public double input() {
         Scanner in = new Scanner(System.in);
-        double res = validator.doubleNum(in);
+        double res = inputValidator.doubleNum(in);
         return res;
     }
 
     public double input(double min) {
         Scanner in = new Scanner(System.in);
-        double res = validator.fromNum(in, min);
+        double res = inputValidator.fromNum(in, min);
+        return res;
+    }
+    public int inputInt() {
+        Scanner in = new Scanner(System.in);
+        int res = inputValidator.intNum(in);
         return res;
     }
 }

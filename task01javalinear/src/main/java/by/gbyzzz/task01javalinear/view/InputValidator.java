@@ -2,7 +2,7 @@ package by.gbyzzz.task01javalinear.view;
 
 import java.util.Scanner;
 
-public class Validator {
+public class InputValidator {
 
 
     public int rangeInt(Scanner in, int min, int max) {
@@ -75,6 +75,21 @@ public class Validator {
                     in.next();
                 }
             }
+            System.out.println("Invalid Input. Please enter a valid number");
+        }
+        return  res;
+    }
+
+    public int intNum (Scanner in){
+        int res;
+        while (true) {
+            if (in.hasNextInt()) {
+                res = in.nextInt();
+                break;
+            } else {
+                in.next();
+            }
+
             System.out.println("Invalid Input. Please enter a valid number");
         }
         return  res;

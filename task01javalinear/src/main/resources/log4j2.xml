@@ -18,13 +18,12 @@
                      filePattern = "${LOG_DIR}/${date:yyyy-MM-dd}/%d{MM-dd-yyyy_HH-mm}_%i.log">
             <PatternLayout pattern="${pattern_file}"/>
             <Policies>
-                <SizeBasedTriggeringPolicy size="15 KB"/>
+                <SizeBasedTriggeringPolicy size="100 KB"/>
                 <OnStartupTriggeringPolicy />
             </Policies>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>
     </Appenders>
-
     <Loggers>
         <Root level = "trace" >
             <AppenderRef ref="FileRolling" />

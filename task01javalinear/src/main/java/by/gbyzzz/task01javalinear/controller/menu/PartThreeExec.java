@@ -1,43 +1,42 @@
 package by.gbyzzz.task01javalinear.controller.menu;
 
 import by.gbyzzz.task01javalinear.controller.Command;
-import by.gbyzzz.task01javalinear.controller.taskoneimpl.*;
+import by.gbyzzz.task01javalinear.controller.taskthreeimpl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
+public class PartThreeExec implements TaskExec {
 
-public class TaskOneMenuExec implements TaskMenu {
+   private static final Logger LOGGER = LogManager.getLogger();
 
-    private static final Logger LOGGER = LogManager.getLogger();
+   Command command;
 
-    Command command;
     @Override
     public void start(int taskSelect, int sourceSelect) {
-        LOGGER.trace("Executing TaskOneMenu method start");
+        LOGGER.trace("Executing TaskThreeMenu method start");
         switch (taskSelect) {
             case 1:
-                command = new Triangle();
+                command = new RowOfNums();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
             case 2:
-                command = new Average();
+                command = new SumMinMax();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
             case 3:
-                command = new Boat();
+                command = new Guess();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
             case 4:
-                command = new AverageCubed();
+                command = new RowMultiply();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
-            case 5:
-                command = new Expression();
+            case 5:command = new MultiplyTable();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
@@ -47,5 +46,3 @@ public class TaskOneMenuExec implements TaskMenu {
         }
     }
 }
-
-

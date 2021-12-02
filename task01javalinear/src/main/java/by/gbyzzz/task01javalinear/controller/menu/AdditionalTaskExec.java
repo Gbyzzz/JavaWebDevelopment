@@ -1,42 +1,33 @@
 package by.gbyzzz.task01javalinear.controller.menu;
 
 import by.gbyzzz.task01javalinear.controller.Command;
-import by.gbyzzz.task01javalinear.controller.taskthreeimpl.*;
+import by.gbyzzz.task01javalinear.controller.additionaltaskimpl.SwitchTwoNumsArithm;
+import by.gbyzzz.task01javalinear.controller.additionaltaskimpl.SwitchTwoNumsBuff;
+import by.gbyzzz.task01javalinear.controller.additionaltaskimpl.SwitchTwoNumsxXOR;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+public class AdditionalTaskExec implements TaskExec {
 
-public class TaskThreeMenuExec implements TaskMenu {
+    private static final Logger LOGGER = LogManager.getLogger();
 
-   private static final Logger LOGGER = LogManager.getLogger();
-
-   Command command;
-
+    Command command;
     @Override
     public void start(int taskSelect, int sourceSelect) {
-        LOGGER.trace("Executing TaskThreeMenu method start");
+        LOGGER.trace("Executing AdditionalTask method start");
         switch (taskSelect) {
             case 1:
-                command = new RowOfNums();
+                command = new SwitchTwoNumsBuff();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
             case 2:
-                command = new SumMinMax();
+                command = new SwitchTwoNumsArithm();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
             case 3:
-                command = new Guess();
-                LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
-                command.exec(sourceSelect);
-                break;
-            case 4:
-                command = new RowMultiply();
-                LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
-                command.exec(sourceSelect);
-                break;
-            case 5:command = new MultiplyTable();
+                command = new SwitchTwoNumsxXOR();
                 LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;

@@ -1,6 +1,10 @@
 package by.gbyzzz.task01javalinear.service;
 
 
+import by.gbyzzz.task01javalinear.entity.Data;
+
+import java.security.PublicKey;
+
 public class ArithmeticService {
 
     public static double mySqrt(double n){
@@ -88,14 +92,23 @@ public class ArithmeticService {
     //task03
     public double rowOfNums(double e, int n) {
         double sum = 0;
-        for (int i = 0; i < n; i++) {
-            double a = (1 / (Math.pow(2, i))) + (1 / (Math.pow(3, i)));
-            if (Math.abs(a) >= e) {
-                sum += a;
-                n++;
+        if (n<0){
+            for (int i = 0; i > n;) {
+                double a = (1 / (Math.pow(2, n))) + (1 / (Math.pow(3, n)));
+                if (Math.abs(a) >= e) {
+                    sum += a;
+                    n++;
+                }
             }
-            return sum;
-        }
+            } else{
+                for (int i = 0; i < n; i++) {
+                    double a = (1 / (Math.pow(2, i))) + (1 / (Math.pow(3, i)));
+                    if (Math.abs(a) >= e) {
+                        sum += a;
+                        n++;
+                    }
+                }
+            }
         return sum;
     }
 
@@ -116,8 +129,41 @@ public class ArithmeticService {
         return sum;
     }
 
-    public double multiply(double a, int b) {
+    public int multiply(int a, int b) {
         return a * b;
+    }
+
+    public Data switchTwoNumsBuff(double a, double b){
+    double c = 0;
+    Data res = new Data();
+    c = b;
+    b = a;
+    a = c;
+    res.add(a);
+    res.add(b);
+    return res;
+    }
+
+    public Data switchTwoNumsArithm(double a, double b){
+
+        Data res = new Data();
+        a  = b + a;
+        b = a - b;
+        a = a - b;
+        res.add(a);
+        res.add(b);
+        return res;
+    }
+
+    public Data switchTwoNumsXOR(int a, int b){
+
+        Data res = new Data();
+        a ^= b;
+        b ^= a;
+        a ^= b;
+        res.add(a);
+        res.add(b);
+        return res;
     }
 
 }

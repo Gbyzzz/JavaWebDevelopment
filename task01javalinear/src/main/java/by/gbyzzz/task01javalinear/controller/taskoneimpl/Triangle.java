@@ -8,11 +8,6 @@ import by.gbyzzz.task01javalinear.service.GeometryService;
 import by.gbyzzz.task01javalinear.view.IOData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
-import java.text.DecimalFormat;
 
 public class Triangle implements Command {
 

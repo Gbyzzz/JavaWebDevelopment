@@ -1,6 +1,6 @@
 package by.gbyzzz.task01javalinear.view;
 
-public class Menu {
+public class MenuText {
     private static IOData io = new IOData();
     String correctImputMsg = "Please input № of task";
     public void mainMenu() {
@@ -8,7 +8,8 @@ public class Menu {
         io.output("1. Task 1");
         io.output("2. Task 2");
         io.output("3. Task 3");
-        io.output("4. Exit");
+        io.output("4. Additional task");
+        io.output("5. Exit");
         io.output(correctImputMsg);
     }
     public void taskOneMenu() {
@@ -39,6 +40,14 @@ public class Menu {
         io.output("6. Exit");
         io.output(correctImputMsg);
     }
+        public void additionalTask(){
+        io.output("1. Switch two numbers using buffer");
+        io.output("2. Switch two numbers using arithmetics");
+        io.output("3. Switch two numbers using XOR");
+        io.output("4. Exit");
+        io.output(correctImputMsg);
+        }
+
     public void sourceMenu() {
         io.output("Please choose the source:");
         io.output("1. Manual input");

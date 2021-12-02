@@ -6,7 +6,7 @@ import by.gbyzzz.task01javalinear.controller.tasktwoimpl.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TaskTwoMenuExec implements TaskMenu {
+public class PartTwoExec implements TaskExec {
 
     private static final Logger LOGGER = LogManager.getLogger();
 

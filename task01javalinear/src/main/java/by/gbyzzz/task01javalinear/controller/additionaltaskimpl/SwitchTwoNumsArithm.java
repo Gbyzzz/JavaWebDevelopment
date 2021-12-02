@@ -1,4 +1,4 @@
-package by.gbyzzz.task01javalinear.controller.taskoneimpl;
+package by.gbyzzz.task01javalinear.controller.additionaltaskimpl;
 
 import by.gbyzzz.task01javalinear.controller.Command;
 import by.gbyzzz.task01javalinear.dal.FileIO;
@@ -9,53 +9,45 @@ import by.gbyzzz.task01javalinear.view.IOData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
-public class AverageCubed implements Command {
-
+public class SwitchTwoNumsArithm implements Command {
     private static final Logger LOGGER = LogManager.getLogger();
 
     static Data in = new Data();
     static Data out = new Data();
     IOData io = new IOData();
-    IOXML XMLIn = new IOXML();
     ArithmeticService as = new ArithmeticService();
+    IOXML XMLIn = new IOXML();
     FileIO fileIO = new FileIO();
 
     @Override
     public void exec(int arg) {
-        switch (arg) {
-            case 1:
-                io.output("Enter first number:");
+        io.output("Enter two numbers which you want to switch:");
+        switch (arg){
+            case 1: io.output("Enter first number:");
                 in.add(io.input());
                 LOGGER.info("User entered first number - " + in.get(0));
                 io.output("Enter second number:");
                 in.add(io.input());
                 LOGGER.info("User entered second number - " + in.get(1));
                 break;
-            case 2:
-                LOGGER.info("Reading txt file for input data");
+            case 2: LOGGER.info("Reading txt file for input data");
                 for(int j = 0; j < 2; j++) {
-                    in.add(fileIO.readFile("double").get(j));
+                    in.add(fileIO.readFile("int").get(j));
                 }
                 break;
-            case 3:{
+            case 3:
                 LOGGER.info("Parsing XML file with XMLIn class and writing info to array");
-                for (int j = 0; j < 2; j++) {
-                    in.add(XMLIn.readXML("double").get(j));
+                for(int j = 0; j < 2; j++) {
+                    in.add(XMLIn.readXML("int").get(j));
                 }
-                break;}
-            default:
                 break;
-        }
-        LOGGER.info("Calculating average value of cubed " + in.get(0) + " and " + in.get(1));
-        out.add(as.averageCubed(in.get(0), in.get(1)));
-        LOGGER.info("Calculating geometric mean of " + in.get(0) + " and " + in.get(1));
-        out.add(as.averageGeom(in.get(0), in.get(1)));
+            default: break;
 
-        io.output("The average value of cubed values of " + in.get(0) + " and " + in.get(1) + ":");
-        io.output(out.get(0));
-        io.output("The geometric mean of " + in.get(0) + " and " + in.get(1) + ":");
-        io.output(out.get(1));
+        }
+        LOGGER.info("switching positions of " + in.get(0) + " and " + in.get(1));
+        out = (as.switchTwoNumsArithm(in.get(0), in.get(1)));
+        io.output("Your input a =  " + in.get(0) + " and b = " + in.get(1));
+        io.output("Now a =  " + out.get(0) + " and b = " + out.get(1));
         in.clear();
         out.clear();
     }
