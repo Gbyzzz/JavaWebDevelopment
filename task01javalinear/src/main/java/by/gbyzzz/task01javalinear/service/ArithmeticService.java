@@ -133,8 +133,8 @@ public class ArithmeticService {
         return a * b;
     }
 
-    public Data switchTwoNumsBuff(double a, double b){
-    double c = 0;
+    public Data switchTwoNumsBuff(int a, int b){
+    int c = 0;
     Data res = new Data();
     c = b;
     b = a;
@@ -144,7 +144,7 @@ public class ArithmeticService {
     return res;
     }
 
-    public Data switchTwoNumsArithm(double a, double b){
+    public Data switchTwoNumsArithm(int a, int b){
 
         Data res = new Data();
         a  = b + a;

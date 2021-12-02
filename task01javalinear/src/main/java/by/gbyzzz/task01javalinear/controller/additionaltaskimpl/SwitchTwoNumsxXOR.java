@@ -32,13 +32,13 @@ public class SwitchTwoNumsxXOR implements Command {
                 break;
             case 2: LOGGER.info("Reading txt file for input data");
                 for(int j = 0; j < 2; j++) {
-                    in.add(fileIO.readFile("int").get(j));
+                    in.add(fileIO.readFile("int").getInt(j));
                 }
                 break;
             case 3:
                 LOGGER.info("Parsing XML file with XMLIn class and writing info to array");
                 for(int j = 0; j < 2; j++) {
-                    in.add(XMLIn.readXML("int").get(j));
+                    in.add(XMLIn.readXML("int").getInt(j));
                 }
                 break;
             default: break;

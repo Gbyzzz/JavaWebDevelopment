@@ -24,30 +24,30 @@ public class SwitchTwoNumsArithm implements Command {
         io.output("Enter two numbers which you want to switch:");
         switch (arg){
             case 1: io.output("Enter first number:");
-                in.add(io.input());
-                LOGGER.info("User entered first number - " + in.get(0));
+                in.add(io.inputInt());
+                LOGGER.info("User entered first number - " + in.getInt(0));
                 io.output("Enter second number:");
-                in.add(io.input());
-                LOGGER.info("User entered second number - " + in.get(1));
+                in.add(io.inputInt());
+                LOGGER.info("User entered second number - " + in.getInt(1));
                 break;
             case 2: LOGGER.info("Reading txt file for input data");
                 for(int j = 0; j < 2; j++) {
-                    in.add(fileIO.readFile("int").get(j));
+                    in.add(fileIO.readFile("int").getInt(j));
                 }
                 break;
             case 3:
                 LOGGER.info("Parsing XML file with XMLIn class and writing info to array");
                 for(int j = 0; j < 2; j++) {
-                    in.add(XMLIn.readXML("int").get(j));
+                    in.add(XMLIn.readXML("int").getInt(j));
                 }
                 break;
             default: break;
 
         }
-        LOGGER.info("switching positions of " + in.get(0) + " and " + in.get(1));
-        out = (as.switchTwoNumsArithm(in.get(0), in.get(1)));
-        io.output("Your input a =  " + in.get(0) + " and b = " + in.get(1));
-        io.output("Now a =  " + out.get(0) + " and b = " + out.get(1));
+        LOGGER.info("switching positions of " + in.getInt(0) + " and " + in.getInt(1));
+        out = (as.switchTwoNumsArithm(in.getInt(0), in.getInt(1)));
+        io.output("Your input a =  " + in.getInt(0) + " and b = " + in.getInt(1));
+        io.output("Now a =  " + out.getInt(0) + " and b = " + out.getInt(1));
         in.clear();
         out.clear();
     }
