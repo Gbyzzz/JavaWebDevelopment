@@ -2,15 +2,14 @@ package by.gbyzzz.task01javalinear.controller.menu;
 
 
 import by.gbyzzz.task01javalinear.view.IOData;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BackMenu {
+    private static final Logger LOGGER = LogManager.getLogger();
     static IOData io = new IOData();
     static StartMenu startMenu = new StartMenu();
-    public void start() throws IOException, ParserConfigurationException, SAXException {
+    public void start() {
 
 
         io.output("");
@@ -21,6 +20,7 @@ public class BackMenu {
             startMenu.start();
         }
         else {
+            LOGGER.trace("Exiting application");
             System.exit(0);
         }
     }

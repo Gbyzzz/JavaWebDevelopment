@@ -1,15 +1,21 @@
 package by.gbyzzz.task01javalinear.controller.taskthreeimpl;
 
+import by.gbyzzz.task01javalinear.controller.Command;
 import by.gbyzzz.task01javalinear.dal.IOXML;
 import by.gbyzzz.task01javalinear.entity.Data;
 import by.gbyzzz.task01javalinear.service.GuessService;
 import by.gbyzzz.task01javalinear.view.IOData;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class Guess {
+public class Guess implements Command {
+
+    private static final Logger LOGGER = LogManager.getLogger();
+
     Data in = new Data();
     Data rand = new Data();
     Data rightGuess = new Data();
@@ -19,8 +25,78 @@ public class Guess {
     GuessService gs = new GuessService();
     IOXML XMLIn = new IOXML();
 
-    public void input(int i) throws ParserConfigurationException, IOException, SAXException {
-        switch (i){
+//    public void input(int i) throws ParserConfigurationException, IOException, SAXException {
+//        switch (i){
+//            case 1: io.output("Enter your first guess:");
+//                in.add(io.input("range", 1,15));
+//                io.output("Enter your second guess:");
+//                in.add(io.input("range", 1,15));
+//                io.output("Enter your third guess:");
+//                in.add(io.input("range", 1,15));
+//                io.output("Enter your forth guess:");
+//                in.add(io.input("range", 1,15));
+//                io.output("Enter your fifth guess:");
+//                in.add(io.input("range", 1,15));
+//                break;
+//            case 2:
+//                break;
+//            case 3: for(int j = 0; j < 5; j++)
+//                in.add(XMLIn.readXML("int").get(j));
+//                break;
+//            default: break;
+//        }
+//
+//    }
+//
+//    public void calculations() {
+//        for(int i = 0; i<5; i++){
+//            rand.add(gs.random(15));
+//        }
+//
+//        for(int i = 0; i<5; i++){
+//            if(gs.rightGuess( in.getInt(i), rand) == 1)
+//                rightGuess.add(in.getInt(i));
+//            else
+//                wrongGuess.add(in.getInt(i));
+//        }
+//
+//        for(int i = 0; i<5; i++){
+//            if(gs.notGuessed( rand.getInt(i),in) == 1)
+//                notGuessed.add(rand.getInt(i));
+//        }
+//    }
+//
+//    public void consoleOutput() {
+//        io.output("Guessed numbers: ");
+//        for (int i = 0; i < rand.size(); i++) {
+//            io.output(rand.getInt(i));
+//        }
+//
+//        io.output("Right guesses: ");
+//        for (int i = 0; i < rightGuess.size(); i++) {
+//            io.output( rightGuess.getInt(i));
+//        }
+//
+//        io.output("Wrong guesses: ");
+//        for (int i = 0; i < wrongGuess.size(); i++) {
+//            io.output( wrongGuess.getInt(i));
+//        }
+//
+//        io.output("Not guessed: ");
+//        for (int i = 0; i < notGuessed.size(); i++) {
+//            io.output(notGuessed.getInt(i));
+//        }
+//
+//        rand.clear();
+//        rightGuess.clear();
+//        wrongGuess.clear();
+//        notGuessed.clear();
+//        in.clear();
+//    }
+
+    @Override
+    public void exec(int arg) {
+        switch (arg){
             case 1: io.output("Enter your first guess:");
                 in.add(io.input("range", 1,15));
                 io.output("Enter your second guess:");
@@ -34,15 +110,16 @@ public class Guess {
                 break;
             case 2:
                 break;
-            case 3: for(int j = 0; j < 5; j++)
-                in.add(XMLIn.readXML("int").get(j));
-                break;
+            case 3:{
+                for(int j = 0; j < 5; j++) {
+                    in.add(XMLIn.readXML("int").get(j));
+                }
+                    break;
+                }
+
             default: break;
         }
 
-    }
-
-    public void calculations() {
         for(int i = 0; i<5; i++){
             rand.add(gs.random(15));
         }
@@ -58,9 +135,7 @@ public class Guess {
             if(gs.notGuessed( rand.getInt(i),in) == 1)
                 notGuessed.add(rand.getInt(i));
         }
-    }
 
-    public void consoleOutput() {
         io.output("Guessed numbers: ");
         for (int i = 0; i < rand.size(); i++) {
             io.output(rand.getInt(i));

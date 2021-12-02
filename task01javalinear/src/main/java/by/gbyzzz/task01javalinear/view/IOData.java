@@ -19,23 +19,23 @@ public class IOData {
         System.out.println(arg);
     }
 
-    public void output(int[] arg) {
-        for (int i = 0; i < arg.length; i++) {
-            System.out.print(arg[i] + "     ");
-        }
-    }
-
-    public void output(String[] label, double[] arg) {
-        for (int i = 0; i < arg.length; i++) {
-            System.out.print(label[i]);
-            System.out.printf("%.2f" + "\n", arg[i]);
-        }
-    }
-
+//    public void output(int[] arg) {
+//        for (int i = 0; i < arg.length; i++) {
+//            System.out.print(arg[i] + "     ");
+//        }
+//    }
+//
+//    public void output(String[] label, double[] arg) {
+//        for (int i = 0; i < arg.length; i++) {
+//            System.out.print(label[i]);
+//            System.out.printf("%.2f" + "\n", arg[i]);
+//        }
+//    }
+//
     public void output(String label, double arg) {
 
         System.out.print(label);
-        System.out.println(arg);
+        System.out.printf("%.2f" + "\n", arg);
 
     }
 

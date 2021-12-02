@@ -3,6 +3,17 @@ package by.gbyzzz.task01javalinear.service;
 
 public class ArithmeticService {
 
+    public static double mySqrt(double n){
+        double result=1.0;
+        double temp=result-(result*result-n)/(2*result);
+
+        while(Math.abs(result-temp)>0.0000001){
+            result=temp;
+            temp=result-(result*result-n)/(2*result);
+        }
+        return result;
+    }
+
     //task01
     public double average(double a, double b) {
         return (a + b) / 2;
@@ -14,6 +25,9 @@ public class ArithmeticService {
 
     public double averageCubed(double a, double b) {
         return (Math.pow(a, 3) + Math.pow(b, 3)) / 2;
+    }
+    public double averageGeom(double a, double b) {
+        return mySqrt(Math.abs(a) * Math.abs(b));
     }
 
     public double expr(double x, double y) {
