@@ -1,13 +1,19 @@
 package by.gbyzzz.task01javalinear.view;
 
-public class MenuText {
+/**
+ * This class contains menu outputs.
+ * @author Anton Pinchuk
+ *
+ */
+
+public final class MenuText {
     private static IOData io = new IOData();
-    String correctImputMsg = "Please input № of task";
+    private String correctImputMsg = "Please input № of task";
     public void mainMenu() {
         io.output("Hello! You've just started my program, please select the task which you want to launch");
-        io.output("1. Task 1");
-        io.output("2. Task 2");
-        io.output("3. Task 3");
+        io.output("1. Part 1");
+        io.output("2. Part 2");
+        io.output("3. Part 3");
         io.output("4. Additional task");
         io.output("5. Exit");
         io.output(correctImputMsg);
@@ -40,7 +46,7 @@ public class MenuText {
         io.output("6. Exit");
         io.output(correctImputMsg);
     }
-        public void additionalTask(){
+        public void additionalTask() {
         io.output("1. Switch two numbers using buffer");
         io.output("2. Switch two numbers using arithmetics");
         io.output("3. Switch two numbers using XOR");

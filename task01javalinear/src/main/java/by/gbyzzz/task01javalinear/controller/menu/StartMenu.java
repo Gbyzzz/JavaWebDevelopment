@@ -6,7 +6,13 @@ import org.apache.logging.log4j.Logger;
 
 import static by.gbyzzz.task01javalinear.controller.menu.BackMenu.io;
 
-public class StartMenu {
+/**
+ * This class shows menu to the user and calls other classes' instances and its methods according to users choice.
+ * @author Anton Pinchuk
+ *
+ */
+
+public final class StartMenu {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -22,15 +28,16 @@ public class StartMenu {
         select[0] = io.input("range", 1, 5);
         LOGGER.trace("User selected task part " + select[0]);
         switch (select[0]) {
-            case 5:{
+            case 5:
                 LOGGER.trace("Exiting application");
-                System.exit(0);}
-            case 1:{
+                System.exit(0);
+            case 1:
                 menuText.taskOneMenu();
                 select[1] = io.input("range", 1, 6);
-                if(select[1] == 6){
+                if (select[1] == 6) {
                     LOGGER.trace("Exiting application");
-                    System.exit(0);}
+                    System.exit(0);
+                }
                 LOGGER.debug("User selected task " + select[1]);
                 menuText.sourceMenu();
                 select[2] = io.input("range", 1, 4);
@@ -39,13 +46,14 @@ public class StartMenu {
                 LOGGER.debug("Starting task " + select[1] + " from part one with source argument " + select[2]);
                 taskExec.start(select[1], select[2]);
                 LOGGER.debug("Opening  Back Menu" + select[2]);
-                backMenu.start();}
-            case 2:{
+                backMenu.start();
+            case 2:
                 menuText.taskTwoMenu();
                 select[1] = io.input("range", 1, 6);
-                if(select[1] == 6){
+                if (select[1] == 6) {
                     LOGGER.trace("Exiting application");
-                    System.exit(0);}
+                    System.exit(0);
+                }
                 LOGGER.debug("User selected task " + select[1]);
                 menuText.sourceMenu();
                 select[2] = io.input("range", 1, 4);
@@ -54,13 +62,14 @@ public class StartMenu {
                 LOGGER.debug("Starting task " + select[1] + " from part two with source argument " + select[2]);
                 taskExec.start(select[1], select[2]);
                 LOGGER.debug("Opening  Back Menu" + select[2]);
-                backMenu.start();}
-            case 3:{
+                backMenu.start();
+            case 3:
                 menuText.taskThreeMenu();
                 select[1] = io.input("range", 1, 6);
-                if(select[1] == 6){
+                if (select[1] == 6) {
                     LOGGER.trace("Exiting application");
-                    System.exit(0);}
+                    System.exit(0);
+                }
                 LOGGER.debug("User selected task " + select[1]);
                 menuText.sourceMenu();
                 select[2] = io.input("range", 1, 4);
@@ -69,13 +78,14 @@ public class StartMenu {
                 LOGGER.debug("Starting task " + select[1] + " from part three with source argument " + select[2]);
                 taskExec.start(select[1], select[2]);
                 LOGGER.debug("Opening  Back Menu" + select[2]);
-                backMenu.start();}
-            case 4:{
+                backMenu.start();
+            case 4:
                 menuText.additionalTask();
                 select[1] = io.input("range", 1, 4);
-                if(select[1] == 4){
+                if (select[1] == 4) {
                     LOGGER.trace("Exiting application");
-                    System.exit(0);}
+                    System.exit(0);
+                }
                 LOGGER.debug("User selected task " + select[1]);
                 menuText.sourceMenu();
                 select[2] = io.input("range", 1, 4);
@@ -84,7 +94,7 @@ public class StartMenu {
                 LOGGER.debug("Starting task " + select[1] + " from part three with source argument " + select[2]);
                 taskExec.start(select[1], select[2]);
                 LOGGER.debug("Opening  Back Menu" + select[2]);
-                backMenu.start();}
+                backMenu.start();
             default: break;
         }
         }

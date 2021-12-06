@@ -9,11 +9,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class FileIO {
+/**
+ * This class reads data from a txt file and converts it to the
+ * type specified in the arg.
+ * @author Anton Pinchuk
+ *
+ */
+
+public final class FileIO {
     private static final Logger LOGGER = LogManager.getLogger();
 
 
-    public Data readFile(String arg) {
+    public Data readFile(final String arg) {
         FileReader fr = null;
         Data res = new Data();
         try {
@@ -36,12 +43,12 @@ public class FileIO {
                 }
                 break;
 
-            case "double": {
+            case "double":
                 while (sc.hasNextLine()) {
                     res.add(Double.parseDouble(sc.nextLine()));
                 }
                 break;
-            }
+
             default:
                 break;
         }

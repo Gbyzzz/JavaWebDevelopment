@@ -2,18 +2,23 @@ package by.gbyzzz.task01javalinear.service;
 
 import by.gbyzzz.task01javalinear.entity.Data;
 
-public class GuessService {
+/**
+ * This class has methods to perform guess game task.
+ * @author Anton Pinchuk
+ *
+ */
 
-    private Data rightGuess = new Data();
-    private Data wrongGuess = new Data();
-    private Data notGuessed = new Data();
-    private Data rand = new Data();
+import java.util.Random;
 
-    public int random (int max) {
-        return (int) (Math.random() * max);
+public final class GuessService {
+
+    private Random rand = new Random();
+
+    public int random(final int max) {
+        return rand.nextInt(max);
     }
 
-    public int rightGuess(int guess, Data rand) {
+    public int rightGuess(final int guess, final Data rand) {
             if (rand.contains(guess)) {
                 return 1;
             } else {
@@ -21,7 +26,7 @@ public class GuessService {
             }
         }
 
-    public int notGuessed(int rand, Data guess) {
+    public int notGuessed(final int rand, final Data guess) {
             if (!guess.contains(rand)) {
             return 1;
             }

@@ -9,41 +9,49 @@ import by.gbyzzz.task01javalinear.view.IOData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Triangle implements Command {
+/**
+ * This class get an input from user, makes calculations by calling
+ * method from GeometryService and shows the result to the user by
+ * printing it to the console.
+ * @author Anton Pinchuk
+ *
+ */
+
+public final class Triangle implements Command {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    static Data in = new Data();
-    static Data out = new Data();
-    IOData io = new IOData();
-    GeometryService gs = new GeometryService();
-    IOXML XMLIn = new IOXML();
-    FileIO fileIO = new FileIO();
+    private Data in = new Data();
+    private Data out = new Data();
+    private IOData io = new IOData();
+    private GeometryService gs = new GeometryService();
+    private IOXML ioxml = new IOXML();
+    private FileIO fileIO = new FileIO();
 
     @Override
-    public void exec(int arg) {
+    public void exec(final int arg) {
         io.output("Enter the side of the equilateral triangle:");
-        switch (arg){
+        switch (arg) {
             case 1: in.add(io.input());
-                LOGGER.info("User entered side of the equilateral triangle - " + in.get(0));
+                LOGGER.info("User entered side of the equilateral triangle - %d", in.get(0));
                 break;
             case 2: LOGGER.info("Reading txt file for input data");
                     in.add(fileIO.readFile("double").get(0));
 
                 break;
-            case 3:{
+            case 3:
                 LOGGER.info("Parsing XML file with XMLIn class and writing info to array");
-                in.add(XMLIn.readXML("double").get(0));
-                break;}
+                in.add(ioxml.readXML("double").get(0));
+                break;
             default: break;
         }
-        LOGGER.info("Calculating height of the equilateral triangle, with side = " + in.get(0));
+        LOGGER.info("Calculating height of the equilateral triangle, with side = %d", in.get(0));
         out.add(gs.triangleHeight(in.get(0)));
-        LOGGER.info("Calculating described circle of the equilateral triangle, with side = " + in.get(0));
+        LOGGER.info("Calculating described circle of the equilateral triangle, with side = %d", in.get(0));
         out.add(gs.triangleDesR(in.get(0)));
-        LOGGER.info("Calculating inscribed circle of the equilateral triangle, with side = " + in.get(0));
+        LOGGER.info("Calculating inscribed circle of the equilateral triangle, with side = %d", in.get(0));
         out.add(gs.triangleInR(in.get(0)));
-        LOGGER.info("Calculating square of the equilateral triangle, with side = " + in.get(0));
+        LOGGER.info("Calculating square of the equilateral triangle, with side = %d", in.get(0));
         out.add(gs.triangleSq(in.get(0)));
         in.clear();
 

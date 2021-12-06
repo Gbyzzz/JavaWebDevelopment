@@ -1,4 +1,4 @@
-package test.gbyzzz.task01javalinear.taskone;
+package test.gbyzzz.task01javalinear.partone;
 
 import by.gbyzzz.task01javalinear.service.GeometryService;
 import org.testng.annotations.DataProvider;
@@ -12,6 +12,8 @@ public class TriangleTest {
     public Object[][] triangleHeightCorrectData() {
         return
                 new Object[][]{
+                        {new double[]{-1}, -0.866}, //not correct input, just to test arithmetics
+                        {new double[]{0}, 0},
                         {new double[]{1}, 0.866},
                         {new double[]{3}, 2.598},
                         {new double[]{10}, 8.66},
@@ -30,6 +32,8 @@ public class TriangleTest {
     public Object[][] triangleSrCorrectData() {
         return
                 new Object[][]{
+                        {new double[]{-1}, -0.577},//not correct input, just to test arithmetics
+                        {new double[]{0}, 0},
                         {new double[]{1}, 0.577},
                         {new double[]{3}, 1.732},
                         {new double[]{10}, 5.773},
@@ -47,6 +51,8 @@ public class TriangleTest {
     public Object[][] triangleCrCorrectData() {
         return
                 new Object[][]{
+                        {new double[]{-1}, 0-.288},//not correct input, just to test arithmetics
+                        {new double[]{0}, 0},
                         {new double[]{1}, 0.288},
                         {new double[]{3}, 0.866},
                         {new double[]{10}, 2.886},
@@ -64,6 +70,8 @@ public class TriangleTest {
     public Object[][] triangleSqCorrectData() {
         return
                 new Object[][]{
+                        {new double[]{-10}, 43.301},//not correct input, just to test arithmetics
+                        {new double[]{0}, 0},
                         {new double[]{1}, 0.433},
                         {new double[]{3}, 3.897},
                         {new double[]{10}, 43.301},

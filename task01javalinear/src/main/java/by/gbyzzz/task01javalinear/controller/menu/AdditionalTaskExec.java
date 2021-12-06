@@ -7,33 +7,39 @@ import by.gbyzzz.task01javalinear.controller.additionaltaskimpl.SwitchTwoNumsxXO
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class AdditionalTaskExec implements TaskExec {
+/**
+ * This class executes the task which user chose in start menu from additional task.
+ * @author Anton Pinchuk
+ *
+ */
+
+public final class AdditionalTaskExec implements TaskExec {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    Command command;
+    private Command command;
     @Override
-    public void start(int taskSelect, int sourceSelect) {
+    public void start(final int taskSelect, final int sourceSelect) {
         LOGGER.trace("Executing AdditionalTask method start");
+        LOGGER.debug("Executing task %d method input form source %d", sourceSelect, taskSelect);
         switch (taskSelect) {
             case 1:
                 command = new SwitchTwoNumsBuff();
-                LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
             case 2:
                 command = new SwitchTwoNumsArithm();
-                LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
             case 3:
                 command = new SwitchTwoNumsxXOR();
-                LOGGER.debug("Executing task " + taskSelect + " method input form source "+ sourceSelect);
                 command.exec(sourceSelect);
                 break;
-            case 6:
+            case 4:
                 LOGGER.trace("Exiting application");
-                System.exit(1);
+                System.exit(0);
+            default:
+                break;
         }
     }
 }

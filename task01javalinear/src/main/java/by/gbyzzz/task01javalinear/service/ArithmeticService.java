@@ -3,68 +3,75 @@ package by.gbyzzz.task01javalinear.service;
 
 import by.gbyzzz.task01javalinear.entity.Data;
 
-import java.security.PublicKey;
+/**
+ * This class has methods to calculate all arithmetic tasks.
+ * @author Anton Pinchuk
+ *
+ */
 
-public class ArithmeticService {
+public final class ArithmeticService {
 
-    public static double mySqrt(double n){
-        double result=1.0;
-        double temp=result-(result*result-n)/(2*result);
+    public static double mySqrt(final double n) {
+        double result = 1.0;
+        double temp = result - (result * result - n) / (2 * result);
 
-        while(Math.abs(result-temp)>0.0000001){
-            result=temp;
-            temp=result-(result*result-n)/(2*result);
+        while (Math.abs(result - temp) > 0.0000001) {
+            result = temp;
+            temp = result - (result * result - n) / (2 * result);
         }
         return result;
     }
 
     //task01
-    public double average(double a, double b) {
+    public double average(final double a, final double b) {
         return (a + b) / 2;
     }
 
-    public double boat(double v1, double v2, double t1, double t2) {
+    public double boat(final double v1, final double v2, final double t1, final double t2) {
         return v1 * t1 + Math.abs((v1 - v2) * t2);
     }
 
-    public double averageCubed(double a, double b) {
+    public double averageCubed(final double a, final double b) {
         return (Math.pow(a, 3) + Math.pow(b, 3)) / 2;
     }
-    public double averageGeom(double a, double b) {
+    public double averageGeom(final double a, final double b) {
         return mySqrt(Math.abs(a) * Math.abs(b));
     }
 
-    public double expr(double x, double y) {
+    public double expr(final double x, final double y) {
         return 2 * x + (y - 2) * 5;
     }
 
     // task02
-    public int positiveNumCount(double a, double b, double c) {
+    public int positiveNumCount(final double a, final double b, final double c) {
         int i = 0;
-        if (a > 0)
+        if (a > 0) {
             i++;
-        if (b > 0)
+        }
+        if (b > 0) {
             i++;
-        if (c > 0)
+        }
+        if (c > 0) {
             i++;
+        }
 
         return i;
     }
 
-    public double compareTwoNums(double a, double b) {
+    public double compareTwoNums(final double a, final double b) {
         double res = 0;
         if (a > b) {
             res = b;
         } else if (a < b) {
             res = a;
-        } else if (a == b) {
+        } else {
             res = 0;
         }
         return res;
     }
 
 
-    public double taskWithTwoNums(double a, double b) {
+    public double taskWithTwoNums(final double a, final double b) {
         double res;
         if (a != b) {
             if (a > b) {
@@ -79,40 +86,41 @@ public class ArithmeticService {
         return res;
     }
 
-    public double compareWithThree(double a) {
+    public double compareWithThree(final double a) {
         double res;
         if (a == 3) {
-            return 2;
+            return 0;
         } else {
-            res = a < 3 ? 1 : 0;
+            res = a < 3 ? 1 : -1;
             return res;
         }
     }
 
     //task03
-    public double rowOfNums(double e, int n) {
+    public double rowOfNums(final double e, int n) {
         double sum = 0;
-        if (n<0){
-            for (int i = 0; i > n;) {
-                double a = (1 / (Math.pow(2, n))) + (1 / (Math.pow(3, n)));
+        double a;
+        if (n >= 0) {
+            for (int i = 1; i <= n; i++) {
+                a = (1 / (Math.pow(2, i))) + (1 / (Math.pow(3, i)));
                 if (Math.abs(a) >= e) {
                     sum += a;
-                    n++;
                 }
+                n++;
             }
-            } else{
-                for (int i = 0; i < n; i++) {
-                    double a = (1 / (Math.pow(2, i))) + (1 / (Math.pow(3, i)));
-                    if (Math.abs(a) >= e) {
-                        sum += a;
-                        n++;
-                    }
+        } else {
+            for (int i = 0; i > n;) {
+                a = (1 / (Math.pow(2, n))) + (1 / (Math.pow(3, n)));
+                if (Math.abs(a) >= e) {
+                    sum += a;
                 }
+                n++;
             }
+        }
         return sum;
     }
 
-    public int sumMaxMin(int min, int max) {
+    public int sumMaxMin(int min, final int max) {
         int sum = 0;
         while (min <= max) {
             sum += min;
@@ -121,7 +129,7 @@ public class ArithmeticService {
         return sum;
     }
 
-    public double rowMultiply(double a, int n) {
+    public double rowMultiply(final double a, final int n) {
         double sum = a;
         for (int i = 1; i <= (n - 1); i++) {
             sum *= (a + i);
@@ -129,11 +137,11 @@ public class ArithmeticService {
         return sum;
     }
 
-    public int multiply(int a, int b) {
+    public int multiply(final int a, final int b) {
         return a * b;
     }
 
-    public Data switchTwoNumsBuff(int a, int b){
+    public Data switchTwoNumsBuff(int a, int b) {
     int c = 0;
     Data res = new Data();
     c = b;
@@ -144,8 +152,7 @@ public class ArithmeticService {
     return res;
     }
 
-    public Data switchTwoNumsArithm(int a, int b){
-
+    public Data switchTwoNumsArithm(int a, int b) {
         Data res = new Data();
         a  = b + a;
         b = a - b;
@@ -155,8 +162,7 @@ public class ArithmeticService {
         return res;
     }
 
-    public Data switchTwoNumsXOR(int a, int b){
-
+    public Data switchTwoNumsXOR(int a, int b) {
         Data res = new Data();
         a ^= b;
         b ^= a;

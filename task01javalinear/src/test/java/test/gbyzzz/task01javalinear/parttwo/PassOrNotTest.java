@@ -1,6 +1,5 @@
-package test.gbyzzz.task01javalinear.tasktwo;
+package test.gbyzzz.task01javalinear.parttwo;
 
-import by.gbyzzz.task01javalinear.service.ArithmeticService;
 import by.gbyzzz.task01javalinear.service.GeometryService;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,8 +9,8 @@ import static org.testng.Assert.assertEquals;
 public class PassOrNotTest {
     GeometryService gst = new GeometryService();
 
-    @DataProvider(name = "average3_a_b")
-    public Object[][] AverageCubedCorrectData() {
+    @DataProvider(name = "pass_or_not")
+    public Object[][] PassOrNotCorrectData() {
         return
                 new Object[][]{
                         {new double[]{2, 2, 2, 2, 2}, 0},
@@ -23,8 +22,8 @@ public class PassOrNotTest {
                 };
     }
 
-    @Test(dataProvider = "average3_a_b")
-    public void AverageCubedTest(double arg[], double expected) {
+    @Test(dataProvider = "pass_or_not")
+    public void PassOrNotTest(double arg[], double expected) {
         double actual = gst.passOrNot(arg[0], arg[1], arg[2], arg[3], arg[4]);
         assertEquals(actual, expected);
     }

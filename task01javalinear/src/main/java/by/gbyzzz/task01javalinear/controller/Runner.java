@@ -1,10 +1,14 @@
 package by.gbyzzz.task01javalinear.controller;
 
 import by.gbyzzz.task01javalinear.controller.menu.StartMenu;
-import by.gbyzzz.task01javalinear.controller.taskoneimpl.Triangle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * main method starting program, creates instance of StartMenu and calls method start
+ * @author Anton Pinchuk
+ *
+ */
 
 public class Runner {
 
@@ -16,7 +20,7 @@ public class Runner {
         StartMenu startMenu = new StartMenu();
         startMenu.start();
 //        }
-//        catch(Throwable t) {
+//        catch(Exception e) {
 //            logger.error("Can't start menu");
 //        }
     }

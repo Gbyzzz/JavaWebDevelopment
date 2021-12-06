@@ -1,4 +1,4 @@
-package test.gbyzzz.task01javalinear.taskone;
+package test.gbyzzz.task01javalinear.partone;
 
 import by.gbyzzz.task01javalinear.service.ArithmeticService;
 import org.testng.annotations.DataProvider;

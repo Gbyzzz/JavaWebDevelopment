@@ -1,34 +1,44 @@
 package by.gbyzzz.task01javalinear.service;
 
-public class GeometryService {
-ArithmeticService as = new ArithmeticService();
+/**
+ * This class has methods to calculate all geometric tasks.
+ * @author Anton Pinchuk
+ *
+ */
 
-    public double triangleHeight(double a){
+public final class GeometryService {
+    private ArithmeticService as = new ArithmeticService();
+
+    public double triangleHeight(final double a) {
         double ans;
         ans =  a * as.mySqrt(3) / 2;
         return ans;
     }
-    public double triangleDesR(double a){
+    public double triangleDesR(final double a) {
         double ans;
-        ans =  a * as.mySqrt(3)/3;
+        ans =  a * as.mySqrt(3) / 3;
         return ans;
     }
-    public double triangleInR(double a){
+    public double triangleInR(final double a) {
         double ans;
-        ans =  a * as.mySqrt(3)/6;
+        ans =  a * as.mySqrt(3) / 6;
         return ans;
     }
-    public double triangleSq(double a){
+    public double triangleSq(final double a) {
         double ans;
         ans =  a * a * as.mySqrt(3) / 4;
         return ans;
     }
-    public double passOrNot(double a, double b, double x, double y, double z) {
-        if (x < a && y < b || y < a && x < b ||
-                x < a && z < b || z < a && x < b ||
-                z < a && y < b || y < a && z < b)
+    public double passOrNot(final double a, final double b, final double x, final double y, final double z) {
+        if (x < a && y < b
+                || y < a && x < b
+                || x < a && z < b
+                || z < a && x < b
+                || z < a && y < b
+                || y < a && z < b) {
             return 1;
-        else
+        } else {
             return 0;
+        }
     }
 }

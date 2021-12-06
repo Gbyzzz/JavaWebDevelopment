@@ -2,10 +2,25 @@ package by.gbyzzz.task01javalinear.view;
 
 import java.util.Scanner;
 
-public class InputValidator {
+/**
+ * This class validates the input of user in console.
+ * @author Anton Pinchuk
+ *
+ */
 
+public final class InputValidator {
 
-    public int rangeInt(Scanner in, int min, int max) {
+    /**
+     * rangeInt method checks if the user inputs an integer between min and max
+     * parameters. If it's not, user got a warning and inputs again. This cycle
+     * works until user inputs right number.
+     * @param max max number
+     * @param min min number
+     * @param in input from the user
+     * @return user's right number
+     */
+
+    public int rangeInt(final Scanner in, final int min, final int max) {
         int res = 0;
         while (true) {
             if (in.hasNextInt()) {
@@ -22,15 +37,23 @@ public class InputValidator {
         return res;
     }
 
-    public int oddInt(Scanner in) {
+    /**
+     * oddInt method checks if the user inputs odd integer. If it's not, user got
+     * a warning and inputs again. This cycle works until user inputs right number.
+     * @param in input from the user
+     * @return user's right number
+     */
+
+    public int oddInt(final Scanner in, int min) {
         int res;
         while (true) {
             if (in.hasNextInt()) {
                 res = in.nextInt();
                 if (res % 2 == 1) {
-                    break;
+                    if (res > min) {
+                        break;
+                    }
                 }
-
             } else {
                 in.next();
             }
@@ -39,14 +62,24 @@ public class InputValidator {
         return res;
     }
 
-    public double fromNum(Scanner in, double min) {
+    /**
+     * fromNum method checks if the user inputs a number that bigger than parameter min.
+     * If it's not, user got a warning and inputs again. This cycle works until user
+     * inputs right number.
+     * @param min min number
+     * @param in input from the user
+     * @return user's right number
+     */
+
+    public double fromNum(final Scanner in, final double min) {
 
         double res;
         while (true) {
             if (in.hasNextDouble()) {
                 res = in.nextDouble();
-                if (res > min)
+                if (res > min) {
                     break;
+                }
             } else if (in.hasNextInt()) {
                     res = in.nextInt();
                     if (res > min) {
@@ -61,7 +94,14 @@ public class InputValidator {
         return res;
     }
 
-    public double doubleNum (Scanner in){
+    /**
+     * doubleNum method checks if the user inputs a number. If it's not, user got a warning
+     * and inputs again. This cycle works until user inputs right number.
+     * @param in input from the user
+     * @return user's right number
+     */
+
+    public double doubleNum(final Scanner in) {
         double res;
         while (true) {
             if (in.hasNextDouble()) {
@@ -80,7 +120,14 @@ public class InputValidator {
         return  res;
     }
 
-    public int intNum (Scanner in){
+    /**
+     * intNum method checks if the user inputs an integer. If it's not, user got a warning
+     * and inputs again. This cycle works until user inputs right number.
+     * @param in input from the user
+     * @return user's right number
+     */
+
+    public int intNum(final Scanner in) {
         int res;
         while (true) {
             if (in.hasNextInt()) {

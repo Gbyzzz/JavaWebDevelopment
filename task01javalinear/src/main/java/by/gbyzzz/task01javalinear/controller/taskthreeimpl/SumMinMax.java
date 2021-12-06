@@ -9,20 +9,27 @@ import by.gbyzzz.task01javalinear.view.IOData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * This class get an input from user, makes calculations by calling
+ * method from ArithmeticService and shows the result to the user by
+ * printing it to the console.
+ * @author Anton Pinchuk
+ *
+ */
 
-public class SumMinMax implements Command {
+public final class SumMinMax implements Command {
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    static Data in = new Data();
-    static Data out = new Data();
-    IOData io = new IOData();
-    IOXML XMLIn = new IOXML();
-    ArithmeticService as = new ArithmeticService();
-    FileIO fileIO = new FileIO();
+    private static Data in = new Data();
+    private Data out = new Data();
+    private IOData io = new IOData();
+    private IOXML ioxml = new IOXML();
+    private ArithmeticService as = new ArithmeticService();
+    private FileIO fileIO = new FileIO();
 
     @Override
-    public void exec(int arg) {
+    public void exec(final int arg) {
         io.output("Enter min and max number:");
         switch (arg) {
             case 1:
@@ -33,22 +40,22 @@ public class SumMinMax implements Command {
                 break;
             case 2:
                 LOGGER.info("Reading txt file for input data");
-                for(int j = 0; j < 2; j++) {
+                for (int j = 0; j < 2; j++) {
                     in.add(fileIO.readFile("int").getInt(j));
                 }
                 break;
-            case 3:{
+            case 3:
                 for (int j = 0; j < 2; j++) {
-                    in.add(XMLIn.readXML("int").getInt(j));
+                    in.add(ioxml.readXML("int").getInt(j));
                 }
-                break;}
+                break;
             default:
                 break;
         }
 
         out.add(as.sumMaxMin(in.getInt(0), in.getInt(1)));
 
-        io.output("Sum of all odd numbers from " + in.getInt(0) + " to " + in.getInt(1) + " - ", out.getInt(0));
+        io.output("Sum of all odd numbers from %d to %d - %d", in.getInt(0), in.getInt(1), out.getInt(0));
         in.clear();
         out.clear();
     }

@@ -13,15 +13,22 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class IOXML {
+/**
+ * This class reads data from a xml file and converts it to the
+ * type specified in the arg.
+ * @author Anton Pinchuk
+ *
+ */
+
+public final class IOXML {
     private static final Logger LOGGER = LogManager.getLogger();
-    public Data readXML(String arg) {
+    public Data readXML(final String arg) {
         final Data num = new Data();
-        DefaultHandler handler = new DefaultHandler(){
+        DefaultHandler handler = new DefaultHandler() {
             @Override
-            public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+            public void startElement(final String uri, final String localName, final String qName, final Attributes attributes) throws SAXException {
                 if (qName.equals("number")) {
-                    switch (arg){
+                    switch (arg) {
                         case "int":
                             LOGGER.debug("Parsing integer from XML file");
                             num.add(Integer.parseInt(attributes.getValue("num")));
@@ -49,7 +56,8 @@ public class IOXML {
             e.printStackTrace();
         }
 
-        try {LOGGER.debug("Parsing XML file");
+        try {
+            LOGGER.debug("Parsing XML file");
             parser.parse(new File("task01javalinear/src/main/resources/data/numbers.xml"), handler);
         } catch (SAXException e) {
             LOGGER.error("SAXException error");

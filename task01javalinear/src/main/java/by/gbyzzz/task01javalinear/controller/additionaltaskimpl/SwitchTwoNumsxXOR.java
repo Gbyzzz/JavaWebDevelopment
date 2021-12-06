@@ -9,20 +9,28 @@ import by.gbyzzz.task01javalinear.view.IOData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SwitchTwoNumsxXOR implements Command {
+/**
+ * This class get an input from user, makes calculations by calling
+ * method from ArithmeticService and shows the result to the user by
+ * printing it to the console.
+ * @author Anton Pinchuk
+ *
+ */
+
+public final class SwitchTwoNumsxXOR implements Command {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    static Data in = new Data();
-    static Data out = new Data();
-    IOData io = new IOData();
-    ArithmeticService as = new ArithmeticService();
-    IOXML XMLIn = new IOXML();
-    FileIO fileIO = new FileIO();
+    private Data in = new Data();
+    private Data out = new Data();
+    private IOData io = new IOData();
+    private ArithmeticService as = new ArithmeticService();
+    private IOXML ioxml = new IOXML();
+    private FileIO fileIO = new FileIO();
 
     @Override
-    public void exec(int arg) {
+    public void exec(final int arg) {
         io.output("Enter two numbers which you want to switch:");
-        switch (arg){
+        switch (arg) {
             case 1: io.output("Enter first number:");
                 in.add(io.inputInt());
                 LOGGER.info("User entered first number - " + in.getInt(0));
@@ -30,15 +38,16 @@ public class SwitchTwoNumsxXOR implements Command {
                 in.add(io.inputInt());
                 LOGGER.info("User entered second number - " + in.getInt(1));
                 break;
-            case 2: LOGGER.info("Reading txt file for input data");
-                for(int j = 0; j < 2; j++) {
+            case 2:
+                LOGGER.info("Reading txt file for input data");
+                for (int j = 0; j < 2; j++) {
                     in.add(fileIO.readFile("int").getInt(j));
                 }
                 break;
             case 3:
                 LOGGER.info("Parsing XML file with XMLIn class and writing info to array");
-                for(int j = 0; j < 2; j++) {
-                    in.add(XMLIn.readXML("int").getInt(j));
+                for (int j = 0; j < 2; j++) {
+                    in.add(ioxml.readXML("int").getInt(j));
                 }
                 break;
             default: break;
