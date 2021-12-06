@@ -16,12 +16,12 @@ public class Runner {
 
     public static void main(String[] args) {
         logger.trace("Launching application");
-//        try{
+        try{
         StartMenu startMenu = new StartMenu();
         startMenu.start();
-//        }
-//        catch(Exception e) {
-//            logger.error("Can't start menu");
-//        }
+        }
+        catch(Exception e) {
+            logger.error("Can't start menu");
+        }
     }
 }
