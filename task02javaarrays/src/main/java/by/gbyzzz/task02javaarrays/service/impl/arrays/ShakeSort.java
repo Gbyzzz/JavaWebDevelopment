@@ -7,12 +7,12 @@ public class ShakeSort implements ArrayService {
     @Override
     public int[] sort(int[]arr){
         int temp = 0;
-        int leftSide = 0;
-        int rightSide = arr.length - 1;
+        int left = 0;
+        int right = arr.length - 1;
 
         do {
 
-            for (int i = leftSide; i < rightSide; i++) {
+            for (int i = left; i < right; i++) {
 
 
                 if (arr[i] > arr[i + 1]) {
@@ -21,28 +21,28 @@ public class ShakeSort implements ArrayService {
                     arr[i + 1] = temp;
                 }
             }
-            rightSide--;
-            for (int i = rightSide; i > leftSide; i--) {
+            right--;
+            for (int i = right; i > left; i--) {
                 if (arr[i] < arr[i - 1]) {
                     temp = arr[i];
                     arr[i] = arr[i - 1];
                     arr[i - 1] = temp;
                 }
             }
-            leftSide++;
-        } while (leftSide < rightSide);
+            left++;
+        } while (left < right);
         return arr;
     }
 
     @Override
     public double[] sort(double[]arr){
         double temp = 0;
-        int leftSide = 0;
-        int rightSide = arr.length - 1;
+        int left = 0;
+        int right = arr.length - 1;
 
         do {
 
-            for (int i = leftSide; i < rightSide; i++) {
+            for (int i = left; i < right; i++) {
 
 
                 if (arr[i] > arr[i + 1]) {
@@ -51,16 +51,16 @@ public class ShakeSort implements ArrayService {
                     arr[i + 1] = temp;
                 }
             }
-            rightSide--;
-            for (int i = rightSide; i > leftSide; i--) {
+            right--;
+            for (int i = right; i > left; i--) {
                 if (arr[i] < arr[i - 1]) {
                     temp = arr[i];
                     arr[i] = arr[i - 1];
                     arr[i - 1] = temp;
                 }
             }
-            leftSide++;
-        } while (leftSide < rightSide);
+            left++;
+        } while (left < right);
         return arr;
     }
 }

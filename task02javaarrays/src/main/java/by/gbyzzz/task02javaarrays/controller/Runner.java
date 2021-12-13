@@ -17,6 +17,7 @@ public class Runner {
         IOData ioData =  viewFactory.getIoData();
         ValidatorFactory validatorFactory = ValidatorFactory.getInstance();
         ValidatorService validatorService = validatorFactory.getValidatorService();
+        Controller controller = new Controller();
         MenuText menuText = new MenuText();
         int[] select = new int[3];
 
@@ -27,6 +28,7 @@ public class Runner {
             case SELECT_ONE:
                 menuText.arrayMenu();
                 select[1] = validatorService.rangeInt(ioData.input(), SELECT_ONE, SELECT_EIGHT);
+                controller.execute(select[1]);
                 break;
             case SELECT_TWO:
                 menuText.matrixMenu();
