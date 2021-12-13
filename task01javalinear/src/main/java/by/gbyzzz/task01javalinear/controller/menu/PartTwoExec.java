@@ -12,6 +12,12 @@ import org.apache.logging.log4j.Logger;
  */
 
 public final class PartTwoExec implements TaskExec {
+    private static final int SELECT_ONE = 1;
+    private static final int SELECT_TWO = 2;
+    private static final int SELECT_THREE = 3;
+    private static final int SELECT_FOUR = 4;
+    private static final int SELECT_FIVE = 5;
+    private static final int SELECT_SIX = 6;
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -22,27 +28,27 @@ public final class PartTwoExec implements TaskExec {
         LOGGER.trace("Executing TaskThreeMenu method start");
         LOGGER.debug("Executing task %d method input form source %d", sourceSelect, taskSelect);
         switch (taskSelect) {
-            case 1:
+            case SELECT_ONE:
                 command = new PositiveNumCount();
                 command.exec(sourceSelect);
                 break;
-            case 2:
+            case SELECT_TWO:
                 command = new CompareTwoNums();
                 command.exec(sourceSelect);
                 break;
-            case 3:
+            case SELECT_THREE:
                 command = new PassOrNot();
                 command.exec(sourceSelect);
                 break;
-            case 4:
+            case SELECT_FOUR:
                 command = new TaskWithTwoNums();
                 command.exec(sourceSelect);
                 break;
-            case 5:
+            case SELECT_FIVE:
                 command = new CompareWithThree();
                 command.exec(sourceSelect);
                 break;
-            case 6:
+            case SELECT_SIX:
                 LOGGER.trace("Exiting application");
                 System.exit(0);
             default:

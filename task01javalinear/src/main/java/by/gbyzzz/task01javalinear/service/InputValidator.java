@@ -1,4 +1,4 @@
-package by.gbyzzz.task01javalinear.view;
+package by.gbyzzz.task01javalinear.service;
 
 import java.util.Scanner;
 

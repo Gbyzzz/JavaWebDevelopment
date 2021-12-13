@@ -1,5 +1,7 @@
 package by.gbyzzz.task01javalinear.view;
 
+import by.gbyzzz.task01javalinear.service.InputValidator;
+
 import java.util.Scanner;
 
 /**

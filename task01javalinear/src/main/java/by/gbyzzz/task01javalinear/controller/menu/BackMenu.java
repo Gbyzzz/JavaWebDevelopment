@@ -11,9 +11,8 @@ import org.apache.logging.log4j.Logger;
  */
 
 public final class BackMenu {
-    private void backMenu() {
-        //not called
-    }
+    private static final int SELECT_ONE = 1;
+    private static final int SELECT_TWO = 2;
     private static final Logger LOGGER = LogManager.getLogger();
     static IOData io = new IOData();
     static StartMenu startMenu = new StartMenu();
@@ -22,7 +21,7 @@ public final class BackMenu {
         io.output("");
         io.output("1. Return to main menu");
         io.output("2. Exit");
-        int select = io.input("range", 1, 2);
+        int select = io.input("range", SELECT_ONE, SELECT_TWO);
         if (select == 1) {
             startMenu.start();
         } else {

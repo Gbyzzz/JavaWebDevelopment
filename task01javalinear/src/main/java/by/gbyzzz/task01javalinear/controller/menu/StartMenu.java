@@ -13,6 +13,11 @@ import static by.gbyzzz.task01javalinear.controller.menu.BackMenu.io;
  */
 
 public final class StartMenu {
+    private static final int SELECT_ONE = 1;
+    private static final int SELECT_TWO = 2;
+    private static final int SELECT_THREE = 3;
+    private static final int SELECT_FOUR = 4;
+    private static final int SELECT_FIVE = 5;
 
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -28,10 +33,10 @@ public final class StartMenu {
         select[0] = io.input("range", 1, 5);
         LOGGER.trace("User selected task part " + select[0]);
         switch (select[0]) {
-            case 5:
+            case SELECT_FIVE:
                 LOGGER.trace("Exiting application");
                 System.exit(0);
-            case 1:
+            case SELECT_ONE:
                 menuText.taskOneMenu();
                 select[1] = io.input("range", 1, 6);
                 if (select[1] == 6) {
@@ -47,7 +52,7 @@ public final class StartMenu {
                 taskExec.start(select[1], select[2]);
                 LOGGER.debug("Opening  Back Menu" + select[2]);
                 backMenu.start();
-            case 2:
+            case SELECT_TWO:
                 menuText.taskTwoMenu();
                 select[1] = io.input("range", 1, 6);
                 if (select[1] == 6) {
@@ -63,7 +68,7 @@ public final class StartMenu {
                 taskExec.start(select[1], select[2]);
                 LOGGER.debug("Opening  Back Menu" + select[2]);
                 backMenu.start();
-            case 3:
+            case SELECT_THREE:
                 menuText.taskThreeMenu();
                 select[1] = io.input("range", 1, 6);
                 if (select[1] == 6) {
@@ -79,7 +84,7 @@ public final class StartMenu {
                 taskExec.start(select[1], select[2]);
                 LOGGER.debug("Opening  Back Menu" + select[2]);
                 backMenu.start();
-            case 4:
+            case SELECT_FOUR:
                 menuText.additionalTask();
                 select[1] = io.input("range", 1, 4);
                 if (select[1] == 4) {
