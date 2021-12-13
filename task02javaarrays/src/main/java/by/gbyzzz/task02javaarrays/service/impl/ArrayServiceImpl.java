@@ -2,7 +2,7 @@ package by.gbyzzz.task02javaarrays.service.impl;
 
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 
-public class ArrayServiceImpl implements ArrayService {
+public class ArrayServiceImpl {
 
     public int[] bubbleSort(int[] arr){
         boolean isSorted = false;
@@ -69,30 +69,30 @@ public class ArrayServiceImpl implements ArrayService {
 
     }
 
-    public int[] addressInsertSort(){
+//    public int[] addressInsertSort(){
+//
+//    }
 
-    }
+//    public int[] simpleInsertSort( int [] arr){
+//        for (int i = 1; i < arr.length; i++){
+//            int z=arr[x];
+//            int y=x-1;
+//            while(y>=0 && arr[y]>x){
+//                arr[y+1] = arr[y];
+//                y--;}
+//            arr[y+1]=z;}
+//
+//    }
 
-    public int[] simpleInsertSort( int [] arr){
-        for (int i = 1; i < arr.length; i++){
-            int z=arr[x];
-            int y=x-1;
-            while(y>=0 && arr[y]>x){
-                arr[y+1] = arr[y];
-                y--;}
-            arr[y+1]=z;}
-
-    }
-
-    public int[] binarySort(){
-
-    }
-
-    public int[] shellsSort(){
-
-    }
-
-    public int[] externalSort(){
-
-    }
+//    public int[] binarySort(){
+//
+//    }
+//
+//    public int[] shellsSort(){
+//
+//    }
+//
+//    public int[] externalSort(){
+//
+//    }
 }

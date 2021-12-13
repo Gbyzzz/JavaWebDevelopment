@@ -10,4 +10,8 @@ public class ViewFactory {
     public static ViewFactory getInstance(){
         return instance;
     }
+
+    public IOData getIoData() {
+        return ioData;
+    }
 }

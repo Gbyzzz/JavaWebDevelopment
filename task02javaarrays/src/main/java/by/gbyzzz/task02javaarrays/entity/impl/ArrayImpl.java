@@ -6,6 +6,6 @@ public class ArrayImpl<T extends Number> implements Array {
     T []arr;
 
     public ArrayImpl(int length) {
-        T[]arr = new Number[];
+        T[]arr = (T[]) new Number[length];
     }
 }

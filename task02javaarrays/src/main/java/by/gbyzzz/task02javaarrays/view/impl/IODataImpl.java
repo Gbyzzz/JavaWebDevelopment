@@ -1,6 +1,6 @@
 package by.gbyzzz.task02javaarrays.view.impl;
 
-import by.gbyzzz.task01javalinear.service.InputValidator;
+
 import by.gbyzzz.task02javaarrays.view.IOData;
 
 import java.util.Scanner;
@@ -13,16 +13,16 @@ import java.util.Scanner;
 
 public final class IODataImpl implements IOData {
 
-    private InputValidator inputValidator = new InputValidator();
-
+   // private InputValidator inputValidator = new InputValidator();
+    @Override
     public void output(final String arg) {
         System.out.println(arg);
     }
-
+    @Override
     public void output(final int arg) {
         System.out.println(arg);
     }
-
+    @Override
     public void output(final double arg) {
         System.out.println(arg);
     }
@@ -63,72 +63,17 @@ public final class IODataImpl implements IOData {
         System.out.printf("%.2f" + "\n", arg, arg1, arg2);
     }
 
-    /**
-     * input method reads input of the user from the console and validates it
-     * according to the arg parameter.
-     * @param arg parameter for InputValidator method
-     * @param a number
-     * @param b number
-     * @return user's input
-     * @see InputValidator
-     */
-
-    public int input(final String arg, final int a, final int b) {
-        int res = 0;
-        Scanner in = new Scanner(System.in);
-        switch (arg) {
-            case "odd":
-                res = inputValidator.oddInt(in, a);
-                break;
-            case "range":
-                res = inputValidator.rangeInt(in, a, b);
-                break;
-            default:
-                break;
-        }
-
-        return res;
-    }
 
     /**
      * input method reads input of the user from the console and validates if
      * it's a number.
      * @return user's input
-     * @see InputValidator
      */
-
-    public double input() {
-        Scanner in = new Scanner(System.in);
-        double res = inputValidator.doubleNum(in);
-        return res;
+    @Override
+    public Scanner input() {
+        return new Scanner(System.in);
     }
 
-    /**
-     * input method reads input of the user from the console and validates if
-     * it's a number bigger than min parameter.
-     * @param min min number
-     * @return user's input
-     * @see InputValidator
-     */
-
-    public double input(final double min) {
-        Scanner in = new Scanner(System.in);
-        double res = inputValidator.fromNum(in, min);
-        return res;
-    }
-
-    /**
-     * input method reads input of the user from the console and validates if
-     * it's an integer.
-     * @return user's input
-     * @see InputValidator
-     */
-
-    public int inputInt() {
-        Scanner in = new Scanner(System.in);
-        int res = inputValidator.intNum(in);
-        return res;
-    }
 }
 
 
