@@ -3,7 +3,7 @@ package by.gbyzzz.task02javaarrays.service.impl;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.ValidatorService;
 
-public class MatrixServiceImpl implements ArrayService {
+public class MatrixServiceImpl {
 
 //    public int[] sum(){
 ////TODO write code
