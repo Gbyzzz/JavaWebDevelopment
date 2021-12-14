@@ -20,13 +20,14 @@ public final class MenuText {
         io.output(correctImputMsg);
     }
     public void arrayMenu() {
-        io.output("Please select the method you want to use to sort your array");
+        io.output("Please select the method to sort your array");
         io.output("1. Bubble sort");
-        io.output("2. The arithmetic mean of two numbers (5)");
-        io.output("3. Boat (31)/n");
-        io.output("4. The arithmetic mean of two qubed numbers (17)");
-        io.output("5. z = 2 * x + ( y – 2 ) * 5 (3)");
-        io.output("6. Exit");
+        io.output("2. Shaker sort");
+        io.output("3. Selection sort");
+        io.output("4. Insertion sort");
+        io.output("5. Shell's sort");
+        io.output("6. Merge sort");
+        io.output("7. Exit");
         io.output(correctImputMsg);
     }
     public void matrixMenu() {
@@ -40,12 +41,10 @@ public final class MenuText {
 
     }
 
-    public void sourceMenu() {
-        io.output("Please choose the source:");
-        io.output("1. Manual input");
-        io.output("2. Input data from file");
-        io.output("3. Input data from xml file");
-        io.output("Please enter a valid number between 1 and 3: ");
+    public void backMenu() {
+        io.output("1. Return to main menu");
+        io.output("2. Exit");
+        io.output("Please enter a valid number between 1 and 2: ");
     }
 
 }
