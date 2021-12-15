@@ -1,6 +1,6 @@
-package by.gbyzzz.task02javaarrays.entity.impl;
+package by.gbyzzz.task02javaarrays.beans.impl;
 
-import by.gbyzzz.task02javaarrays.entity.Array;
+import by.gbyzzz.task02javaarrays.beans.Array;
 
 public class MatrixImpl<T extends Number> implements Array {
     T[][] matrix;

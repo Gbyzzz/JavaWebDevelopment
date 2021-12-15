@@ -19,17 +19,11 @@ public enum CommandName {
     MATRIX_MULTIPLICATION_NUM (new int[]{2, 5}),
     MATRIX_TRANSPOSE(new int[]{2, 6});
 
-
-
-
-
     public final int[] value;
 
     CommandName(final int[] value) {
         this.value = value;
     }
-
-
 
     static CommandName getValue(int[] value) {
         for(CommandName e: CommandName.values()) {
