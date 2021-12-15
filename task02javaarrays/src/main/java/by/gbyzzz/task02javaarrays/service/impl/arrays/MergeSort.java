@@ -4,15 +4,13 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 
 public class MergeSort implements ArrayService {
     @Override
-    public double[] sort(double[] arg) {
+    public void sort(double[] arg) {
         //TODO: write code
-        return new double[0];
     }
 
     @Override
-    public int[] sort(int[] arg) {
+    public void sort(int[] arg) {
         //TODO: write code
-        return new int[0];
     }
     public static int[] mergeSort(int[] array) {
         int[] tmp;

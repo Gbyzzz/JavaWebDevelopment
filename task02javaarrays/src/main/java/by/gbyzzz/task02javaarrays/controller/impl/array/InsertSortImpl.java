@@ -1,4 +1,4 @@
-package by.gbyzzz.task02javaarrays.controller.impl;
+package by.gbyzzz.task02javaarrays.controller.impl.array;
 
 import by.gbyzzz.task02javaarrays.controller.command.Command;
 import by.gbyzzz.task02javaarrays.service.ArrayService;

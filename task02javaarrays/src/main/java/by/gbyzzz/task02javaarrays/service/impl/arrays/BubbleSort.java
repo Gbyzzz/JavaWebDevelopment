@@ -5,7 +5,7 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 public class BubbleSort implements ArrayService {
 
     @Override
-    public double[] sort(double[] arr) {
+    public void sort(double[] arr) {
         boolean isSorted = false;
         double buf;
         while(!isSorted) {
@@ -20,11 +20,10 @@ public class BubbleSort implements ArrayService {
                 }
             }
         }
-        return arr;
     }
 
     @Override
-    public int[] sort(int[] arr) {
+    public void sort(int[] arr) {
         boolean isSorted = false;
         int buf;
         while(!isSorted) {
@@ -39,6 +38,5 @@ public class BubbleSort implements ArrayService {
                 }
             }
         }
-        return arr;
     }
 }

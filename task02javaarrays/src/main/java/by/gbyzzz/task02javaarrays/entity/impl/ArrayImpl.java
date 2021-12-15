@@ -8,4 +8,8 @@ public class ArrayImpl<T extends Number> implements Array {
     public ArrayImpl(int length) {
         T[]arr = (T[]) new Number[length];
     }
+
+    public ArrayImpl() {
+
+    }
 }

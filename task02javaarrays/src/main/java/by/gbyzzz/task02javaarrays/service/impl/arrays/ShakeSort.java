@@ -5,7 +5,7 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 public class ShakeSort implements ArrayService {
 
     @Override
-    public int[] sort(int[]arr){
+    public void sort(int[]arr){
         int temp = 0;
         int left = 0;
         int right = arr.length - 1;
@@ -31,11 +31,10 @@ public class ShakeSort implements ArrayService {
             }
             left++;
         } while (left < right);
-        return arr;
     }
 
     @Override
-    public double[] sort(double[]arr){
+    public void sort(double[]arr){
         double temp = 0;
         int left = 0;
         int right = arr.length - 1;
@@ -61,6 +60,5 @@ public class ShakeSort implements ArrayService {
             }
             left++;
         } while (left < right);
-        return arr;
     }
 }

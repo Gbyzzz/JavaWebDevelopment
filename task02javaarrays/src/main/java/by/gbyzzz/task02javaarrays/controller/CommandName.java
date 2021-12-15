@@ -8,14 +8,16 @@ public enum CommandName {
     SHAKE_SORT(new int[]{1, 2}),
     SELECT_SORT(new int[]{1, 3}),
     INSERT_SORT(new int[]{1, 4}),
-    SHELL_SORT(new int[]{1, 5}),
+    INSERT_ADDRESS_SORT(new int[]{1, 5}),
     MERGE_SORT(new int[]{1, 6}),
-    MATRIX_SUM(new int[]{2, 1}),
-    MATRIX_SUB(new int[]{2, 2}),
-    MATRIX_MULT(new int[]{2, 3}),
-    MATRIX_MULT_NUM (new int[]{2, 4}),
-    MATRIX_DIV(new int[]{2, 5}),
-    MATRIX_TRANSP(new int[]{2, 6});
+    SHELL_SORT(new int[]{1, 7}),
+    EXTERNAL_SORT(new int[]{1, 8}),
+    MATRIX_ADDITION(new int[]{2, 1}),
+    MATRIX_SUBTRACTION(new int[]{2, 2}),
+    MATRIX_MULTIPLICATION(new int[]{2, 3}),
+    MATRIX_EXPONENTIATION(new int[]{2, 4}),
+    MATRIX_MULTIPLICATION_NUM (new int[]{2, 5}),
+    MATRIX_TRANSPOSE(new int[]{2, 6});
 
 
 

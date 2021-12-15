@@ -5,7 +5,7 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 public class SelectSort implements ArrayService {
 
     @Override
-    public int[] sort(int[] arr){
+    public void sort(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             int pos = i;
             int min = arr[i];
@@ -18,11 +18,10 @@ public class SelectSort implements ArrayService {
             arr[pos] = arr[i];
             arr[i] = min;
         }
-        return arr;
     }
 
     @Override
-    public double[] sort(double[] arr){
+    public void sort(double[] arr){
         for (int i = 0; i < arr.length; i++) {
             int pos = i;
             double min = arr[i];
@@ -35,6 +34,5 @@ public class SelectSort implements ArrayService {
             arr[pos] = arr[i];
             arr[i] = min;
         }
-        return arr;
     }
 }

@@ -8,7 +8,8 @@ enum MenuSelection {
     SELECT_FIVE (5),
     SELECT_SIX (6),
     SELECT_SEVEN (7),
-    SELECT_EIGHT (8);
+    SELECT_EIGHT (8),
+    SELECT_NINE (9);
 
     public final int value;
 

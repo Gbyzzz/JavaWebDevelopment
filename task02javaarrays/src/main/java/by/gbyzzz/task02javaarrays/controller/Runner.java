@@ -27,7 +27,11 @@ public class Runner {
         menuText.mainMenu();
         select[0] = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_THREE.value);
         controller.execute(select);
-        select[1] = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_SIX.value);
+            if (select[0] ==1) {
+                select[1] = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_NINE.value);
+            } else {
+                select[1] = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_SEVEN.value);
+            }
         controller.execute(select);
         menuText.backMenu();
         back = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_TWO.value);

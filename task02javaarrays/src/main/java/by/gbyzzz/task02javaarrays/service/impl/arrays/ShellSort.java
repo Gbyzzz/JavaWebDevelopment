@@ -4,7 +4,7 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 
 public class ShellSort implements ArrayService {
     @Override
-    public int[] sort(int[] arr) {
+    public void sort(int[] arr) {
         for (int step = arr.length/ 2; step > 0; step /= 2) {
             for (int i = step; i < arr.length; i++) {
                 for (int j = i - step; j >= 0 && arr[j] > arr[j + step] ; j -= step) {
@@ -14,11 +14,10 @@ public class ShellSort implements ArrayService {
                 }
             }
         }
-        return arr;
     }
 
     @Override
-    public double[] sort(double[] arr) {
+    public void sort(double[] arr) {
         for (int step = arr.length/ 2; step > 0; step /= 2) {
             for (int i = step; i < arr.length; i++) {
                 for (int j = i - step; j >= 0 && arr[j] > arr[j + step] ; j -= step) {
@@ -28,6 +27,5 @@ public class ShellSort implements ArrayService {
                 }
             }
         }
-        return arr;
     }
 }

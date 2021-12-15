@@ -4,7 +4,7 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 
 public class InsertSort implements ArrayService {
 
-    public int[] sort (int[] arr) {
+    public void sort (int[] arr) {
         for (int i = 1; i < arr.length; i++) {
             int current = arr[i];
             int j = i;
@@ -14,10 +14,9 @@ public class InsertSort implements ArrayService {
             }
             arr[j] = current;
         }
-        return arr;
     }
 
-    public double[] sort (double[] arr) {
+    public void sort (double[] arr) {
         for (int i = 1; i < arr.length; i++) {
             double current = arr[i];
             int j = i;
@@ -27,6 +26,5 @@ public class InsertSort implements ArrayService {
             }
             arr[j] = current;
         }
-        return arr;
     }
 }

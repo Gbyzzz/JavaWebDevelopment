@@ -2,7 +2,7 @@ package by.gbyzzz.task02javaarrays.service;
 
 public interface ArrayService {
 
-    double[] sort(double[] arg);
+    void sort(double[] arg);
 
-    int[] sort(int[] arg);
+    void sort(int[] arg);
 }
