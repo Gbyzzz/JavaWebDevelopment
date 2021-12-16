@@ -1,5 +1,6 @@
 package by.gbyzzz.task02javaarrays.controller.impl.array;
 
+import by.gbyzzz.task02javaarrays.beans.Array;
 import by.gbyzzz.task02javaarrays.controller.command.Command;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.factory.ArrayServiceFactory;
@@ -13,8 +14,8 @@ public class BubbleSortImpl implements Command {
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
         ArrayService arrayService = arrayServiceFactory.getBubbleSort();
-        ArrayService.readFile("").getArr();
-//        arrayService.sort(ArrayService.readFile("").getArr());
-//        ioData.outputArr(ArrayService.readFile("").getArr());
+        Array a = ArrayService.readFileToArray("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\array.txt");
+        arrayService.sort(a.getArr());
+        ioData.outputArr(a.getArr());
     }
 }

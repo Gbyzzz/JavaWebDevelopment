@@ -1,5 +1,7 @@
 package by.gbyzzz.task02javaarrays.dal;
 
+import by.gbyzzz.task02javaarrays.beans.Array;
+
 public interface FileIO {
-    Number[] fileReadArray(String str);
+    Array fileReadToArray(String str);
 }

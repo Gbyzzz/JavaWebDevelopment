@@ -1,5 +1,6 @@
 package by.gbyzzz.task02javaarrays.controller.impl.array;
 
+import by.gbyzzz.task02javaarrays.beans.Array;
 import by.gbyzzz.task02javaarrays.controller.command.Command;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.factory.ArrayServiceFactory;
@@ -13,8 +14,15 @@ public class SelectSortImpl implements Command {
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
         ArrayService arrayService = arrayServiceFactory.getSelectSort();
-        int [] arr = {6,5,1,9,0,4};
-        arrayService.sort(arr);
-        ioData.outputArr(arr);
+        Array a = ArrayService.readFileToArray("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\array.txt");
+        arrayService.sort(a.getArr());
+        ioData.outputArr(a.getArr());
+//        ViewFactory viewFactory = ViewFactory.getInstance();
+//        IOData ioData =  viewFactory.getIoData();
+//        ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
+//        ArrayService arrayService = arrayServiceFactory.getSelectSort();
+//        int [] arr = {6,5,1,9,0,4};
+//        arrayService.sort(arr);
+//        ioData.outputArr(arr);
     }
 }

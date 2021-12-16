@@ -1,5 +1,8 @@
 package by.gbyzzz.task02javaarrays.dal;
 
+import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.factory.EntityFactory;
+
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,7 +20,7 @@ import java.util.Scanner;
 public final class FileIOImpl implements FileIO {
 
     @Override
-    public Number[] fileReadArray(String str){
+    public Array fileReadToArray(String str){
 
         FileInputStream fileInputStream = null;
         try {
@@ -27,26 +30,32 @@ public final class FileIOImpl implements FileIO {
         }
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream, 200);
         Scanner in = new Scanner(bufferedInputStream);
+        EntityFactory entityFactory = new EntityFactory();
+        Array array = null;
 
         Number[] arr = null;
-        if(in.hasNextDouble()) {
-            List<Double> numbers = new ArrayList<Double>();
-            while (in.hasNextDouble()) {
-                numbers.add(in.nextDouble());
-            }
-            int length = numbers.size();
-            arr = numbers.toArray(new Double[length]);
-        }else if(in.hasNextInt()) {
+        if(in.hasNextInt()) {
             List<Integer> numbers = new ArrayList<Integer>();
             while (in.hasNextInt()) {
                 numbers.add(in.nextInt());
             }
             int length = numbers.size();
             arr = numbers.toArray(new Integer[length]);
-        }
+            array = entityFactory.makeNewIntArray((Integer[]) arr);
 
-        return arr;
+
+        } else if(in.hasNextDouble()) {
+            List<Double> numbers = new ArrayList<Double>();
+            while (in.hasNextDouble()) {
+                numbers.add(in.nextDouble());
+            }
+            int length = numbers.size();
+            arr = numbers.toArray(new Double[length]);
+            array = entityFactory.makeNewDoubleArray((Double[]) arr);
+        }
+        return array;
     }
+
     public Number[][] fileReadMatrix(String str){
 
         FileInputStream fileInputStream = null;
@@ -77,42 +86,4 @@ public final class FileIOImpl implements FileIO {
 
         return arr;
     }
-
 }
-
-//    private static final Logger LOGGER = LogManager.getLogger();
-//
-//
-//    public Data readFile(final String arg) {
-//        FileReader fr = null;
-//        Data res = new Data();
-//        try {
-//            fr = new FileReader("C:\\Java\\MyWorkSpace\\task01javalinear\\src\\main\\resources\\data\\numbers.txt");
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//    Scanner sc = new Scanner(fr);
-//
-//        switch (arg) {
-//            case "int":
-//                while (sc.hasNextLine()) {
-//                    res.add(Integer.parseInt(sc.nextLine()));
-//                }
-//                break;
-//
-//            case "double":
-//                while (sc.hasNextLine()) {
-//                    res.add(Double.parseDouble(sc.nextLine()));
-//                }
-//                break;
-//
-//            default:
-//                break;
-//        }
-//        try {
-//            fr.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return res;

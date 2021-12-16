@@ -5,6 +5,10 @@ import by.gbyzzz.task02javaarrays.beans.Array;
 public class MatrixImpl<T extends Number> implements Array {
     T[][] matrix;
 
+    @Override
+    public Number[] getArr() {
+        return new Number[0];
+    }
 }
 //public class Matrix {
 //    private int[][] a;
