@@ -1,6 +1,6 @@
 package by.gbyzzz.task02javaarrays.service.impl.arrays;
 
-import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.FileIOService;
 import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
@@ -8,24 +8,24 @@ import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 public class BubbleSort implements ArrayService {
 
     @Override
-    public Array execute(String str) {
+    public MyArray execute(String ... str) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
-        Array array = fileIOServiceImpl.readFileToArray(str);
-        Number[][] arr = array.getArr();
+        MyArray myArray = fileIOServiceImpl.readFileToArray(str[0]);
+        Number[][] arr = myArray.getArr();
 
         boolean isSorted = false;
         while(!isSorted) {
             if(arr[0][0]instanceof Integer){
                 int buf;
             isSorted = true;
-            for (int i = 0; i < arr.length-1; i++) {
-                if(arr[i][0].intValue()>arr[i+1][0].intValue()) {
+            for (int i = 0; i < arr[0].length-1; i++) {
+                if(arr[0][i].intValue()>arr[0][i+1].intValue()) {
                     isSorted = false;
 
-                    buf = (int) arr[i][0];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1][0] = buf;
+                    buf = (int) arr[0][i];
+                    arr[0][i] = arr[0][i + 1];
+                    arr[0][i + 1] = buf;
                 }
             }
             }else if(arr[0][0]instanceof Double){
@@ -42,7 +42,7 @@ public class BubbleSort implements ArrayService {
                 }
             }
         }
-        array.setArr(arr);
-        return array;
+        myArray.setArr(arr);
+        return myArray;
     }
 }

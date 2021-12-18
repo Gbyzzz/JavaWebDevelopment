@@ -1,8 +1,8 @@
 package by.gbyzzz.task02javaarrays.beans.impl;
 
-import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 
-public class ArrayImpl<T extends Number> implements Array {
+public class MyArrayImpl<T extends Number> implements MyArray {
     T [][] arr;
 
     public T [][] getArr() {
@@ -13,11 +13,12 @@ public class ArrayImpl<T extends Number> implements Array {
         this.arr = (T[][]) arr;
     }
 
-    public ArrayImpl(T[][] arr) {
+
+    public MyArrayImpl(T[][] arr) {
         this.arr = arr;
     }
 
-    public ArrayImpl() {
+    public MyArrayImpl() {
 
     }
 }

@@ -25,6 +25,7 @@ public final class IODataImpl implements IOData {
             for (int j = 0; j < arr[i].length; j++){
                 System.out.print(arr[i][j] + " ");
             }
+            System.out.println();
         }
         System.out.println();
         System.out.println();

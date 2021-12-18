@@ -1,7 +1,6 @@
 package by.gbyzzz.task02javaarrays.service.factory;
 
 import by.gbyzzz.task02javaarrays.service.ArrayService;
-import by.gbyzzz.task02javaarrays.service.MatrixService;
 import by.gbyzzz.task02javaarrays.service.impl.arrays.*;
 import by.gbyzzz.task02javaarrays.service.impl.matrix.*;
 
@@ -15,12 +14,12 @@ public class ArrayServiceFactory {
     private final ArrayService mergeSort = new MergeSort();
     private final ArrayService insertAddrSort = new InsertAddrSort();
     private final ArrayService externalSort = new ExternalSort();
-    private final MatrixService addition = new Addition();
-    private final MatrixService exponentiation = new Exponentiation();
-    private final MatrixService multiplication = new Multiplication();
-    private final MatrixService multiplicationOnNum = new MultiplicationOnNum();
-    private final MatrixService subtraction = new Subtraction();
-    private final MatrixService transpose = new Transpose();
+    private final ArrayService addition = new Addition();
+    private final ArrayService exponentiation = new Exponentiation();
+    private final ArrayService multiplication = new Multiplication();
+    private final ArrayService multiplicationOnNum = new MultiplicationOnNum();
+    private final ArrayService subtraction = new Subtraction();
+    private final ArrayService transpose = new Transpose();
 
     private ArrayServiceFactory(){}
     public static ArrayServiceFactory getInstance(){
@@ -59,27 +58,27 @@ public class ArrayServiceFactory {
         return mergeSort;
     }
 
-    public MatrixService getAddition() {
+    public ArrayService getAddition() {
         return addition;
     }
 
-    public MatrixService getExponentiation() {
+    public ArrayService getExponentiation() {
         return exponentiation;
     }
 
-    public MatrixService getMultiplication() {
+    public ArrayService getMultiplication() {
         return multiplication;
     }
 
-    public MatrixService getMultiplicationOnNum() {
+    public ArrayService getMultiplicationOnNum() {
         return multiplicationOnNum;
     }
 
-    public MatrixService getSubtraction() {
+    public ArrayService getSubtraction() {
         return subtraction;
     }
 
-    public MatrixService getTranspose() {
+    public ArrayService getTranspose() {
         return transpose;
     }
 }

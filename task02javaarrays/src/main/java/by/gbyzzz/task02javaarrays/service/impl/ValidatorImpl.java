@@ -1,5 +1,6 @@
 package by.gbyzzz.task02javaarrays.service.impl;
 
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.service.ValidatorService;
 
 import java.util.Scanner;
@@ -143,5 +144,20 @@ public final class ValidatorImpl implements ValidatorService {
             System.out.println("Invalid Input. Please enter a valid number");
         }
         return  res;
+    }
+    @Override
+    public boolean matrixSizeEquals(MyArray arr1, MyArray arr2) {
+        boolean res = false;
+        if(arr1.getArr().length == arr2.getArr().length && arr1.getArr()[0].length == arr2.getArr()[0].length)
+        res = true;
+        return res;
+    }
+
+    @Override
+    public boolean matrixEqualsForMult(MyArray arr1, MyArray arr2) {
+        boolean res = false;
+        if(arr1.getArr()[0].length == arr2.getArr().length)
+            res = true;
+        return res;
     }
 }

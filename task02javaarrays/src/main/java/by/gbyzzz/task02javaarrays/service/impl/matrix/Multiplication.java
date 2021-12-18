@@ -1,15 +1,42 @@
 package by.gbyzzz.task02javaarrays.service.impl.matrix;
 
-import by.gbyzzz.task02javaarrays.service.MatrixService;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
+import by.gbyzzz.task02javaarrays.service.ArrayService;
+import by.gbyzzz.task02javaarrays.service.FileIOService;
+import by.gbyzzz.task02javaarrays.service.ValidatorService;
+import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
-public class Multiplication implements MatrixService {
-    @Override
-    public double[][] execute(double[][] arg) {
-        return new double[0][];
-    }
+public class Multiplication implements ArrayService {
 
     @Override
-    public int[][] execute(int[][] arg) {
-        return new int[0][];
+    public MyArray execute(String... str) {
+        ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
+        MyArray matrixOne = fileIOServiceImpl.readFileToArray(str[0]);
+        MyArray matrixTwo = fileIOServiceImpl.readFileToArray(str[1]);
+        ValidatorService validatorService = serviceFactory.getValidatorService();
+        Number[][] arr1 = matrixOne.getArr();
+        Number[][] arr2 = matrixTwo.getArr();
+        Number[][] res = new Number[arr1.length][arr2[0].length];
+        for (int i = 0; i < res.length; i++) {
+            for (int j = 0; j < res[i].length; j++) {
+                res[i][j] = 0;
+            }
+        }
+        if(validatorService.matrixSizeEquals(matrixOne, matrixTwo)) {
+            for (int i = 0; i < arr1.length; i++) {
+                for (int j = 0; j < arr2[0].length; j++) {
+                    for (int k = 0; k < arr1[0].length; k++) {
+                        if (arr1[0][0] instanceof Integer) {
+                            res[i][j] = res[i][j].intValue() + arr1[i][k].intValue() * arr2[k][j].intValue();
+                        } else if (arr1[0][0] instanceof Double) {
+                            res[i][j] = res[i][j].doubleValue() + arr1[i][k].doubleValue() * arr2[k][j].doubleValue();
+                        }
+                    }
+                }
+            }
+        }
+        matrixOne.setArr(res);
+        return matrixOne;
     }
 }

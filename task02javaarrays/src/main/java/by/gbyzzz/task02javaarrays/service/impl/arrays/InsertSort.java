@@ -1,41 +1,41 @@
 package by.gbyzzz.task02javaarrays.service.impl.arrays;
 
-import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.FileIOService;
 import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
 public class InsertSort implements ArrayService {
     @Override
-    public Array execute(String str) {
+    public MyArray execute(String... str) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
-        Array array = fileIOServiceImpl.readFileToArray(str);
-        Number[][] arr = array.getArr();
+        MyArray myArray = fileIOServiceImpl.readFileToArray(str[0]);
+        Number[][] arr = myArray.getArr();
 
         if (arr[0][0] instanceof Integer) {
-            for (int i = 1; i < arr.length; i++) {
-                int current = arr[i][0].intValue();
+            for (int i = 1; i < arr[0].length; i++) {
+                int current = arr[0][i].intValue();
                 int j = i;
-                while (j > 0 && arr[j - 1][0].intValue() > current) {
-                    arr[j][0] = arr[j - 1][0];
+                while (j > 0 && arr[0][j - 1].intValue() > current) {
+                    arr[0][j] = arr[0][j - 1];
                     j--;
                 }
-                arr[j][0] = current;
+                arr[0][j] = current;
             }
         } else if (arr[0][0] instanceof Double) {
-            for (int i = 1; i < arr.length; i++) {
-                double current = arr[i][0].doubleValue();
+            for (int i = 1; i < arr[0].length; i++) {
+                double current = arr[0][i].doubleValue();
                 int j = i;
-                while (j > 0 && arr[j - 1][0].doubleValue() > current) {
-                    arr[j][0] = arr[j - 1][0];
+                while (j > 0 && arr[0][j - 1].doubleValue() > current) {
+                    arr[0][j] = arr[0][j - 1];
                     j--;
                 }
-                arr[j][0] = current;
+                arr[0][j] = current;
             }
         }
 
-        array.setArr(arr);
-        return array;
+        myArray.setArr(arr);
+        return myArray;
     }
 }

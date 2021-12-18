@@ -1,7 +1,7 @@
 package by.gbyzzz.task02javaarrays.service;
 
-import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 
 public interface FileIOService {
-     Array readFileToArray(String str);
+     MyArray readFileToArray(String str);
     }

@@ -1,6 +1,6 @@
 package by.gbyzzz.task02javaarrays.controller.impl.array;
 
-import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.controller.command.Command;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.factory.ArrayServiceFactory;
@@ -14,7 +14,7 @@ public class MergeSortImpl implements Command {
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
         ArrayService arrayService = arrayServiceFactory.getMergeSort();
-        Array a = arrayService.execute("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\array.txt");
+        MyArray a = arrayService.execute("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\array.txt");
         ioData.outputArr(a.getArr());
 //        ViewFactory viewFactory = ViewFactory.getInstance();
 //        IOData ioData =  viewFactory.getIoData();

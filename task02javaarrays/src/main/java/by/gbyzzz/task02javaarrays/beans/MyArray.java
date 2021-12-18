@@ -1,6 +1,6 @@
 package by.gbyzzz.task02javaarrays.beans;
 
-public interface Array <T extends Number>  {
+public interface MyArray<T extends Number>  {
      T[][] getArr();
      void setArr(Number[][] arr);
 }

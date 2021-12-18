@@ -1,16 +1,37 @@
 package by.gbyzzz.task02javaarrays.service.impl.matrix;
 
-import by.gbyzzz.task02javaarrays.service.MatrixService;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
+import by.gbyzzz.task02javaarrays.service.ArrayService;
+import by.gbyzzz.task02javaarrays.service.FileIOService;
+import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
-public class MultiplicationOnNum implements MatrixService {
+public class MultiplicationOnNum implements ArrayService {
+
 
     @Override
-    public double[][] execute(double[][] arg) {
-        return new double[0][];
-    }
+    public MyArray execute(String... matrix) {
+        ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
+        MyArray matrixOne = fileIOServiceImpl.readFileToArray(matrix[0]);
+        Number[][] arr1 = matrixOne.getArr();
 
-    @Override
-    public int[][] execute(int[][] arg) {
-        return new int[0][];
+
+        if (arr1[0][0] instanceof Integer) {
+            for (int i = 0; i < arr1.length; i++) {
+                for (int j = 0; j < arr1[i].length; j++) {
+                    arr1[i][j] = arr1[i][j].intValue() * Integer.parseInt(matrix[1]);
+                }
+            }
+        } else if (arr1[0][0] instanceof Double) {
+            for (int i = 0; i < arr1.length; i++) {
+                for (int j = 0; j < arr1[i].length; j++) {
+                    arr1[i][j] = arr1[i][j].doubleValue() * Double.parseDouble(matrix[1]);
+                }
+            }
+        }
+
+        return matrixOne;
     }
 }
+
+

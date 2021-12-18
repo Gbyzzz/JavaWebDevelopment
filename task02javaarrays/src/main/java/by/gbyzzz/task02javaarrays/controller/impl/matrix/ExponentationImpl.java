@@ -1,7 +1,8 @@
 package by.gbyzzz.task02javaarrays.controller.impl.matrix;
 
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.controller.command.Command;
-import by.gbyzzz.task02javaarrays.service.MatrixService;
+import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.factory.ArrayServiceFactory;
 import by.gbyzzz.task02javaarrays.view.IOData;
 import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
@@ -12,11 +13,8 @@ public class ExponentationImpl implements Command {
         ViewFactory viewFactory = ViewFactory.getInstance();
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
-        MatrixService matrixService = arrayServiceFactory.getExponentiation();
-        int [][] arr = {{6,5,1,9,0,4}, {6,5,1,9,0,4}};
-        matrixService.execute(arr);
-        for(int[] a : arr)
-            for (int b : a)
-                System.out.print(b);
+        ArrayService arrayService = arrayServiceFactory.getExponentiation();
+        MyArray a = arrayService.execute("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\matrix1.txt");
+        ioData.outputArr(a.getArr());
     }
 }

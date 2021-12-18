@@ -1,36 +1,36 @@
 package by.gbyzzz.task02javaarrays.service.impl.arrays;
 
-import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.FileIOService;
 import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
 public class ShakeSort implements ArrayService {
     @Override
-    public Array execute(String str) {
+    public MyArray execute(String... str) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
-        Array array = fileIOServiceImpl.readFileToArray(str);
-        Number[][] arr = array.getArr();
+        MyArray myArray = fileIOServiceImpl.readFileToArray(str[0]);
+        Number[][] arr = myArray.getArr();
         int left = 0;
-        int right = arr.length - 1;
+        int right = arr[0].length - 1;
 
         if (arr[0][0] instanceof Integer) {
                 do {
                     int temp;
                     for (int i = left; i < right; i++) {
-                        if (arr[i][0].intValue() > arr[i + 1][0].intValue()) {
-                            temp = arr[i][0].intValue();
-                            arr[i][0] = arr[i + 1][0];
-                            arr[i + 1][0] = temp;
+                        if (arr[0][i].intValue() > arr[0][i + 1].intValue()) {
+                            temp = arr[0][i].intValue();
+                            arr[0][i] = arr[0][i + 1];
+                            arr[0][i + 1] = temp;
                         }
                     }
                     right--;
                     for (int i = right; i > left; i--) {
-                        if (arr[i][0].intValue() < arr[i - 1][0].intValue()) {
-                            temp = arr[i][0].intValue();
-                            arr[i][0] = arr[i - 1][0];
-                            arr[i - 1][0] = temp;
+                        if (arr[0][i].intValue() < arr[0][i - 1].intValue()) {
+                            temp = arr[0][i].intValue();
+                            arr[0][i] = arr[0][i - 1];
+                            arr[0][i - 1] = temp;
                         }
                     }
                     left++;
@@ -40,25 +40,25 @@ public class ShakeSort implements ArrayService {
                 do {
                     double temp;
                     for (int i = left; i < right; i++) {
-                        if (arr[i][0].doubleValue() > arr[i + 1][0].doubleValue()) {
-                            temp = arr[i][0].doubleValue();
-                            arr[i][0] = arr[i + 1][0];
-                            arr[i + 1][0] = temp;
+                        if (arr[0][i].doubleValue() > arr[0][i + 1].doubleValue()) {
+                            temp = arr[0][i].doubleValue();
+                            arr[0][i] = arr[0][i + 1];
+                            arr[0][i + 1] = temp;
                         }
                     }
                     right--;
                     for (int i = right; i > left; i--) {
                         if (arr[i][0].doubleValue() < arr[i - 1][0].doubleValue()) {
-                            temp = arr[i][0].doubleValue();
-                            arr[i][0] = arr[i - 1][0];
-                            arr[i - 1][0] = temp;
+                            temp = arr[0][i].doubleValue();
+                            arr[0][i] = arr[0][i - 1];
+                            arr[0][i - 1] = temp;
                         }
                     }
                     left++;
                 } while (left < right);
             }
-            array.setArr(arr);
-            return array;
+            myArray.setArr(arr);
+            return myArray;
     }
 }
 

@@ -1,18 +1,16 @@
 package by.gbyzzz.task02javaarrays.beans.impl;
 
-import by.gbyzzz.task02javaarrays.beans.Array;
+import by.gbyzzz.task02javaarrays.beans.MyArray;
 
-public class MatrixImpl<T extends Number> implements Array {
-    T[][] matrix;
+public class MatrixImpl<T extends Number> implements MyArray {
+    T[][] arr;
 
-    @Override
-    public Number[][] getArr() {
-        return new Number[0][0];
+    public T [][] getArr() {
+        return arr;
     }
 
-    @Override
     public void setArr(Number[][] arr) {
-
+        this.arr = (T[][]) arr;
     }
 }
 //public class Matrix {
