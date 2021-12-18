@@ -6,8 +6,13 @@ public class MatrixImpl<T extends Number> implements Array {
     T[][] matrix;
 
     @Override
-    public Number[] getArr() {
-        return new Number[0];
+    public Number[][] getArr() {
+        return new Number[0][0];
+    }
+
+    @Override
+    public void setArr(Number[][] arr) {
+
     }
 }
 //public class Matrix {

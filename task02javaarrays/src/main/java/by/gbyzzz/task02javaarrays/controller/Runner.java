@@ -1,7 +1,7 @@
 package by.gbyzzz.task02javaarrays.controller;
 
 import by.gbyzzz.task02javaarrays.service.ValidatorService;
-import by.gbyzzz.task02javaarrays.service.factory.ValidatorFactory;
+import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 import by.gbyzzz.task02javaarrays.view.IOData;
 import by.gbyzzz.task02javaarrays.view.MenuText;
 import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
@@ -11,8 +11,8 @@ public class Runner {
     public static void main(String[] args) {
         ViewFactory viewFactory = ViewFactory.getInstance();
         IOData ioData =  viewFactory.getIoData();
-        ValidatorFactory validatorFactory = ValidatorFactory.getInstance();
-        ValidatorService validatorService = validatorFactory.getValidatorService();
+        ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        ValidatorService validatorService = serviceFactory.getValidatorService();
         Controller controller = new Controller();
         MenuText menuText = new MenuText();
         int[] select = {0 ,0};

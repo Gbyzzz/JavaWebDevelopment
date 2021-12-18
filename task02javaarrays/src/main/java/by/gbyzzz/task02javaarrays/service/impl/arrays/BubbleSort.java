@@ -1,57 +1,48 @@
 package by.gbyzzz.task02javaarrays.service.impl.arrays;
 
+import by.gbyzzz.task02javaarrays.beans.Array;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
+import by.gbyzzz.task02javaarrays.service.FileIOService;
+import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
 public class BubbleSort implements ArrayService {
 
     @Override
-    public void sort(Number[] arr) {
+    public Array execute(String str) {
+        ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
+        Array array = fileIOServiceImpl.readFileToArray(str);
+        Number[][] arr = array.getArr();
+
         boolean isSorted = false;
-        System.out.println(arr[0]);;
         while(!isSorted) {
-            if(arr[0]instanceof Integer){
+            if(arr[0][0]instanceof Integer){
                 int buf;
             isSorted = true;
             for (int i = 0; i < arr.length-1; i++) {
-                if(Integer.parseInt(String.valueOf(arr[i]))>Integer.parseInt(String.valueOf(arr[i+1]))) {
+                if(arr[i][0].intValue()>arr[i+1][0].intValue()) {
                     isSorted = false;
 
-                    buf = (int) arr[i];
+                    buf = (int) arr[i][0];
                     arr[i] = arr[i + 1];
-                    arr[i + 1] = buf;
+                    arr[i + 1][0] = buf;
                 }
             }
-            }else if(arr[0]instanceof Double){
+            }else if(arr[0][0]instanceof Double){
                 double buf;
                 isSorted = true;
                 for (int i = 0; i < arr.length-1; i++) {
-                    if(Double.parseDouble(String.valueOf(arr[i]))>Double.parseDouble(String.valueOf(arr[i+1]))) {
+                    if(arr[i][0].doubleValue()>arr[i+1][0].doubleValue()) {
                         isSorted = false;
 
-                        buf = (double) arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = buf;
+                        buf = (double) arr[i][0];
+                        arr[i][0] = arr[i + 1][0];
+                        arr[i + 1][0] = buf;
                     }
                 }
             }
         }
+        array.setArr(arr);
+        return array;
     }
-
-//    @Override
-//    public void sort(int[] arr) {
-//        boolean isSorted = false;
-//        int buf;
-//        while(!isSorted) {
-//            isSorted = true;
-//            for (int i = 0; i < arr.length-1; i++) {
-//                if(arr[i]>arr[i+1]){
-//                    isSorted = false;
-//
-//                    buf = arr[i];
-//                    arr[i] = arr[i+1];
-//                    arr[i+1] = buf;
-//                }
-//            }
-//        }
-//    }
 }

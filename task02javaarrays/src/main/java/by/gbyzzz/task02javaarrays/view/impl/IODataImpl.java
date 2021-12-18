@@ -20,10 +20,12 @@ public final class IODataImpl implements IOData {
     }
 
     @Override
-    public void outputArr(Number [] arr) {
-        for (Number a : arr) {
-            System.out.print(a + " ");
-    }
+    public void outputArr(Number [][] arr) {
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr[i].length; j++){
+                System.out.print(arr[i][j] + " ");
+            }
+        }
         System.out.println();
         System.out.println();
     }

@@ -5,11 +5,11 @@ import by.gbyzzz.task02javaarrays.beans.impl.ArrayImpl;
 import by.gbyzzz.task02javaarrays.beans.impl.MatrixImpl;
 
 public class EntityFactory {
-    public Array makeNewIntArray(Integer[] arr) {
+    public Array makeNewIntArray(Integer[][] arr) {
 
         return new ArrayImpl<Integer>(arr);
     }
-    public Array makeNewDoubleArray(Double[] arr) {
+    public Array makeNewDoubleArray(Double[][] arr) {
         return new ArrayImpl<Double>(arr);
     }
     public Array makeNewIntMatrix() {

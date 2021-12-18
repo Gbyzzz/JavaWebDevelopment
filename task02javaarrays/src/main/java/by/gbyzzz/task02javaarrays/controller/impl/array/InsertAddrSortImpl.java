@@ -14,8 +14,7 @@ public class InsertAddrSortImpl implements Command {
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
         ArrayService arrayService = arrayServiceFactory.getInsertAddrSort();
-        Array a = ArrayService.readFileToArray("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\array.txt");
-        arrayService.sort(a.getArr());
+        Array a = arrayService.execute("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\array.txt");
         ioData.outputArr(a.getArr());
 //        ViewFactory viewFactory = ViewFactory.getInstance();
 //        IOData ioData =  viewFactory.getIoData();
