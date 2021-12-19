@@ -11,7 +11,7 @@ public class MergeSortTest {
     ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
 
     @Test(dataProvider = "sort", dataProviderClass = ArrayDataProvider.class)
-    public void averageTest(String str, Number[][] expected) {
+    public void mergeSortTest(String str, Number[][] expected) {
         MyArray arr = arrayServiceFactory.getMergeSort().execute(str);
         assertEquals(arr.getArr(), expected);
     }

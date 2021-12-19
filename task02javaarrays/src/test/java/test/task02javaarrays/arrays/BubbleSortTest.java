@@ -11,7 +11,7 @@ public class BubbleSortTest {
 
 
     @Test(dataProvider = "sort", dataProviderClass = ArrayDataProvider.class)
-    public void averageTest(String str, Number[][] expected) {
+    public void bubbleSortTest(String str, Number[][] expected) {
         MyArray arr = arrayServiceFactory.getBubbleSort().execute(str);
         assertEquals(arr.getArr(), expected);
     }

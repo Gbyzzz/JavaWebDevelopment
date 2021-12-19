@@ -11,61 +11,61 @@ public class MergeSort implements ArrayService {
         MyArray myArray = fileIOFactory.getFileIO().readFileToArray(str[0]);
         Number[][] arr = myArray.getArr();
             Number[][] tmp;
-            Number[][] currentSrc = arr;
-            Number[][] currentDest = new Number[arr.length][arr[0].length];
+            Number[][] arrSrc = arr;
+            Number[][] arrNew = new Number[arr.length][arr[0].length];
 
             int size = 1;
             while (size < arr[0].length) {
                 for (int i = 0; i < arr[0].length; i += 2 * size) {
-                    merge(currentSrc, i, currentSrc, i + size, currentDest, i, size);
+                    merge(arrSrc, i, arrSrc, i + size, arrNew, i, size);
                 }
 
-                tmp = currentSrc;
-                currentSrc = currentDest;
-                currentDest = tmp;
+                tmp = arrSrc;
+                arrSrc = arrNew;
+                arrNew = tmp;
 
                 size = size * 2;
             }
 
-        myArray.setArr(currentSrc);
+        myArray.setArr(arrSrc);
         return myArray;
     }
 
 
     private static void merge(final Number[][] src1, final int src1Start,
                               final Number[][] src2, final int src2Start,
-                              final Number[][] dest, final int destStart, final int size) {
-        int index1 = src1Start;
-        int index2 = src2Start;
+                              final Number[][] res, final int resStart, final int size) {
+        int i1 = src1Start;
+        int i2 = src2Start;
 
         int src1End = Math.min(src1Start + size, src1[0].length);
         int src2End = Math.min(src2Start + size, src2[0].length);
 
         if (src1Start + size > src1[0].length) {
             for (int i = src1Start; i < src1End; i++) {
-                dest[i] = src1[i];
+                res[i] = src1[i];
             }
             return;
         }
 
         int iterationCount = src1End - src1Start + src2End - src2Start;
 
-        for (int i = destStart; i < destStart + iterationCount; i++) {
+        for (int i = resStart; i < resStart + iterationCount; i++) {
             if (src1[0][0] instanceof Integer) {
-                if (index1 < src1End && (index2 >= src2End || src1[0][index1].intValue() < src2[0][index2].intValue())) {
-                    dest[0][i] = src1[0][index1];
-                    index1++;
+                if (i1 < src1End && (i2 >= src2End || src1[0][i1].intValue() < src2[0][i2].intValue())) {
+                    res[0][i] = src1[0][i1];
+                    i1++;
                 } else {
-                    dest[0][i] = src2[0][index2];
-                    index2++;
+                    res[0][i] = src2[0][i2];
+                    i2++;
                 }
             } else if (src1[0][0] instanceof Double) {
-                if (index1 < src1End && (index2 >= src2End || src1[0][index1].doubleValue() < src2[0][index2].doubleValue())) {
-                    dest[0][i] = src1[0][index1];
-                    index1++;
+                if (i1 < src1End && (i2 >= src2End || src1[0][i1].doubleValue() < src2[0][i2].doubleValue())) {
+                    res[0][i] = src1[0][i1];
+                    i1++;
                 } else {
-                    dest[0][i] = src2[0][index2];
-                    index2++;
+                    res[0][i] = src2[0][i2];
+                    i2++;
                 }
             }
         }

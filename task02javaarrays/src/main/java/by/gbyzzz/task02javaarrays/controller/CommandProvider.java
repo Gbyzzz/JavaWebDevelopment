@@ -21,6 +21,7 @@ final class CommandProvider {
             repository.put(CommandName.SHAKE_SORT, new ShakeSortImpl());
             repository.put(CommandName.SELECT_SORT, new SelectSortImpl());
             repository.put(CommandName.INSERT_SORT, new InsertSortImpl());
+            repository.put(CommandName.INSERT_ADDRESS_SORT, new InsertAddrSortImpl());
             repository.put(CommandName.MERGE_SORT, new MergeSortImpl());
             repository.put(CommandName.SHELL_SORT, new ShellSortImpl());
             repository.put(CommandName.MATRIX_ADDITION, new AdditionImpl());

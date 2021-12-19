@@ -11,7 +11,7 @@ public class ShellSortTest {
     ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
 
     @Test(dataProvider = "sort", dataProviderClass = ArrayDataProvider.class)
-    public void averageTest(String str, Number[][] expected) {
+    public void shellSortTest(String str, Number[][] expected) {
         MyArray arr = arrayServiceFactory.getShellSort().execute(str);
         assertEquals(arr.getArr(), expected);
     }

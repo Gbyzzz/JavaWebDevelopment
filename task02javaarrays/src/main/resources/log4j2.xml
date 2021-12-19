@@ -10,7 +10,7 @@
     </Properties>
 
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT"
+        <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="${pattern_short}"/>
         </Console>
 

@@ -10,7 +10,7 @@ public class InsertSortTest {
     ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
 
     @Test(dataProvider = "sort", dataProviderClass = ArrayDataProvider.class)
-    public void averageTest(String str, Number[][] expected) {
+    public void insertSortTest(String str, Number[][] expected) {
         MyArray arr = arrayServiceFactory.getInsertSort().execute(str);
         assertEquals(arr.getArr(), expected);
     }
