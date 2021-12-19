@@ -9,7 +9,7 @@ import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 public class Exponentiation implements ArrayService {
 
     @Override
-    public MyArray execute(String... matrix) {
+    public MyArray execute(final String... matrix) {
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
@@ -21,7 +21,7 @@ public class Exponentiation implements ArrayService {
                 res[i][j] = 0;
             }
         }
-        if(validatorService.matrixSizeEquals(matrixOne, matrixOne)) {
+        if (validatorService.matrixSizeEquals(matrixOne, matrixOne)) {
             for (int i = 0; i < arr1.length; i++) {
                 for (int j = 0; j < arr1[0].length; j++) {
                     for (int k = 0; k < arr1[0].length; k++) {

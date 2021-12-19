@@ -4,8 +4,8 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.impl.arrays.*;
 import by.gbyzzz.task02javaarrays.service.impl.matrix.*;
 
-public class ArrayServiceFactory {
-    private static final ArrayServiceFactory instance = new ArrayServiceFactory();
+public final class ArrayServiceFactory {
+    private static final ArrayServiceFactory INSTANCE = new ArrayServiceFactory();
     private final ArrayService bubbleSort = new BubbleSort();
     private final ArrayService shakeSort = new ShakeSort();
     private final ArrayService selectSort = new SelectSort();
@@ -21,9 +21,9 @@ public class ArrayServiceFactory {
     private final ArrayService subtraction = new Subtraction();
     private final ArrayService transpose = new Transpose();
 
-    private ArrayServiceFactory(){}
-    public static ArrayServiceFactory getInstance(){
-        return instance;
+    private ArrayServiceFactory() { }
+    public static ArrayServiceFactory getInstance() {
+        return INSTANCE;
     }
 
     public ArrayService getBubbleSort() {

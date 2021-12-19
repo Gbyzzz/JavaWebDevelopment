@@ -22,7 +22,7 @@ public final class FileIOImpl implements FileIO {
     private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
-    public MyArray readFileToArray(String strIn) {
+    public MyArray readFileToArray(final String strIn) {
         LOGGER.trace("Reading from file");
         String str = filePath(strIn);
         EntityFactory entityFactory = new EntityFactory();
@@ -44,7 +44,7 @@ public final class FileIOImpl implements FileIO {
             while (scanner.hasNextLine()) {
                 j++;
                 String[] array = scanner.nextLine().split(" ");
-                Integer numArr[] = new Integer[array.length];
+                Integer[] numArr = new Integer[array.length];
                 for (int a = 0; a < array.length; a++) {
                     numArr[a] = Integer.parseInt(array[a]);
                 }
@@ -54,8 +54,9 @@ public final class FileIOImpl implements FileIO {
             arr = new Integer[j][i];
             for (int a = 0; a < lines.size(); a++) {
 
-                for (int b = 0; b < i; b++)
+                for (int b = 0; b < i; b++) {
                     arr[a][b] = lines.get(a)[b];
+                }
 
             }
             myArray = entityFactory.makeNewIntArray((Integer[][]) arr);
@@ -65,7 +66,7 @@ public final class FileIOImpl implements FileIO {
             while (scanner.hasNextLine()) {
                 j++;
                 String[] array = scanner.nextLine().split(" ");
-                Double numArr[] = new Double[array.length];
+                Double[] numArr = new Double[array.length];
                 for (int a = 0; a < array.length; a++) {
                     numArr[a] = Double.parseDouble(array[a]);
                 }
@@ -75,8 +76,9 @@ public final class FileIOImpl implements FileIO {
             arr = new Double[j][i];
             for (int a = 0; a < lines.size(); a++) {
                 for (Double[] nums : arr) {
-                    for (int b = 0; b < nums.length; b++)
+                    for (int b = 0; b < nums.length; b++) {
                         nums[b] = lines.get(a)[b];
+                    }
                 }
             }
             myArray = entityFactory.makeNewDoubleArray((Double[][]) arr);
@@ -88,7 +90,7 @@ public final class FileIOImpl implements FileIO {
 }
 
     @Override
-    public String filePath(String str) {
+    public String filePath(final String str) {
         LOGGER.trace("Getting path to the file");
         ClassLoader classLoader = getClass().getClassLoader();
         URL resource = classLoader.getResource(str);
@@ -100,7 +102,7 @@ public final class FileIOImpl implements FileIO {
     }
 
     @Override
-    public void arrayWriteToFile(MyArray arr, String str) {
+    public void arrayWriteToFile(final MyArray arr, final String str) {
         LOGGER.trace("writing array to file");
         Number[][] temp = arr.getArr();
         try (FileWriter writer = new FileWriter(filePath("executed_" + str), false)) {

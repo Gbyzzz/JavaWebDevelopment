@@ -3,7 +3,6 @@ package by.gbyzzz.task02javaarrays.view;
 import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 
 /**
  * This class contains menu outputs.
@@ -12,10 +11,9 @@ import java.util.Locale;
  */
 
 public final class MenuText {
-    ViewFactory viewFactory = ViewFactory.getInstance();
-    IOData io =  viewFactory.getIoData();
-    Locale locale = Locale.getDefault();
-    MessageManager current = MessageManager.setLocale();
+    private ViewFactory viewFactory = ViewFactory.getInstance();
+    private IOData io =  viewFactory.getIoData();
+    private MessageManager current = MessageManager.setLocale();
 
     private String correctInputMsg = "Please input № of task";
     public void mainMenu() {
@@ -38,7 +36,7 @@ public final class MenuText {
     public void inputNum() {
         io.output("inputNumStr");
     }
-    public void invalidInput(int min, int max) {
+    public void invalidInput(final int min, final int max) {
 
         String message = current.getString("invalidInputStr");
         String[] args = {String.valueOf(min), String.valueOf(max)};

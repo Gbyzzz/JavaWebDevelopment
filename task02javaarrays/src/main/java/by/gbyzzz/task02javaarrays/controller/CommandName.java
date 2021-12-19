@@ -16,19 +16,19 @@ public enum CommandName {
     MATRIX_SUBTRACTION(new int[]{2, 2}),
     MATRIX_MULTIPLICATION(new int[]{2, 3}),
     MATRIX_EXPONENTIATION(new int[]{2, 4}),
-    MATRIX_MULTIPLICATION_NUM (new int[]{2, 5}),
+    MATRIX_MULTIPLICATION_NUM(new int[]{2, 5}),
     MATRIX_TRANSPOSE(new int[]{2, 6});
 
-    public final int[] value;
+    private final int[] value;
 
-    CommandName(final int[] value) {
-        this.value = value;
+    CommandName(final int[] value1) {
+        this.value = value1;
     }
 
-    static CommandName getValue(int[] value) {
-        for(CommandName e: CommandName.values()) {
+    static CommandName getValue(final int[] value1) {
+        for (CommandName e: CommandName.values()) {
             int[] temp = e.value;
-            if(temp[0] == value[0] && temp[1] == value[1]) {
+            if (temp[0] == value1[0] && temp[1] == value1[1]) {
                 return e;
             }
         }

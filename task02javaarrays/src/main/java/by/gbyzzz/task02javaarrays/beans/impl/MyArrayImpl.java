@@ -5,9 +5,9 @@ import by.gbyzzz.task02javaarrays.beans.MyArray;
 import java.util.Arrays;
 
 public class MyArrayImpl<T extends Number> implements MyArray {
-    T [][] arr;
+    private T[][] arr;
 
-    public T [][] getArr() {
+    public T[][] getArr() {
         return arr;
     }
 

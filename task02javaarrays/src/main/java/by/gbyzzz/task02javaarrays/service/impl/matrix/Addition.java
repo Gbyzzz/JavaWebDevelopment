@@ -9,7 +9,7 @@ import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
 public class Addition implements ArrayService {
     @Override
-    public MyArray execute(String... matrix) {
+    public MyArray execute(final String... matrix) {
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
@@ -18,24 +18,20 @@ public class Addition implements ArrayService {
         Number[][] arr1 = matrixOne.getArr();
         Number[][] arr2 = matrixTwo.getArr();
         Number[][] res = matrixTwo.getArr();
-        if(validatorService.matrixSizeEquals(matrixOne, matrixTwo)) {
-
-
-            if(arr1[0][0]instanceof Integer){
+        if (validatorService.matrixSizeEquals(matrixOne, matrixTwo)) {
+            if (arr1[0][0]instanceof Integer) {
             for (int i = 0; i < arr1.length; i++) {
                 for (int j = 0; j < arr1[i].length; j++) {
                     res[i][j] = arr1[i][j].intValue() + arr2[i][j].intValue();
                 }
             }
-        } else if(arr1[0][0]instanceof Double){
+        } else if (arr1[0][0]instanceof Double) {
                 for (int i = 0; i < arr1.length; i++) {
                     for (int j = 0; j < arr1[i].length; j++) {
                         res[i][j] = arr1[i][j].doubleValue() + arr2[i][j].doubleValue();
                     }
                 }
             }
-        } else {
-
         }
         matrixOne.setArr(res);
         fileIOFactory.getFileIO().arrayWriteToFile(matrixOne, matrix[0]);

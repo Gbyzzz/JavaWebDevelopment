@@ -6,7 +6,7 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 
 public class SelectSort implements ArrayService {
     @Override
-    public MyArray execute(String... str) {
+    public MyArray execute(final String... str) {
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         MyArray myArray = fileIOFactory.getFileIO().readFileToArray(str[0]);
         Number[][] arr = myArray.getArr();

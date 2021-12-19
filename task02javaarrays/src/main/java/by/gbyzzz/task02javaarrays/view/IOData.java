@@ -6,7 +6,7 @@ public interface IOData {
 
     void output(String arg);
 
-    void outputArr(Number [][] arr);
+    void outputArr(Number[][] arr);
 
     void output(int arg);
 

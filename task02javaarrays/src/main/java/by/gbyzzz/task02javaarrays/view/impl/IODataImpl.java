@@ -19,9 +19,9 @@ public final class IODataImpl implements IOData {
     }
 
     @Override
-    public void outputArr(Number [][] arr) {
-        for (int i = 0; i < arr.length; i++){
-            for (int j = 0; j < arr[i].length; j++){
+    public void outputArr(final Number[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j] + " ");
             }
             System.out.println();
@@ -61,20 +61,6 @@ public final class IODataImpl implements IOData {
         System.out.print(label);
         System.out.printf("%.2f" + "\n", arg, arg1);
     }
-
-    /**
-     * output method outputs to the console text with two number arguments.
-     * @param label max number
-     * @param arg number
-     * @param arg1 number
-     * @param arg2 number
-     */
-
-    public void output(final String label, final double arg, final double arg1, double arg2) {
-        System.out.print(label);
-        System.out.printf("%.2f" + "\n", arg, arg1, arg2);
-    }
-
 
     /**
      * input method reads input of the user from the console and validates if

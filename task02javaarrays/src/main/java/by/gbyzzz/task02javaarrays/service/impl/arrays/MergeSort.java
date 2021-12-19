@@ -6,7 +6,7 @@ import by.gbyzzz.task02javaarrays.service.ArrayService;
 
 public class MergeSort implements ArrayService {
     @Override
-    public MyArray execute(String... str) {
+    public MyArray execute(final String... str) {
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         MyArray myArray = fileIOFactory.getFileIO().readFileToArray(str[0]);
         Number[][] arr = myArray.getArr();
@@ -32,9 +32,9 @@ public class MergeSort implements ArrayService {
     }
 
 
-    private static void merge(Number[][] src1, int src1Start,
-                              Number[][] src2, int src2Start,
-                              Number[][] dest, int destStart, int size) {
+    private static void merge(final Number[][] src1, final int src1Start,
+                              final Number[][] src2, final int src2Start,
+                              final Number[][] dest, final int destStart, final int size) {
         int index1 = src1Start;
         int index2 = src2Start;
 

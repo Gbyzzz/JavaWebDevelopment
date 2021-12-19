@@ -9,7 +9,7 @@ public class MultiplicationOnNum implements ArrayService {
 
 
     @Override
-    public MyArray execute(String... matrix) {
+    public MyArray execute(final String... matrix) {
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);

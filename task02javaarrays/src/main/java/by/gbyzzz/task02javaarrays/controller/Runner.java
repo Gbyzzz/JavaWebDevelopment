@@ -13,30 +13,31 @@ public class Runner {
 
     public static void main(String[] args) {
         LOGGER.trace("Launching application");
+        MenuSelection menuSelection = null;
         ViewFactory viewFactory = ViewFactory.getInstance();
         IOData ioData =  viewFactory.getIoData();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         ValidatorService validatorService = serviceFactory.getValidatorService();
         Controller controller = new Controller();
         MenuText menuText = new MenuText();
-        int[] select = {0 ,0};
+        int[] select = {0, 0};
         int back;
 
         while (true) {
             LOGGER.trace("Starting main menu");
         menuText.mainMenu();
             LOGGER.trace("getting input from user in main menu");
-        select[0] = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_THREE.value);
+        select[0] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_THREE));
         controller.execute(select);
-            if (select[0] ==1) {
-                select[1] = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_NINE.value);
+            if (select[0] == 1) {
+                select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_NINE));
             } else {
-                select[1] = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_SEVEN.value);
+                select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_SEVEN));
             }
         controller.execute(select);
         menuText.backMenu();
-        back = validatorService.rangeInt(ioData.input(), MenuSelection.SELECT_ONE.value, MenuSelection.SELECT_TWO.value);
-        if(back == 2){
+        back = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_TWO));
+        if (back == 2) {
             System.exit(0);
         }
         select[0] = 0;

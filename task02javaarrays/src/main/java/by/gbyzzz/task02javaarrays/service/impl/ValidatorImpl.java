@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 
 public final class ValidatorImpl implements ValidatorService {
-    MenuText menuText = new MenuText();
+    private MenuText menuText = new MenuText();
 
     /**
      * rangeInt method checks if the user inputs an integer between min and max
@@ -45,18 +45,20 @@ public final class ValidatorImpl implements ValidatorService {
 
 
     @Override
-    public boolean matrixSizeEquals(MyArray arr1, MyArray arr2) {
+    public boolean matrixSizeEquals(final MyArray arr1, final MyArray arr2) {
         boolean res = false;
-        if(arr1.getArr().length == arr2.getArr().length && arr1.getArr()[0].length == arr2.getArr()[0].length)
-        res = true;
+        if (arr1.getArr().length == arr2.getArr().length && arr1.getArr()[0].length == arr2.getArr()[0].length) {
+            res = true;
+        }
         return res;
     }
 
     @Override
-    public boolean matrixEqualsForMult(MyArray arr1, MyArray arr2) {
+    public boolean matrixEqualsForMult(final MyArray arr1, final MyArray arr2) {
         boolean res = false;
-        if(arr1.getArr()[0].length == arr2.getArr().length)
+        if (arr1.getArr()[0].length == arr2.getArr().length) {
             res = true;
+        }
         return res;
     }
 }
