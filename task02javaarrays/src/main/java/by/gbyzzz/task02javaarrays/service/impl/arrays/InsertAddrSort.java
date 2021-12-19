@@ -1,17 +1,15 @@
 package by.gbyzzz.task02javaarrays.service.impl.arrays;
 
 import by.gbyzzz.task02javaarrays.beans.MyArray;
+import by.gbyzzz.task02javaarrays.dal.FileIOFactory;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
-import by.gbyzzz.task02javaarrays.service.FileIOService;
-import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
 public class InsertAddrSort implements ArrayService {
 
     @Override
     public MyArray execute(String... str) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
-        MyArray myArray = fileIOServiceImpl.readFileToArray(str[0]);
+        FileIOFactory fileIOFactory = FileIOFactory.getInstance();
+        MyArray myArray = fileIOFactory.getFileIO().readFileToArray(str[0]);
         Number[][] arr = myArray.getArr();
 // TODO write code
         myArray.setArr(arr);

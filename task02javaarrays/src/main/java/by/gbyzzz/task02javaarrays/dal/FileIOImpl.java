@@ -4,6 +4,7 @@ import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.beans.factory.EntityFactory;
 
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +19,8 @@ import java.util.Scanner;
 public final class FileIOImpl implements FileIO {
 
     @Override
-    public MyArray fileReadToArray(String str) {
+    public MyArray readFileToArray(String strIn) {
+        String str = filePath(strIn);
         EntityFactory entityFactory = new EntityFactory();
         MyArray myArray = null;
         File file = new File(str);
@@ -33,7 +35,7 @@ public final class FileIOImpl implements FileIO {
 
         if (scanner.hasNextInt()) {
             Integer[][] arr;
-        List<Integer[]> lines = new ArrayList<>();
+            List<Integer[]> lines = new ArrayList<>();
             while (scanner.hasNextLine()) {
                 j++;
                 String[] array = scanner.nextLine().split(" ");
@@ -45,10 +47,10 @@ public final class FileIOImpl implements FileIO {
                 i = array.length;
             }
             arr = new Integer[j][i];
-            for(int a = 0; a < lines.size(); a++) {
+            for (int a = 0; a < lines.size(); a++) {
 
-                    for (int b = 0; b < i; b++)
-                        arr[a][b] = lines.get(a)[b];
+                for (int b = 0; b < i; b++)
+                    arr[a][b] = lines.get(a)[b];
 
             }
             myArray = entityFactory.makeNewIntArray((Integer[][]) arr);
@@ -66,7 +68,7 @@ public final class FileIOImpl implements FileIO {
                 i = i + array.length;
             }
             arr = new Double[j][i];
-            for(int a = 0; a < lines.size(); a++) {
+            for (int a = 0; a < lines.size(); a++) {
                 for (Double[] nums : arr) {
                     for (int b = 0; b < nums.length; b++)
                         nums[b] = lines.get(a)[b];
@@ -77,102 +79,33 @@ public final class FileIOImpl implements FileIO {
         scanner.close();
         return myArray;
 
-    }
+
 }
 
+    @Override
+    public String filePath(String str) {
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL resource = classLoader.getResource(str);
+        if (resource == null) {
+            throw new IllegalArgumentException("file not found! " + str);
+        }
+        return resource.getPath();
+    }
 
-//        FileInputStream fileInputStream = null;
-//        try {
-//            fileInputStream = new FileInputStream(str);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        InputStream bufferedInputStream = new BufferedInputStream(fileInputStream, 200);
-//        scanner = new Scanner(bufferedInputStream);
-//        Number[][] arr;
-//        if(scanner.hasNextInt()) {
-//            arr = new Integer[i][j];
-//            List<Integer> numbers = new ArrayList<Integer>();
-//            for(int a = 0; a < j; a++){
-//            while (scanner.hasNextInt()) {
-//                numbers.add(scanner.nextInt());
-//            }
-//            arr = numbers.toArray(new Integer[i][j-1]);
-//            myArray = entityFactory.makeNewIntArray((Integer[][]) arr);
-//
-//
-//        } else if(scanner.hasNextDouble()) {
-//            List<Double> numbers = new ArrayList<Double>();
-//            while (scanner.hasNextDouble()) {
-//                numbers.add(scanner.nextDouble());
-//            }
-//            arr = numbers.toArray(new Double[i][j]);
-//            myArray = entityFactory.makeNewDoubleArray((Double[][]) arr);
-//        }
-//        scanner.close();
-//        return myArray;
-//    }
-//        FileInputStream fileInputStream = null;
-//        try {
-//            fileInputStream = new FileInputStream(str);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        InputStream bufferedInputStream = new BufferedInputStream(fileInputStream, 200);
-//        Scanner in = null;
-//        EntityFactory entityFactory = new EntityFactory();
-////        int j = 1;
-////        try {
-////            byte[] c = new byte[1024];
-////            int readChars = 0;
-////            boolean empty = true;
-////            while ((readChars = bufferedInputStream.read(c)) != -1) {
-////                empty = false;
-////                for (int i = 0; i < readChars; ++i) {
-////                    if (c[i] == '\n') {
-////                        ++j;
-////                    }
-////                }
-////            }
-////            j =  (j == 1 && !empty) ? 1 : j;
-////        } catch (IOException e) {
-////            e.printStackTrace();
-////        }
-////        try {
-////            bufferedInputStream.reset();
-////        } catch (IOException e) {
-////            e.printStackTrace();
-////        }
-//
-//
-//        MyArray myArray = null;
-//        int j = 1;
-//        in = new Scanner(fileInputStream);
-//        while(in.hasNextLine()){
-//            j++;
-//        }
-//
-//        Number[][] arr;
-//        if(in.hasNextInt()) {
-//            List<Integer> numbers = new ArrayList<Integer>();
-//            while (in.hasNextInt()) {
-//                numbers.add(in.nextInt());
-//            }
-//            int length = numbers.size();
-//            arr = numbers.toArray(new Integer[length][j]);
-//            myArray = entityFactory.makeNewIntArray((Integer[][]) arr);
-//
-//
-//        } else if(in.hasNextDouble()) {
-//            List<Double> numbers = new ArrayList<Double>();
-//            while (in.hasNextDouble()) {
-//                numbers.add(in.nextDouble());
-//            }
-//            int length = numbers.size();
-//            arr = numbers.toArray(new Double[length][j]);
-//            myArray = entityFactory.makeNewDoubleArray((Double[][]) arr);
-//        }
-//        in.close();
-//        return myArray;
-//    }
+    @Override
+    public void arrayWriteToFile(MyArray arr, String str) {
+        Number[][] temp = arr.getArr();
+        try (FileWriter writer = new FileWriter(filePath(str), false)) {
+            for (int i = 0; i < temp.length; ++i) {
+                for (int j = 0; j < temp[i].length; ++j) {
+                    writer.write(temp[i][j].toString());
+                    writer.write(" ");
+                }
+                writer.write("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
 

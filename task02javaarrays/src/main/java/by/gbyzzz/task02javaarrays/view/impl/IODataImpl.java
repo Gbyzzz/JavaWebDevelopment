@@ -13,7 +13,6 @@ import java.util.Scanner;
 
 public final class IODataImpl implements IOData {
 
-   // private InputValidator inputValidator = new InputValidator();
     @Override
     public void output(final String arg) {
         System.out.println(arg);
@@ -30,15 +29,6 @@ public final class IODataImpl implements IOData {
         System.out.println();
         System.out.println();
     }
-//
-//    @Override
-//    public void outputArr(double [] arr) {
-//        for (double a : arr) {
-//            System.out.print(a + " ");
-//        }
-//        System.out.println();
-//        System.out.println();
-//    }
 
     @Override
     public void output(final int arg) {

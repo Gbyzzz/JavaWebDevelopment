@@ -4,6 +4,7 @@ import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.controller.command.Command;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.factory.ArrayServiceFactory;
+import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 import by.gbyzzz.task02javaarrays.view.IOData;
 import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
 
@@ -14,7 +15,7 @@ public class SubtractionImpl implements Command {
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
         ArrayService arrayService = arrayServiceFactory.getSubtraction();
-        MyArray a = arrayService.execute("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\matrix1.txt", "C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\matrix2.txt");
+        MyArray a = arrayService.execute("matrix1.txt", "matrix2.txt");
         ioData.outputArr(a.getArr());
     }
 }

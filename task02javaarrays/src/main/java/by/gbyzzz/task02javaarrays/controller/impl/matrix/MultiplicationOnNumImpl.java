@@ -4,7 +4,9 @@ import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.controller.command.Command;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
 import by.gbyzzz.task02javaarrays.service.factory.ArrayServiceFactory;
+import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 import by.gbyzzz.task02javaarrays.view.IOData;
+import by.gbyzzz.task02javaarrays.view.MenuText;
 import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
 
 public class MultiplicationOnNumImpl implements Command {
@@ -14,9 +16,11 @@ public class MultiplicationOnNumImpl implements Command {
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
         ArrayService arrayService = arrayServiceFactory.getMultiplicationOnNum();
-        ioData.output("Please insert a number");
+        MenuText menuText = new MenuText();
+        menuText.inputNum();
         String num = ioData.input().next();
-        MyArray a = arrayService.execute("C:\\Java\\MyWorkspace\\task02javaarrays\\src\\main\\resources\\matrix1.txt", num);
+        ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        MyArray a = arrayService.execute("matrix1.txt",num);
         ioData.outputArr(a.getArr());
     }
 }

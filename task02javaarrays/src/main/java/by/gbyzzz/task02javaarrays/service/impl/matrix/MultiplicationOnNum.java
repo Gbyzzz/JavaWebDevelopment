@@ -1,8 +1,8 @@
 package by.gbyzzz.task02javaarrays.service.impl.matrix;
 
 import by.gbyzzz.task02javaarrays.beans.MyArray;
+import by.gbyzzz.task02javaarrays.dal.FileIOFactory;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
-import by.gbyzzz.task02javaarrays.service.FileIOService;
 import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
 public class MultiplicationOnNum implements ArrayService {
@@ -10,9 +10,9 @@ public class MultiplicationOnNum implements ArrayService {
 
     @Override
     public MyArray execute(String... matrix) {
+        FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
-        MyArray matrixOne = fileIOServiceImpl.readFileToArray(matrix[0]);
+        MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
         Number[][] arr1 = matrixOne.getArr();
 
 

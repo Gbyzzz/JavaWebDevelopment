@@ -2,6 +2,9 @@ package by.gbyzzz.task02javaarrays.view;
 
 import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
 
+import java.text.MessageFormat;
+import java.util.Locale;
+
 /**
  * This class contains menu outputs.
  * @author Anton Pinchuk
@@ -11,43 +14,37 @@ import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
 public final class MenuText {
     ViewFactory viewFactory = ViewFactory.getInstance();
     IOData io =  viewFactory.getIoData();
-    private String correctImputMsg = "Please input № of task";
+    Locale locale = Locale.getDefault();
+    MessageManager current = MessageManager.setLocale();
+
+    private String correctInputMsg = "Please input № of task";
     public void mainMenu() {
-        io.output("Hello! You've just started my program, please select the task which you want to launch");
-        io.output("1. Array");
-        io.output("2. Matrix");
-        io.output("3. Exit");
-        io.output(correctImputMsg);
+        io.output(current.getString("mainMenuStr"));
+        io.output(current.getString("correctInputMsg"));
     }
     public void arrayMenu() {
-        io.output("Please select the method to sort your array");
-        io.output("1. Bubble sort");
-        io.output("2. Shaker sort");
-        io.output("3. Selection sort");
-        io.output("4. Insertion sort");
-        io.output("5. Insertion sort(address)");
-        io.output("6. Merge sort");
-        io.output("7. Shell's sort");
-        io.output("8. External sort");
-        io.output("9. Exit");
-        io.output(correctImputMsg);
+        io.output(current.getString("arrayMenuStr"));
+        io.output(current.getString("correctInputMsg"));
     }
     public void matrixMenu() {
-        io.output("1. Addition of two matrices");
-        io.output("2. Subtraction of two matrices");
-        io.output("3. Multiplication of two matrices");
-        io.output("4. Exponentiation of matrix");
-        io.output("5. Multiplication of matrix on number");
-        io.output("6. Transpose of matrix on number");
-        io.output("7. Exit");
-        io.output(correctImputMsg);
+        io.output(current.getString("matrixMenuStr"));
+        io.output(current.getString("correctInputMsg"));
 
     }
 
     public void backMenu() {
-        io.output("1. Return to main menu");
-        io.output("2. Exit");
-        io.output("Please enter a valid number between 1 and 2: ");
+        io.output(current.getString("backMenuStr"));
     }
+    public void inputNum() {
+        io.output("inputNumStr");
+    }
+    public void invalidInput(int min, int max) {
 
+        String message = current.getString("invalidInputStr");
+        String[] args = {String.valueOf(min), String.valueOf(max)};
+        MessageFormat messageForm = new MessageFormat(message);
+        String result = messageForm.format(args);
+        io.output(result);
+
+    }
 }

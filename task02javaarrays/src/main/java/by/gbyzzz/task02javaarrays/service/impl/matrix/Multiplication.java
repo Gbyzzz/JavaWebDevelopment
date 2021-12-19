@@ -1,19 +1,19 @@
 package by.gbyzzz.task02javaarrays.service.impl.matrix;
 
 import by.gbyzzz.task02javaarrays.beans.MyArray;
+import by.gbyzzz.task02javaarrays.dal.FileIOFactory;
 import by.gbyzzz.task02javaarrays.service.ArrayService;
-import by.gbyzzz.task02javaarrays.service.FileIOService;
 import by.gbyzzz.task02javaarrays.service.ValidatorService;
 import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 
 public class Multiplication implements ArrayService {
 
     @Override
-    public MyArray execute(String... str) {
+    public MyArray execute(String... matrix) {
+        FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        FileIOService fileIOServiceImpl = serviceFactory.getFileIOService();
-        MyArray matrixOne = fileIOServiceImpl.readFileToArray(str[0]);
-        MyArray matrixTwo = fileIOServiceImpl.readFileToArray(str[1]);
+        MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
+        MyArray matrixTwo = fileIOFactory.getFileIO().readFileToArray(matrix[1]);
         ValidatorService validatorService = serviceFactory.getValidatorService();
         Number[][] arr1 = matrixOne.getArr();
         Number[][] arr2 = matrixTwo.getArr();
