@@ -2,6 +2,8 @@ package by.gbyzzz.task02javaarrays.dal;
 
 import by.gbyzzz.task02javaarrays.beans.MyArray;
 import by.gbyzzz.task02javaarrays.beans.factory.EntityFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.net.URL;
@@ -17,9 +19,11 @@ import java.util.Scanner;
  */
 
 public final class FileIOImpl implements FileIO {
+    private static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     public MyArray readFileToArray(String strIn) {
+        LOGGER.trace("Reading from file");
         String str = filePath(strIn);
         EntityFactory entityFactory = new EntityFactory();
         MyArray myArray = null;
@@ -28,6 +32,7 @@ public final class FileIOImpl implements FileIO {
         try {
             scanner = new Scanner(file);
         } catch (FileNotFoundException e) {
+            LOGGER.error("File not found");
             e.printStackTrace();
         }
         int i = 0;
@@ -84,9 +89,11 @@ public final class FileIOImpl implements FileIO {
 
     @Override
     public String filePath(String str) {
+        LOGGER.trace("Getting path to the file");
         ClassLoader classLoader = getClass().getClassLoader();
         URL resource = classLoader.getResource(str);
         if (resource == null) {
+            LOGGER.error("File not found");
             throw new IllegalArgumentException("file not found! " + str);
         }
         return resource.getPath();
@@ -94,8 +101,9 @@ public final class FileIOImpl implements FileIO {
 
     @Override
     public void arrayWriteToFile(MyArray arr, String str) {
+        LOGGER.trace("writing array to file");
         Number[][] temp = arr.getArr();
-        try (FileWriter writer = new FileWriter(filePath(str), false)) {
+        try (FileWriter writer = new FileWriter(filePath("executed_" + str), false)) {
             for (int i = 0; i < temp.length; ++i) {
                 for (int j = 0; j < temp[i].length; ++j) {
                     writer.write(temp[i][j].toString());
@@ -104,6 +112,7 @@ public final class FileIOImpl implements FileIO {
                 writer.write("\n");
             }
         } catch (IOException e) {
+            LOGGER.error("File not found");
             e.printStackTrace();
         }
     }

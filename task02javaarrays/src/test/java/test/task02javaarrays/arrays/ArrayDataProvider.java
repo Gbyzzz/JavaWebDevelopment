@@ -2,7 +2,7 @@ package test.task02javaarrays.arrays;
 
 import org.testng.annotations.DataProvider;
 
-public class MyDataProvider {
+public class ArrayDataProvider {
     @DataProvider(name = "sort")
     public static Object[][] DataForSort() {
         return

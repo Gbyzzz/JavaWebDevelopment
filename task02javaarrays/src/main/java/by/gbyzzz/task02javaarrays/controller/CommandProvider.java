@@ -5,12 +5,15 @@ import by.gbyzzz.task02javaarrays.controller.impl.array.*;
 import by.gbyzzz.task02javaarrays.controller.impl.matrix.*;
 import by.gbyzzz.task02javaarrays.controller.impl.menu.MenuArrImpl;
 import by.gbyzzz.task02javaarrays.controller.impl.menu.MenuMatrixImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 
 final class CommandProvider {
-        private final Map<CommandName, Command> repository = new HashMap<>();
+    private static final Logger LOGGER = LogManager.getLogger();
+    private final Map<CommandName, Command> repository = new HashMap<>();
         CommandProvider(){
             repository.put(CommandName.MENU_ARR, new MenuArrImpl());
             repository.put(CommandName.MENU_MATRIX, new MenuMatrixImpl());
@@ -31,8 +34,9 @@ final class CommandProvider {
 
         CommandName commandName =null;
         Command command = null;
-
+        LOGGER.trace("getting command name");
             commandName = CommandName.getValue(select);
+        LOGGER.trace("getting command from repository");
             command = repository.get(commandName);
 
         return command;

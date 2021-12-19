@@ -8,8 +8,11 @@ import by.gbyzzz.task02javaarrays.service.factory.ServiceFactory;
 import by.gbyzzz.task02javaarrays.view.IOData;
 import by.gbyzzz.task02javaarrays.view.MenuText;
 import by.gbyzzz.task02javaarrays.view.factory.ViewFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class MultiplicationOnNumImpl implements Command {
+    private static final Logger LOGGER = LogManager.getLogger();
     @Override
     public void execute() {
         ViewFactory viewFactory = ViewFactory.getInstance();
@@ -20,6 +23,7 @@ public class MultiplicationOnNumImpl implements Command {
         menuText.inputNum();
         String num = ioData.input().next();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
+        LOGGER.trace("Executing multiplication matrix on a num");
         MyArray a = arrayService.execute("matrix1.txt",num);
         ioData.outputArr(a.getArr());
     }
