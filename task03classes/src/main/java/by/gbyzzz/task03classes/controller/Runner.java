@@ -1,0 +1,7 @@
+package by.gbyzzz.task03classes.controller;
+
+public class Runner {
+    public static void main(String[] args) {
+
+    }
+}
