@@ -1,13 +1,8 @@
 package by.gbyzzz.task03classes.controller;
 
-import by.gbyzzz.task02javaarrays.controller.command.Command;
-import by.gbyzzz.task02javaarrays.controller.impl.array.*;
-import by.gbyzzz.task02javaarrays.controller.impl.matrix.*;
-import by.gbyzzz.task02javaarrays.controller.impl.menu.MenuArrImpl;
-import by.gbyzzz.task02javaarrays.controller.impl.menu.MenuMatrixImpl;
+import by.gbyzzz.task03classes.controller.command.Command;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.HashMap;
 import java.util.Map;
 
