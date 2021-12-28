@@ -6,10 +6,11 @@ import java.math.BigDecimal;
 public class Ribbon extends Accessories {
     private int length;
 
-    protected Ribbon(String name, BigDecimal price, String color, int length) {
-        super(name, price, color);
+    protected Ribbon(BigDecimal price, String color, int length) {
+        super(price, color);
         this.length = length;
     }
+
 
     public int getLength() {
         return length;

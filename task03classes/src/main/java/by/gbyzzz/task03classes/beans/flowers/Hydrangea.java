@@ -3,14 +3,17 @@ package by.gbyzzz.task03classes.beans.flowers;
 import by.gbyzzz.task03classes.beans.Flower;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Hydrangea extends Flower {
-    public Hydrangea(BigDecimal price, int stemLength, String color) {
-        super(price, stemLength, color);
+    private final String NAME = "Hydrangea";
+
+    public Hydrangea(String name, String color, int stemLength, BigDecimal price, Date cutDate) {
+        super(name, color, stemLength, price, cutDate);
     }
 
     @Override
     public String toString() {
-        return "Hydrangea, color:" + getColor() + ", stem length" + getStemLength() + ", price:" + getPrice();
+        return NAME + ", color:" + getColor() + ", stem length" + getStemLength() + ", price:" + getPrice();
     }
 }
