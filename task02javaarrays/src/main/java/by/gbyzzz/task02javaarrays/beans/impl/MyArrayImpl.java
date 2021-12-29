@@ -25,7 +25,21 @@ public class MyArrayImpl<T extends Number> implements MyArray {
         return Arrays.toString(arr);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyArrayImpl<?> myArray = (MyArrayImpl<?>) o;
+        return Arrays.equals(arr, myArray.arr);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(arr);
+    }
+
     public MyArrayImpl() {
+
 
     }
 }

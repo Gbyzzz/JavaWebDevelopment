@@ -43,7 +43,7 @@ public class MergeSort implements ArrayService {
 
         if (src1Start + size > src1[0].length) {
             for (int i = src1Start; i < src1End; i++) {
-                res[i] = src1[i];
+                res[0][i] = src1[0][i];
             }
             return;
         }
