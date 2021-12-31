@@ -2,15 +2,15 @@ package by.gbyzzz.task03classes.beans;
 
 import java.math.BigDecimal;
 
-public abstract class Accessories extends Goods{
-    private final String Color;
+public class Accessories extends Goods{
+    private int length;
 
-    protected Accessories(BigDecimal price, String color) {
-        super(price);
-        Color = color;
+    public Accessories(String name, String color, BigDecimal price, int length) {
+        super(name, color, price);
+        this.length = length;
     }
 
-    public String getColor() {
-        return Color;
+    public int getLength() {
+        return length;
     }
 }

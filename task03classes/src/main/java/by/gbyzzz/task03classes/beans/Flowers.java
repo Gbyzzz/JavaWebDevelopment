@@ -23,6 +23,16 @@ public class Flowers extends Goods{
     public String getName() {
         return super.getName();
     }
+    public BigDecimal getPrice() {
+        return super.getPrice();
+    }
 
-
+    @Override
+    public String toString() {
+        return "Flowers{" + "name: " + super.getName() +
+                ", price: " + super.getPrice() +
+                ", stemLength=" + stemLength +
+                ", cutDate=" + cutDate +
+                '}';
+    }
 }

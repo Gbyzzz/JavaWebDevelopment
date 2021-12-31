@@ -1,6 +1,5 @@
 package by.gbyzzz.task03classes.beans;
 
-import by.gbyzzz.task03classes.beans.flowers.Rose;
 import java.util.List;
 
 public class AllGoods <T extends Goods> {

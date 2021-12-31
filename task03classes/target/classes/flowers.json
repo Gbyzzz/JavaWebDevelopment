@@ -1,5 +1,4 @@
-{ "name": "flowers",
-  "goods": [
+[
     {
       "name": "Rose",
       "color": "White",
@@ -13,14 +12,14 @@
       "color": "Red",
       "stemLength": "50",
       "price": "3.45",
-      "cutDate": "27-12-2021"
+      "cutDate": "29-12-2021"
     },
     {
       "name": "Rose",
       "color": "Orange",
       "stemLength": "50",
       "price": "3.45",
-      "cutDate": "27-12-2021"
+      "cutDate": "28-12-2021"
     },
     {
       "name": "Rose",
@@ -86,4 +85,3 @@
       "cutDate": "27-12-2021"
     }
   ]
-}

@@ -3,14 +3,28 @@ package by.gbyzzz.task03classes.beans;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bouquet {
-    private List<Goods> bouquet = new ArrayList<>();
+public class Bouquet{
+    private List<Flowers> flowers = new ArrayList<>();
 
-    public List<Goods> getBouquet() {
-        return bouquet;
+    public void add(Flowers flowers){
+        this.flowers.add(flowers);
     }
 
-    public void setBouquet(List<Goods> bouquet) {
-        this.bouquet = bouquet;
+    public List<Flowers> getFlowers() {
+        return flowers;
+    }
+
+    public void setFlowers(List<Flowers> flowers) {
+        this.flowers = flowers;
+    }
+
+    @Override
+    public String toString() {
+        String flowersString = new String();
+        for(Flowers flower : flowers)
+            flowersString += flower.toString();
+        return "Bouquet{" +
+                "bouquet=" + flowersString +
+                '}';
     }
 }
