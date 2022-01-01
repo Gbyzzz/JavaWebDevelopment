@@ -1,6 +1,8 @@
 package by.gbyzzz.task03classes.beans;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Flowers extends Goods{
@@ -9,6 +11,7 @@ public class Flowers extends Goods{
 
     public Flowers(String name, String color, BigDecimal price, int stemLength, Date cutDate) {
         super(name, color, price);
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         this.stemLength = stemLength;
         this.cutDate = cutDate;
     }
@@ -29,10 +32,11 @@ public class Flowers extends Goods{
 
     @Override
     public String toString() {
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         return "Flowers{" + "name: " + super.getName() +
                 ", price: " + super.getPrice() +
                 ", stemLength=" + stemLength +
-                ", cutDate=" + cutDate +
+                ", cutDate=" + df.format(cutDate) +
                 '}';
     }
 }

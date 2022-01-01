@@ -5,6 +5,7 @@ import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.beans.Flowers;
 import by.gbyzzz.task03classes.dal.FileIOFactory;
 import by.gbyzzz.task03classes.dal.FileIOInterface;
+import by.gbyzzz.task03classes.services.BouquetPrice;
 import by.gbyzzz.task03classes.services.MakeBouquet;
 import by.gbyzzz.task03classes.services.SortBouquet;
 import com.google.gson.reflect.TypeToken;
@@ -26,6 +27,8 @@ public class Runner {
         MakeBouquet makeBouquet = new MakeBouquet();
         SortBouquet sortBouquet = new SortBouquet();
         Bouquet bouquet = makeBouquet.makeBouquet(flowers, accessories, "Rose");
+        BouquetPrice bouquetPrice = new BouquetPrice();
+        bouquetPrice.getTotalPrice(bouquet);
         System.out.println(bouquet);
         sortBouquet.sortByStemLength(bouquet);
         System.out.println();
