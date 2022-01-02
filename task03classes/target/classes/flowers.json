@@ -1,4 +1,5 @@
-[
+{"name": "AllGoods",
+  "flowers": [
     {
       "name": "Rose",
       "color": "White",
@@ -84,4 +85,37 @@
       "price": "2.95",
       "cutDate": "27-12-2021"
     }
+  ],
+  "accessories": [
+  {
+    "name": "craftPaper",
+    "color": "brown",
+    "price": "1.7",
+    "length": "1"
+  },
+    {
+      "name": "ribbon",
+      "color": "red",
+      "price": "0.9",
+      "length": "1"
+    },
+    {
+      "name": "ribbon",
+      "color": "silver",
+      "price": "0.9",
+      "length": "1"
+    },
+    {
+      "name": "ribbon",
+      "color": "white",
+      "price": "0.9",
+      "length": "1"
+    },
+    {
+      "name": "ribbon",
+      "color": "blue",
+      "price": "0.9",
+      "length": "1"
+    }
   ]
+}

@@ -24,4 +24,5 @@ public abstract class Goods {
     protected BigDecimal getPrice() {
         return price;
     }
+
 }

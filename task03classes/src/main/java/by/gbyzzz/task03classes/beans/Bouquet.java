@@ -6,19 +6,20 @@ import java.util.List;
 
 public class Bouquet{
     private List<Flowers> flowers = new ArrayList<>();
-    private BigDecimal totalPrice = BigDecimal.valueOf(0);
+    private List<Accessories> accessories = new ArrayList<>();
+    private BigDecimal totalPrice = BigDecimal.ZERO;
 
     public BigDecimal getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
     public void add(Flowers flowers){
         this.flowers.add(flowers);
-        this.totalPrice.add(flowers.getPrice());
+        totalPrice = totalPrice.add(flowers.getPrice());
+    }
+    public void add(Accessories accessories){
+        this.accessories.add(accessories);
+        totalPrice = totalPrice.add(accessories.getPrice());
     }
 
     public List<Flowers> getFlowers() {
@@ -31,11 +32,13 @@ public class Bouquet{
 
     @Override
     public String toString() {
-        String flowersString = new String();
+        String bouquetString = new String();
         for(Flowers flower : flowers)
-            flowersString += flower.toString() + "\n";
+            bouquetString += flower.toString();
+        for(Accessories accessory : accessories)
+            bouquetString += accessory.toString();
         return "Bouquet{" +
-                "bouquet=" + flowersString +
+                "bouquet=" + bouquetString + "\n" +
                 "total price:" + totalPrice + '}';
     }
 }

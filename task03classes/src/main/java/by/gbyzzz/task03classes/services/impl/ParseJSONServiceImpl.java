@@ -1,8 +1,8 @@
-package by.gbyzzz.task03classes.services;
+package by.gbyzzz.task03classes.services.impl;
 
 import by.gbyzzz.task03classes.dal.FileIOFactory;
 
-public class ParseJSONService {
+public class ParseJSONServiceImpl {
     FileIOFactory  fileIOFactory = FileIOFactory.getInstance();
 
 }

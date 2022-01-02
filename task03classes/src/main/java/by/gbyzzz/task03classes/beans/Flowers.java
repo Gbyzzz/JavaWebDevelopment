@@ -26,6 +26,10 @@ public class Flowers extends Goods{
     public String getName() {
         return super.getName();
     }
+    public String getColor() {
+        return super.getColor();
+    }
+
     public BigDecimal getPrice() {
         return super.getPrice();
     }
@@ -33,8 +37,8 @@ public class Flowers extends Goods{
     @Override
     public String toString() {
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        return "Flowers{" + "name: " + super.getName() +
-                ", price: " + super.getPrice() +
+        return "\n" + "Flowers{" + "name: " + getName() +
+                ", price: " + getPrice() +
                 ", stemLength=" + stemLength +
                 ", cutDate=" + df.format(cutDate) +
                 '}';
