@@ -1,8 +1,10 @@
 package by.gbyzzz.task03classes.view.impl;
 
 
+import by.gbyzzz.task03classes.beans.Flowers;
 import by.gbyzzz.task03classes.view.IOData;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -70,6 +72,11 @@ public final class IODataImpl implements IOData {
     @Override
     public Scanner input() {
         return new Scanner(System.in);
+    }
+
+    @Override
+    public void output(List<Flowers> flowers) {
+        System.out.println(flowers);
     }
 
 }

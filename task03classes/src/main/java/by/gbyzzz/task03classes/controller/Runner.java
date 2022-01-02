@@ -13,8 +13,8 @@ public class Runner {
         FileIOInterface fileIO = fileIOFactory.getFileIO();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
 
-        AllGoods.setInstance(fileIO.parseJSON("flowers.json", AllGoods.class));
-        System.out.println(AllGoods.getInstance());
+        AllGoods.setAllGoods(fileIO.parseJSON("flowers.json", AllGoods.class));
+        System.out.println(AllGoods.getAllGoods());
 
         Bouquet bouquet = new Bouquet();
         serviceFactory.getMakeBouquetByFlowerType().makeBouquet(bouquet, "Rose", "ribbon", "red");
@@ -25,6 +25,10 @@ public class Runner {
         System.out.println(bouquet);
         serviceFactory.getSortBouquetByCutDate().sort(bouquet);
         System.out.println(bouquet);
+
+        System.out.println(serviceFactory.getFindFlowerByFreshness().find(bouquet, "6"));
+        System.out.println(serviceFactory.getFindFlowerByPrice().find(bouquet, "2", "3"));
+        System.out.println(serviceFactory.getFindFlowerByStemLength().find(bouquet, "30", "50"));
 
 
 //        List<Flowers> flowers = new ArrayList<>();

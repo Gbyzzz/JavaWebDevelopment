@@ -7,10 +7,11 @@ import by.gbyzzz.task03classes.services.BouquetSortService;
 import java.util.Comparator;
 import java.util.List;
 
-public class SortBouquetByStemLengthImplSort implements BouquetSortService {
+public class SortBouquetByCutDate implements BouquetSortService {
+
     @Override
     public void sort(Bouquet bouquet) {
         List<Flowers> list = bouquet.getFlowers();
-        list.sort(Comparator.comparing(o -> o.getStemLength()));
+        list.sort(Comparator.comparing(o -> o.getCutDate()));
     }
 }

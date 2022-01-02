@@ -6,16 +6,15 @@ import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.beans.Flowers;
 import by.gbyzzz.task03classes.services.MakeBouquetService;
 
-public class MakeBouquetByColorImpl implements MakeBouquetService {
+public class MakeBouquetByFlowerType implements MakeBouquetService {
     @Override
-    public void makeBouquet (Bouquet bouquet, String... str){
-        AllGoods allGoods = AllGoods.getInstance();
-        for(Flowers flower : allGoods.getFlowers()){
-            if(flower.getColor().equals(str[0])){
+    public void makeBouquet (Bouquet bouquet,  String... str){
+        for(Flowers flower : AllGoods.getAllGoods().getFlowers()){
+            if(flower.getName().equals(str[0])){
                 bouquet.add(flower);
             }
         }
-        for(Accessories accessory : allGoods.getAccessories()){
+        for(Accessories accessory : AllGoods.getAllGoods().getAccessories()){
             if(accessory.getName().equals(str[1])){
                 if(accessory.getColor().equals(str[2])) {
                     bouquet.add(accessory);

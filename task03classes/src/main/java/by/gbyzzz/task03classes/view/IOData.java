@@ -1,5 +1,8 @@
 package by.gbyzzz.task03classes.view;
 
+import by.gbyzzz.task03classes.beans.Flowers;
+
+import java.util.List;
 import java.util.Scanner;
 
 public interface IOData {
@@ -14,5 +17,6 @@ public interface IOData {
 
     Scanner input();
 
+    void output(List<Flowers> flowers);
 }
 

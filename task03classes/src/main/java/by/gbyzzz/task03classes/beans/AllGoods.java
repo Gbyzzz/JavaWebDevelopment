@@ -3,16 +3,16 @@ package by.gbyzzz.task03classes.beans;
 import java.util.List;
 
 public class AllGoods {
-    private static AllGoods INSTANCE = new AllGoods();
+    private static AllGoods allGoods = new AllGoods();
     private String name;
     private List<Flowers> flowers;
     private List<Accessories> accessories;
 
-    public static AllGoods getInstance() {
-        return INSTANCE;
+    public static AllGoods getAllGoods() {
+        return allGoods;
     }
-    public static void setInstance(AllGoods allGoods) {
-        INSTANCE = allGoods;
+    public static void setAllGoods(AllGoods allGoods) {
+        AllGoods.allGoods = allGoods;
     }
 
     public List<Flowers> getFlowers() {
@@ -38,8 +38,6 @@ public class AllGoods {
     public void setAccessories(List<Accessories> accessories) {
         this.accessories = accessories;
     }
-
-
 
     @Override
     public String toString() {
