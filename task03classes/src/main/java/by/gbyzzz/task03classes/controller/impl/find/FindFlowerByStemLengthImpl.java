@@ -6,7 +6,7 @@ import by.gbyzzz.task03classes.controller.command.Command;
 public class FindFlowerByStemLengthImpl implements Command {
 
     @Override
-    public void execute(Bouquet bouquet) {
+    public void execute() {
 
     }
 }

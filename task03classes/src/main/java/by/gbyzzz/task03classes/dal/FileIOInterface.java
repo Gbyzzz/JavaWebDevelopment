@@ -7,5 +7,5 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 public interface FileIOInterface {
-    public AllGoods parseJSON(String file, Type type);
+    public void parseJSON(String file);
 }

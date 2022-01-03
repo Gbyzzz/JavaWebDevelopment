@@ -6,7 +6,7 @@ import by.gbyzzz.task03classes.controller.command.Command;
 public class FindFlowerByPriceImpl implements Command {
 
     @Override
-    public void execute(Bouquet bouquet) {
+    public void execute() {
 
     }
 }

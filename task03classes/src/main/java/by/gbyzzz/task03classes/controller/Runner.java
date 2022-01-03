@@ -1,54 +1,50 @@
 package by.gbyzzz.task03classes.controller;
 
-import by.gbyzzz.task03classes.beans.AllGoods;
-import by.gbyzzz.task03classes.beans.Bouquet;
-import by.gbyzzz.task03classes.dal.FileIOFactory;
-import by.gbyzzz.task03classes.dal.FileIOInterface;
 import by.gbyzzz.task03classes.services.factory.ServiceFactory;
+import by.gbyzzz.task03classes.view.IOData;
+import by.gbyzzz.task03classes.view.MenuText;
+import by.gbyzzz.task03classes.view.factory.ViewFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Runner {
+    private static final Logger LOGGER = LogManager.getLogger();
+
     public static void main(String[] args) {
-
-        FileIOFactory fileIOFactory = FileIOFactory.getInstance();
-        FileIOInterface fileIO = fileIOFactory.getFileIO();
+        LOGGER.trace("Launching application");
+        MenuSelection menuSelection = null;
+        ViewFactory viewFactory = ViewFactory.getInstance();
+        IOData ioData =  viewFactory.getIoData();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
+//        ValidatorService validatorService = serviceFactory.getValidatorService();
+        Controller controller = new Controller();
+        MenuText menuText = new MenuText();
+        int[] select = {0, 0};
+        int back;
+        serviceFactory.getParseJSON().parseJSON("flower_shop.json");
 
-        AllGoods.setAllGoods(fileIO.parseJSON("flowers.json", AllGoods.class));
-        System.out.println(AllGoods.getAllGoods());
+        while (true) {
+            LOGGER.trace("Starting main menu");
+        menuText.mainMenu();
+            LOGGER.trace("getting input from user in main menu");
+        select[0] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_THREE));
+        controller.execute(select);
+            if (select[0] == 1) {
+                select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_NINE));
+            } else {
+                select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_SEVEN));
+            }
+        controller.execute(select);
+        menuText.backMenu();
+        back = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_TWO));
+        if (back == 2) {
+            System.exit(0);
+        }
+        select[0] = 0;
+        select[1] = 0;
 
-        Bouquet bouquet = new Bouquet();
-        serviceFactory.getMakeBouquetByFlowerType().makeBouquet(bouquet, "Rose", "ribbon", "red");
-        System.out.println(bouquet);
-        serviceFactory.getSortBouquetByStemLength().sort(bouquet);
-        System.out.println(bouquet);
-        serviceFactory.getSortBouquetByPrice().sort(bouquet);
-        System.out.println(bouquet);
-        serviceFactory.getSortBouquetByCutDate().sort(bouquet);
-        System.out.println(bouquet);
+        }
 
-        System.out.println(serviceFactory.getFindFlowerByFreshness().find(bouquet, "6"));
-        System.out.println(serviceFactory.getFindFlowerByPrice().find(bouquet, "2", "3"));
-        System.out.println(serviceFactory.getFindFlowerByStemLength().find(bouquet, "30", "50"));
-
-
-//        List<Flowers> flowers = new ArrayList<>();
-//        Type type = new TypeToken<List<Flowers>>() {}.getType();
-//        flowers = (List<Flowers>) fileIO.parseJSON("flowers.json", flowers, type);
-//        List<Accessories> accessories = new ArrayList<>();
-//        accessories = (List<Accessories>) fileIO.parseJSON("accessories.json", accessories, type);
-//        SortBouquetByCutDateImpl sortBouquetByCutDateImpl = new SortBouquetByCutDateImpl();
-//        Bouquet bouquet = makeBouquetImpl.makeBouquet(flowers, accessories, "Rose");
-//        BouquetPriceImpl bouquetPriceImpl = new BouquetPriceImpl();
-//        bouquetPriceImpl.getTotalPrice(bouquet);
-//        System.out.println(bouquet);
-//        sortBouquetByCutDateImpl.sortByStemLength(bouquet);
-//        System.out.println();
-//        System.out.println(bouquet);
-//        sortBouquetByCutDateImpl.sortByPrice(bouquet);
-//        System.out.println();
-//        System.out.println(bouquet);
-//        sortBouquetByCutDateImpl.sortByCutDate(bouquet);
-//        System.out.println();
-//        System.out.println(bouquet);
     }
+
 }
