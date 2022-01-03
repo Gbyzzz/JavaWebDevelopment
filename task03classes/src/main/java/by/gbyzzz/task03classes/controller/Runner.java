@@ -1,5 +1,6 @@
 package by.gbyzzz.task03classes.controller;
 
+import by.gbyzzz.task03classes.services.ValidatorService;
 import by.gbyzzz.task03classes.services.factory.ServiceFactory;
 import by.gbyzzz.task03classes.view.IOData;
 import by.gbyzzz.task03classes.view.MenuText;
@@ -16,33 +17,31 @@ public class Runner {
         ViewFactory viewFactory = ViewFactory.getInstance();
         IOData ioData =  viewFactory.getIoData();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-//        ValidatorService validatorService = serviceFactory.getValidatorService();
+        ValidatorService validatorService = serviceFactory.getValidatorService();
         Controller controller = new Controller();
         MenuText menuText = new MenuText();
+
+        serviceFactory.getParseJSON().parseJSON("flower_shop.json");
+
         int[] select = {0, 0};
         int back;
-        serviceFactory.getParseJSON().parseJSON("flower_shop.json");
 
         while (true) {
             LOGGER.trace("Starting main menu");
-        menuText.mainMenu();
+            menuText.bouquetMakeMenu();
             LOGGER.trace("getting input from user in main menu");
-        select[0] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_THREE));
-        controller.execute(select);
-            if (select[0] == 1) {
-                select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_NINE));
-            } else {
-                select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_SEVEN));
+            select[0] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_THREE));
+            controller.execute(select);
+            select[0] = 0;
+            menuText.bouquetMenu();
+            select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_TWO));
+            controller.execute(select);
+            menuText.backMenu();
+            back = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_TWO));
+            if (back == 2) {
+                System.exit(0);
             }
-        controller.execute(select);
-        menuText.backMenu();
-        back = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_TWO));
-        if (back == 2) {
-            System.exit(0);
-        }
-        select[0] = 0;
-        select[1] = 0;
-
+            select[1] = 0;
         }
 
     }

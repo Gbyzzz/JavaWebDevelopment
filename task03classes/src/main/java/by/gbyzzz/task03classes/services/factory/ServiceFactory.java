@@ -1,10 +1,7 @@
 package by.gbyzzz.task03classes.services.factory;
 
 
-import by.gbyzzz.task03classes.services.BouquetFindService;
-import by.gbyzzz.task03classes.services.BouquetSortService;
-import by.gbyzzz.task03classes.services.MakeBouquetService;
-import by.gbyzzz.task03classes.services.ParseJSONService;
+import by.gbyzzz.task03classes.services.*;
 import by.gbyzzz.task03classes.services.impl.*;
 
 public final class ServiceFactory {
@@ -19,6 +16,7 @@ public final class ServiceFactory {
     private final BouquetFindService findFlowerByPrice = new FindFlowerByPrice();
     private final BouquetFindService findFlowerByFreshness = new FindFlowerByFreshness();
     private final ParseJSONService parseJSON = new ParseJSON();
+    private final ValidatorService validatorService = new ValidatorImpl();
 
 
     private ServiceFactory() { }
@@ -59,4 +57,6 @@ public final class ServiceFactory {
         return parseJSON;
     }
 
+    public ValidatorService getValidatorService() {return validatorService;
+    }
 }

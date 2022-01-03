@@ -15,19 +15,13 @@ public final class MenuText {
     private IOData io =  viewFactory.getIoData();
     private MessageManager current = MessageManager.setLocale();
 
-    private String correctInputMsg = "Please input № of task";
-    public void mainMenu() {
-        io.output(current.getString("mainMenuStr"));
+    public void bouquetMakeMenu() {
+        io.output(current.getString("bouquetMakeMenuStr"));
         io.output(current.getString("correctInputMsg"));
     }
-    public void arrayMenu() {
-        io.output(current.getString("arrayMenuStr"));
+    public void bouquetMenu() {
+        io.output(current.getString("bouquetMenuStr"));
         io.output(current.getString("correctInputMsg"));
-    }
-    public void matrixMenu() {
-        io.output(current.getString("matrixMenuStr"));
-        io.output(current.getString("correctInputMsg"));
-
     }
 
     public void backMenu() {

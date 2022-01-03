@@ -2,22 +2,11 @@ package by.gbyzzz.task03classes.controller;
 
 public enum CommandName {
 
-    MENU_ARR(new int[]{1, 0}),
-    MENU_MATRIX(new int[]{2, 0}),
-    BUBBLE_SORT(new int[]{1, 1}),
-    SHAKE_SORT(new int[]{1, 2}),
-    SELECT_SORT(new int[]{1, 3}),
-    INSERT_SORT(new int[]{1, 4}),
-    INSERT_ADDRESS_SORT(new int[]{1, 5}),
-    MERGE_SORT(new int[]{1, 6}),
-    SHELL_SORT(new int[]{1, 7}),
-    EXTERNAL_SORT(new int[]{1, 8}),
-    MATRIX_ADDITION(new int[]{2, 1}),
-    MATRIX_SUBTRACTION(new int[]{2, 2}),
-    MATRIX_MULTIPLICATION(new int[]{2, 3}),
-    MATRIX_EXPONENTIATION(new int[]{2, 4}),
-    MATRIX_MULTIPLICATION_NUM(new int[]{2, 5}),
-    MATRIX_TRANSPOSE(new int[]{2, 6});
+    MAKE_BOUQUET_BY_FLOWER_TYPE(new int[]{1, 0}),
+    MAKE_BOUQUET_BY_COLOR(new int[]{2, 0}),
+    MAKE_BOUQUET_BY_STEM_LENGTH(new int[]{3, 0}),
+    FIND_FLOWER_BY_STEM_LENGTH(new int[]{0, 2}),
+    SORT_BY_FRESHNESS(new int[]{0, 1});
 
     private final int[] value;
 

@@ -1,13 +1,12 @@
-package by.gbyzzz.task03classes.controller.impl.find;
+package by.gbyzzz.task03classes.controller.impl;
 
-import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.controller.command.Command;
 import by.gbyzzz.task03classes.services.factory.ServiceFactory;
 import by.gbyzzz.task03classes.view.IOData;
 import by.gbyzzz.task03classes.view.MessageManager;
 import by.gbyzzz.task03classes.view.factory.ViewFactory;
 
-public class FindFlowerByFreshnessImpl implements Command {
+public class SortBouquetByCutDateImpl implements Command {
     @Override
     public void execute() {
         MessageManager current = MessageManager.setLocale();
