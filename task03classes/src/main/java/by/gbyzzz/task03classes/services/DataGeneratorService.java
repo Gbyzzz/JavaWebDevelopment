@@ -1,5 +1,5 @@
 package by.gbyzzz.task03classes.services;
 
-public interface DateGeneratorService {
+public interface DataGeneratorService {
     void generateData(int maxFlowers, int maxAccessories, int daysFromCut, String name);
 }

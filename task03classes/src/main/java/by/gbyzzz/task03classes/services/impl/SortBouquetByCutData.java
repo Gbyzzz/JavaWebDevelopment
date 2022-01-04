@@ -7,7 +7,7 @@ import by.gbyzzz.task03classes.services.BouquetSortService;
 import java.util.Comparator;
 import java.util.List;
 
-public class SortBouquetByCutDate implements BouquetSortService {
+public class SortBouquetByCutData implements BouquetSortService {
 
     @Override
     public void sort(Bouquet bouquet) {

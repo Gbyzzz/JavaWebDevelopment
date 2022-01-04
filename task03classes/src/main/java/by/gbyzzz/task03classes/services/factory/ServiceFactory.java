@@ -9,12 +9,12 @@ public final class ServiceFactory {
     private final MakeBouquetService makeBouquetByStemLength = new MakeBouquetByStemLength();
     private final MakeBouquetService makeBouquetByFlowerType = new MakeBouquetByFlowerType();
     private final MakeBouquetService makeBouquetByColor = new MakeBouquetByColor();
-    private final BouquetSortService sortBouquetByCutDate = new SortBouquetByCutDate();
+    private final BouquetSortService sortBouquetByCutDate = new SortBouquetByCutData();
     private final BouquetFindService findFlowerByStemLength = new FindFlowerByStemLength();
     private final ParseJSONService parseJSON = new ParseJSON();
     private final ParseJSONService writeJSON = new WriteToJSON();
     private final ValidatorService validatorService = new ValidatorImpl();
-    private final DateGeneratorService dateGeneratorService = new GenerateData();
+    private final DataGeneratorService dataGeneratorService = new GenerateData();
 
 
     private ServiceFactory() { }
@@ -49,5 +49,5 @@ public final class ServiceFactory {
 
     public ValidatorService getValidatorService() {return validatorService;}
 
-    public DateGeneratorService getDateGeneratorService(){return dateGeneratorService;}
+    public DataGeneratorService getDateGeneratorService(){return dataGeneratorService;}
 }

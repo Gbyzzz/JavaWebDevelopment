@@ -3,14 +3,14 @@ package by.gbyzzz.task03classes.services.impl;
 import by.gbyzzz.task03classes.beans.Accessories;
 import by.gbyzzz.task03classes.beans.AllGoods;
 import by.gbyzzz.task03classes.beans.Flowers;
-import by.gbyzzz.task03classes.services.DateGeneratorService;
+import by.gbyzzz.task03classes.services.DataGeneratorService;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class GenerateData implements DateGeneratorService {
+public class GenerateData implements DataGeneratorService {
     public void generateData(int maxFlowers, int maxAccessories, int daysFromCut, String name){
         List<Flowers> flowers = new ArrayList<>();
         List<Accessories> accessories = new ArrayList<>();
