@@ -4,9 +4,8 @@ import by.gbyzzz.task03classes.beans.AllGoods;
 import by.gbyzzz.task03classes.beans.Bouquet;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import java.io.*;
 import java.net.URL;
 import java.util.List;
 
@@ -26,14 +25,13 @@ public class FileIOImpl implements FileIOInterface  {
 
     @Override
     public void writeJSON(String file) {
-        Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
-        try {
-            gson.toJson(AllGoods.getGenerator(), new FileWriter(filePath(file)));
+
+        try (Writer writer = new FileWriter(filePath(file))) {
+            Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyyy").setPrettyPrinting().create();
+            gson.toJson(AllGoods.getGenerator(), writer);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
 

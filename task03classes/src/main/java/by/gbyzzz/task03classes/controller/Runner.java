@@ -1,5 +1,6 @@
 package by.gbyzzz.task03classes.controller;
 
+import by.gbyzzz.task03classes.beans.AllGoods;
 import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.services.ValidatorService;
 import by.gbyzzz.task03classes.services.factory.ServiceFactory;
@@ -22,6 +23,9 @@ public class Runner {
         Controller controller = new Controller();
         MenuText menuText = new MenuText();
 
+        serviceFactory.getDateGeneratorService().generateData(100, 50, 10, "Test");
+        System.out.println(AllGoods.getGenerator());
+        serviceFactory.getWriteJSON().JsonIO("flower_shop.json");
         serviceFactory.getParseJSON().JsonIO("flower_shop.json");
 
         int[] select = {0, 0};
@@ -38,18 +42,14 @@ public class Runner {
             Bouquet bouquet = new Bouquet();
             controller.execute(select, bouquet);
             select[0] = 0;
-            menuText.bouquetMenu();
-            select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_THREE));
-            if(select[1] == 3){
-                System.exit(0);
+            while (select[1] != 3) {
+                menuText.bouquetMenu();
+                select[1] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_FOUR));
+                if (select[1] == 4) {
+                    System.exit(0);
+                }else if (select[1] != 3){
+                controller.execute(select, bouquet);}
             }
-            controller.execute(select, bouquet);
-            menuText.backMenu();
-            back = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_TWO));
-            if (back == 2) {
-                System.exit(0);
-            }
-            select[1] = 0;
         }
 
     }

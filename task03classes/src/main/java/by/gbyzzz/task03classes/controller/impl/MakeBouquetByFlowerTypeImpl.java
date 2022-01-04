@@ -18,7 +18,9 @@ public class MakeBouquetByFlowerTypeImpl implements Command {
         String flower = String.valueOf(ioData.input().next());
         ioData.output(current.getString("accessoryTypeStr"));
         String accessory = String.valueOf(ioData.input().next());
-        serviceFactory.getMakeBouquetByFlowerType().makeBouquet(bouquet, flower, accessory);
+        ioData.output(current.getString("accessoryColorStr"));
+        String accessoryColor = String.valueOf(ioData.input().next());
+        serviceFactory.getMakeBouquetByFlowerType().makeBouquet(bouquet, flower, accessory, accessoryColor);
         ioData.output(bouquet);
     }
 }

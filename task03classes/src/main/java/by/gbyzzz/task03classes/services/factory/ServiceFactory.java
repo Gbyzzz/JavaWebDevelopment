@@ -12,7 +12,9 @@ public final class ServiceFactory {
     private final BouquetSortService sortBouquetByCutDate = new SortBouquetByCutDate();
     private final BouquetFindService findFlowerByStemLength = new FindFlowerByStemLength();
     private final ParseJSONService parseJSON = new ParseJSON();
+    private final ParseJSONService writeJSON = new WriteToJSON();
     private final ValidatorService validatorService = new ValidatorImpl();
+    private final DateGeneratorService dateGeneratorService = new GenerateData();
 
 
     private ServiceFactory() { }
@@ -40,7 +42,12 @@ public final class ServiceFactory {
     public ParseJSONService getParseJSON() {
         return parseJSON;
     }
-
-    public ValidatorService getValidatorService() {return validatorService;
+    public ParseJSONService getWriteJSON() {
+        return writeJSON;
     }
+
+
+    public ValidatorService getValidatorService() {return validatorService;}
+
+    public DateGeneratorService getDateGeneratorService(){return dateGeneratorService;}
 }

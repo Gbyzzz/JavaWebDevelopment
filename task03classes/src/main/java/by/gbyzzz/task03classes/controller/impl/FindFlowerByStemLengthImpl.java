@@ -16,9 +16,9 @@ public class FindFlowerByStemLengthImpl implements Command {
         IOData ioData = viewFactory.getIoData();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         ioData.output(current.getString("minStemStr"));
-        String min = String.valueOf(ioData.input());
+        String min = String.valueOf(ioData.input().next());
         ioData.output(current.getString("maxStemStr"));
-        String max = String.valueOf(ioData.input());
+        String max = String.valueOf(ioData.input().next());
         ioData.output(serviceFactory.getFindFlowerByStemLength().find(bouquet, min, max));
     }
 }

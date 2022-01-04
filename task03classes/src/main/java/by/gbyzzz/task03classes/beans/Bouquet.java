@@ -26,6 +26,11 @@ public class Bouquet{
         return flowers;
     }
 
+    public List<Accessories> getAccessories() {
+        return accessories;
+    }
+
+
     public void setFlowers(List<Flowers> flowers) {
         this.flowers = flowers;
     }

@@ -18,7 +18,9 @@ public class MakeBouquetByStemLengthImpl implements Command {
         String stemLength = String.valueOf(ioData.input().next());
         ioData.output(current.getString("accessoryTypeStr"));
         String accessory = String.valueOf(ioData.input().next());
-        serviceFactory.getMakeBouquetByStemLength().makeBouquet(bouquet, stemLength, accessory);
+        ioData.output(current.getString("accessoryColorStr"));
+        String accessoryColor = String.valueOf(ioData.input().next());
+        serviceFactory.getMakeBouquetByStemLength().makeBouquet(bouquet, stemLength, accessory, accessoryColor);
         ioData.output(bouquet);
     }
 }

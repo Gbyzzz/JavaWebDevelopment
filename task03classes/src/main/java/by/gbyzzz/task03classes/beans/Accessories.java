@@ -3,15 +3,17 @@ package by.gbyzzz.task03classes.beans;
 import java.math.BigDecimal;
 
 public class Accessories extends Goods{
-    private int length;
+    public static String[] names = new String[]{"Ribbon", "PackingPaper", "GiftBox"};
+    public static String[] colors = new String[]{"Silver", "Golden", "Craft", "Red", "White", "with Printing"};
+    private String color;
 
-    public Accessories(String name, BigDecimal price, int length) {
+    public Accessories(String name, BigDecimal price, String color) {
         super(name, price);
-        this.length = length;
+        this.color = color;
     }
 
-    public int getLength() {
-        return length;
+    public String getColor() {
+        return color;
     }
     public String getName(){
         return super.getName();
@@ -25,7 +27,7 @@ public class Accessories extends Goods{
     public String toString() {
         return "\n" + "Accessories{" + "name: " + getName() +
                 ", price: " + getPrice() +
-                ", length: " + length +
+                ", color: " + color +
                 '}';
     }
 }

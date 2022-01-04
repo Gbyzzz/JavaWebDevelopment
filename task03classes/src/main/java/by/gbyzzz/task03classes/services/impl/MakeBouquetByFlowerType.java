@@ -16,12 +16,15 @@ public class MakeBouquetByFlowerType implements MakeBouquetService {
                 bouquet.add(flower);
             }
         }
-        if(str.length > 1) {
         for(Accessories accessory : AllGoods.getAllGoods().getAccessories()) {
-            if (accessory.getName().toLowerCase(Locale.ROOT).equals(str[1].toLowerCase(Locale.ROOT))) {
-                bouquet.add(accessory);
+            if (accessory.getName().toLowerCase(Locale.ROOT).equals(str[1].toLowerCase(Locale.ROOT)) &&
+                    accessory.getColor().toLowerCase(Locale.ROOT).equals(str[2].toLowerCase(Locale.ROOT))) {
+                if(bouquet.getAccessories().size() < 1)
+                {
+                    bouquet.add(accessory);
+                }
             }
-        }
+
         }
     }
 }
