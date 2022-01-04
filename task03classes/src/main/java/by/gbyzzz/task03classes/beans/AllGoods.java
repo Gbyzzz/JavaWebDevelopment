@@ -4,6 +4,7 @@ import java.util.List;
 
 public class AllGoods {
     private static AllGoods allGoods = new AllGoods();
+    private static AllGoods generator = new AllGoods();
     private String name;
     private List<Flowers> flowers;
     private List<Accessories> accessories;
@@ -13,6 +14,13 @@ public class AllGoods {
     }
     public static void setAllGoods(AllGoods allGoods) {
         AllGoods.allGoods = allGoods;
+    }
+
+    public static AllGoods getGenerator() {
+        return generator;
+    }
+    public static void setGenerator(AllGoods allGoods) {
+        AllGoods.generator = allGoods;
     }
 
     public List<Flowers> getFlowers() {

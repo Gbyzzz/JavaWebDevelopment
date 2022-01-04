@@ -6,12 +6,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Flowers extends Goods{
+    public static String [] names = new String[]{"Rose", "Tulip", "Alstroemeria", "Lily"};
+    public static String [] colors = new String[]{"Red", "White", "Yellow", "Orange"};
+    public static int [] stemLengths = new int[]{40, 50, 60, 70};
+    private String color;
     private final int stemLength;
     private final Date cutDate;
 
     public Flowers(String name, String color, BigDecimal price, int stemLength, Date cutDate) {
-        super(name, color, price);
+        super(name, price);
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        this.color = color;
         this.stemLength = stemLength;
         this.cutDate = cutDate;
     }
@@ -27,7 +32,7 @@ public class Flowers extends Goods{
         return super.getName();
     }
     public String getColor() {
-        return super.getColor();
+        return color;
     }
 
     public BigDecimal getPrice() {
@@ -38,6 +43,7 @@ public class Flowers extends Goods{
     public String toString() {
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         return "\n" + "Flowers{" + "name: " + getName() +
+                ", color:" + getColor() +
                 ", price: " + getPrice() +
                 ", stemLength=" + stemLength +
                 ", cutDate=" + df.format(cutDate) +

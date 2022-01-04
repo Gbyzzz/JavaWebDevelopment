@@ -1,6 +1,7 @@
 package by.gbyzzz.task03classes.view.impl;
 
 
+import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.beans.Flowers;
 import by.gbyzzz.task03classes.view.IOData;
 
@@ -78,6 +79,11 @@ public final class IODataImpl implements IOData {
     public void output(List<Flowers> flowers) {
         System.out.println(flowers);
     }
+    @Override
+    public void output(Bouquet bouquet) {
+        System.out.println(bouquet);
+    }
+
 
 }
 

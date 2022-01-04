@@ -10,11 +10,7 @@ public final class ServiceFactory {
     private final MakeBouquetService makeBouquetByFlowerType = new MakeBouquetByFlowerType();
     private final MakeBouquetService makeBouquetByColor = new MakeBouquetByColor();
     private final BouquetSortService sortBouquetByCutDate = new SortBouquetByCutDate();
-    private final BouquetSortService sortBouquetByPrice = new SortBouquetByPrice();
-    private final BouquetSortService sortBouquetByStemLength = new SortBouquetByStemLength();
     private final BouquetFindService findFlowerByStemLength = new FindFlowerByStemLength();
-    private final BouquetFindService findFlowerByPrice = new FindFlowerByPrice();
-    private final BouquetFindService findFlowerByFreshness = new FindFlowerByFreshness();
     private final ParseJSONService parseJSON = new ParseJSON();
     private final ValidatorService validatorService = new ValidatorImpl();
 
@@ -26,12 +22,6 @@ public final class ServiceFactory {
 
     public BouquetSortService getSortBouquetByCutDate() {
         return sortBouquetByCutDate;
-    }
-    public BouquetSortService getSortBouquetByPrice() {
-        return sortBouquetByPrice;
-    }
-    public BouquetSortService getSortBouquetByStemLength() {
-        return sortBouquetByStemLength;
     }
 
     public MakeBouquetService getMakeBouquetByStemLength() {
@@ -46,12 +36,6 @@ public final class ServiceFactory {
 
     public BouquetFindService getFindFlowerByStemLength() {
         return findFlowerByStemLength;
-    }
-    public BouquetFindService getFindFlowerByPrice() {
-        return findFlowerByPrice;
-    }
-    public BouquetFindService getFindFlowerByFreshness() {
-        return findFlowerByFreshness;
     }
     public ParseJSONService getParseJSON() {
         return parseJSON;

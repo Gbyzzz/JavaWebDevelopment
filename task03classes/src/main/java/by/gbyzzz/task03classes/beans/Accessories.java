@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 public class Accessories extends Goods{
     private int length;
 
-    public Accessories(String name, String color, BigDecimal price, int length) {
-        super(name, color, price);
+    public Accessories(String name, BigDecimal price, int length) {
+        super(name, price);
         this.length = length;
     }
 
@@ -16,9 +16,7 @@ public class Accessories extends Goods{
     public String getName(){
         return super.getName();
     }
-    public String getColor(){
-        return super.getColor();
-    }
+
     public BigDecimal getPrice(){
         return super.getPrice();
     }
@@ -26,7 +24,6 @@ public class Accessories extends Goods{
     @Override
     public String toString() {
         return "\n" + "Accessories{" + "name: " + getName() +
-                ", color: " + getColor() +
                 ", price: " + getPrice() +
                 ", length: " + length +
                 '}';

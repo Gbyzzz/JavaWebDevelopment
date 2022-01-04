@@ -7,5 +7,6 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 public interface FileIOInterface {
-    public void parseJSON(String file);
+    void parseJSON(String file);
+    void writeJSON(String file);
 }

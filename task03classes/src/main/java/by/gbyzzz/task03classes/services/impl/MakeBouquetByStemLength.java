@@ -6,6 +6,8 @@ import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.beans.Flowers;
 import by.gbyzzz.task03classes.services.MakeBouquetService;
 
+import java.util.Locale;
+
 public class MakeBouquetByStemLength implements MakeBouquetService {
     @Override
     public void makeBouquet (Bouquet bouquet, String... str){
@@ -15,12 +17,13 @@ public class MakeBouquetByStemLength implements MakeBouquetService {
                 bouquet.add(flower);
             }
         }
-        for(Accessories accessory : allGoods.getAccessories()){
-            if(accessory.getName().equals(str[1])){
-                if(accessory.getColor().equals(str[2])) {
-                    bouquet.add(accessory);
+        if(str.length > 1) {
+            for(Accessories accessory : AllGoods.getAllGoods().getAccessories()) {
+                if (accessory.getName().toLowerCase(Locale.ROOT).equals(str[1].toLowerCase(Locale.ROOT))) {
+                        bouquet.add(accessory);
                 }
             }
+
         }
     }
 }

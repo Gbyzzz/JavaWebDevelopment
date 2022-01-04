@@ -1,10 +1,14 @@
 package by.gbyzzz.task03classes.dal;
 
 import by.gbyzzz.task03classes.beans.AllGoods;
+import by.gbyzzz.task03classes.beans.Bouquet;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 
 
 public class FileIOImpl implements FileIOInterface  {
@@ -19,6 +23,19 @@ public class FileIOImpl implements FileIOInterface  {
 
         }
     }
+
+    @Override
+    public void writeJSON(String file) {
+        Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
+        try {
+            gson.toJson(AllGoods.getGenerator(), new FileWriter(filePath(file)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
 
     public String filePath(final String str) {
         // LOGGER.trace("Getting path to the file");
