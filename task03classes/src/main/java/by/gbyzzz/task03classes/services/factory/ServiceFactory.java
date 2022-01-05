@@ -12,8 +12,8 @@ public final class ServiceFactory {
     private final FindService findFlowerByColor = new FindFlowerByColor();
     private final FindService findFlowerByType = new FindFlowerByType();
     private final FindService findAccessory = new FindAccessory();
-    private final ParseJSONService parseJSON = new ParseJSON();
-    private final ParseJSONService writeJSON = new WriteToJSON();
+    private final JSONService parseJSON = new JSON();
+    private final JSONService writeJSON = new WriteToJSON();
     private final ValidatorService validatorService = new ValidatorImpl();
     private final DataGeneratorService dataGeneratorService = new GenerateData();
 
@@ -41,10 +41,10 @@ public final class ServiceFactory {
     }
 
 
-    public ParseJSONService getParseJSON() {
+    public JSONService getParseJSON() {
         return parseJSON;
     }
-    public ParseJSONService getWriteJSON() {
+    public JSONService getWriteJSON() {
         return writeJSON;
     }
 

@@ -1,5 +1,5 @@
 package by.gbyzzz.task03classes.services;
 
-public interface ParseJSONService {
+public interface JSONService {
     void JsonIO(String file);
 }
