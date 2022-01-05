@@ -5,6 +5,12 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * This class is a class which describes flowers entities.
+ * @author Anton Pinchuk
+ *
+ */
+
 public class Flowers extends Goods{
     public static String [] names = new String[]{"Rose", "Tulip", "Alstroemeria", "Lily"};
     public static String [] colors = new String[]{"Red", "White", "Yellow", "Orange"};

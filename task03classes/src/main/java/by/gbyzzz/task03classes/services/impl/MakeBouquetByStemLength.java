@@ -12,6 +12,7 @@ public class MakeBouquetByStemLength implements MakeBouquetService {
     @Override
     public void makeBouquet (Bouquet bouquet, String... str){
         AllGoods allGoods = AllGoods.getAllGoods();
+        bouquet.setName(str[0].toLowerCase() + " cm bouquet");
         for(Flowers flower : allGoods.getFlowers()){
             if(flower.getStemLength() == Integer.parseInt(str[0])){
                 bouquet.add(flower);

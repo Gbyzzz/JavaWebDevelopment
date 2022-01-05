@@ -12,6 +12,7 @@ public class MakeBouquetByColor implements MakeBouquetService {
     @Override
     public void makeBouquet (Bouquet bouquet, String... str){
         AllGoods allGoods = AllGoods.getAllGoods();
+        bouquet.setName(str[0].toLowerCase() + " colored bouquet");
         for(Flowers flower : allGoods.getFlowers()){
             if(flower.getColor().toLowerCase(Locale.ROOT).equals(str[0].toLowerCase(Locale.ROOT))){
                 bouquet.add(flower);

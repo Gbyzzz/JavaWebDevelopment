@@ -28,12 +28,12 @@ public class GenerateData implements DataGeneratorService {
             flowers.add(flower);
         }
         for(int i = 0; i < maxAccessories; ++i){
-            String names = Accessories.names[new Random().nextInt(Flowers.names.length-1)];
-            String color = Accessories.colors[new Random().nextInt(Flowers.colors.length-1)];
+            String names = Accessories.getNames()[new Random().nextInt(Flowers.names.length-1)];
+            String color = Accessories.getColors()[new Random().nextInt(Flowers.colors.length-1)];
 
             if(names.equals("Ribbon")) {
                 do {
-                    color = Accessories.colors[new Random().nextInt(Flowers.colors.length)];
+                    color = Accessories.getColors()[new Random().nextInt(Flowers.colors.length)];
                 } while (color.equals("Craft"));
             }
             BigDecimal price = new BigDecimal(BigInteger.valueOf(new Random().nextInt(200)), 2);

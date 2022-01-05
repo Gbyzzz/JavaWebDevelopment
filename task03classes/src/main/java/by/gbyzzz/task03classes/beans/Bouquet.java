@@ -1,33 +1,35 @@
 package by.gbyzzz.task03classes.beans;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
-public class Bouquet{
-    private List<Flowers> flowers = new ArrayList<>();
-    private List<Accessories> accessories = new ArrayList<>();
+/**
+ * This class describes a bouquet.
+ * @author Anton Pinchuk
+ *
+ */
+
+public class Bouquet extends AllGoods {
     private BigDecimal totalPrice = BigDecimal.ZERO;
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
+    public void add(Flowers flower){
+        super.flowers.add(flower);
+        totalPrice = totalPrice.add(flower.getPrice());
     }
-
-    public void add(Flowers flowers){
-        this.flowers.add(flowers);
-        totalPrice = totalPrice.add(flowers.getPrice());
+    public void add(Accessories accessory){
+        super.accessories.add(accessory);
+        totalPrice = totalPrice.add(accessory.getPrice());
     }
-    public void add(Accessories accessories){
-        this.accessories.add(accessories);
-        totalPrice = totalPrice.add(accessories.getPrice());
+    public void setName(String name){
+        super.setName(name);
     }
 
     public List<Flowers> getFlowers() {
-        return flowers;
+        return super.flowers;
     }
 
     public List<Accessories> getAccessories() {
-        return accessories;
+        return super.accessories;
     }
 
 
@@ -38,13 +40,13 @@ public class Bouquet{
     @Override
     public String toString() {
         String bouquetString = new String();
-        for(Flowers flower : flowers)
+        for(Flowers flower : super.flowers)
             bouquetString += flower.toString();
-        for(Accessories accessory : accessories)
+        for(Accessories accessory : super.accessories)
             bouquetString += accessory.toString();
-        return "Bouquet{" +
-                "bouquet=" + bouquetString + "\n" +
-                "total price:" + totalPrice + '}';
+        return "Bouquet{" + "name: " + super.name + ",\n"
+                + "bouquet:" + bouquetString + "\n"
+                + "total price:" + totalPrice + '}';
     }
 }
 

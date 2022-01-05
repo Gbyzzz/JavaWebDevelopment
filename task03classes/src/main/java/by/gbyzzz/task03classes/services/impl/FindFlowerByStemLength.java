@@ -9,9 +9,9 @@ import java.util.List;
 
 public class FindFlowerByStemLength implements BouquetFindService {
     @Override
-    public List<Flowers> find(Bouquet bouquet, String ... str){
+    public List<Flowers> find(List<Flowers> flowers, String ... str){
     List<Flowers> foundFlowers = new ArrayList<>();
-    for(Flowers flower : bouquet.getFlowers()) {
+    for(Flowers flower : flowers) {
         if (flower.getStemLength() >= Integer.parseInt(str[0]) && flower.getStemLength() <= Integer.parseInt(str[1])) {
             foundFlowers.add(flower);
         }

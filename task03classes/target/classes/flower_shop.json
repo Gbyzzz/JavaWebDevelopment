@@ -2,881 +2,946 @@
   "name": "Test",
   "flowers": [
     {
-      "color": "Yellow",
-      "stemLength": 50,
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "04-01-2022",
+      "name": "Alstroemeria",
+      "price": 0.78
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
       "cutDate": "30-12-2021",
-      "name": "Rose",
-      "price": 2.29
+      "name": "Tulip",
+      "price": 0.87
     },
     {
       "color": "Red",
-      "stemLength": 40,
+      "stemLength": 50,
       "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 0.58
+      "name": "Alstroemeria",
+      "price": 4.88
     },
     {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 1.50
-    },
-    {
-      "color": "Red",
-      "stemLength": 40,
-      "cutDate": "29-12-2021",
-      "name": "Tulip",
-      "price": 2.15
-    },
-    {
-      "color": "Red",
-      "stemLength": 40,
-      "cutDate": "27-12-2021",
-      "name": "Rose",
-      "price": 0.65
-    },
-    {
-      "color": "Yellow",
+      "color": "White",
       "stemLength": 40,
       "cutDate": "03-01-2022",
-      "name": "Alstroemeria",
-      "price": 3.77
+      "name": "Tulip",
+      "price": 2.82
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "26-12-2021",
+      "name": "Tulip",
+      "price": 2.62
     },
     {
       "color": "Yellow",
       "stemLength": 60,
-      "cutDate": "26-12-2021",
-      "name": "Alstroemeria",
-      "price": 4.47
+      "cutDate": "30-12-2021",
+      "name": "Tulip",
+      "price": 3.30
     },
     {
-      "color": "Red",
+      "color": "White",
       "stemLength": 60,
-      "cutDate": "28-12-2021",
+      "cutDate": "02-01-2022",
+      "name": "Alstroemeria",
+      "price": 2.90
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "26-12-2021",
       "name": "Rose",
       "price": 4.98
     },
     {
-      "color": "White",
-      "stemLength": 50,
-      "cutDate": "28-12-2021",
-      "name": "Tulip",
-      "price": 1.00
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "28-12-2021",
-      "name": "Tulip",
-      "price": 2.32
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "27-12-2021",
-      "name": "Tulip",
-      "price": 4.83
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "02-01-2022",
-      "name": "Alstroemeria",
-      "price": 3.27
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "31-12-2021",
-      "name": "Rose",
-      "price": 2.42
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "27-12-2021",
-      "name": "Alstroemeria",
-      "price": 2.63
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "26-12-2021",
-      "name": "Rose",
-      "price": 2.34
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "27-12-2021",
-      "name": "Rose",
-      "price": 2.76
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "29-12-2021",
-      "name": "Tulip",
-      "price": 2.56
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 2.49
-    },
-    {
-      "color": "Red",
-      "stemLength": 40,
-      "cutDate": "04-01-2022",
-      "name": "Alstroemeria",
-      "price": 4.91
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "01-01-2022",
-      "name": "Alstroemeria",
-      "price": 3.00
-    },
-    {
-      "color": "White",
-      "stemLength": 50,
-      "cutDate": "02-01-2022",
-      "name": "Rose",
-      "price": 4.94
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "28-12-2021",
-      "name": "Tulip",
-      "price": 1.15
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "02-01-2022",
-      "name": "Alstroemeria",
-      "price": 2.59
-    },
-    {
-      "color": "Red",
-      "stemLength": 40,
-      "cutDate": "01-01-2022",
-      "name": "Rose",
-      "price": 0.57
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "26-12-2021",
-      "name": "Rose",
-      "price": 4.88
-    },
-    {
       "color": "Yellow",
       "stemLength": 60,
       "cutDate": "27-12-2021",
-      "name": "Alstroemeria",
-      "price": 1.24
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "02-01-2022",
-      "name": "Alstroemeria",
-      "price": 1.78
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "31-12-2021",
-      "name": "Rose",
-      "price": 0.88
-    },
-    {
-      "color": "White",
-      "stemLength": 50,
-      "cutDate": "30-12-2021",
-      "name": "Alstroemeria",
-      "price": 3.12
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "01-01-2022",
-      "name": "Alstroemeria",
-      "price": 1.13
-    },
-    {
-      "color": "White",
-      "stemLength": 40,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 4.50
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "01-01-2022",
-      "name": "Alstroemeria",
-      "price": 3.37
-    },
-    {
-      "color": "Red",
-      "stemLength": 40,
-      "cutDate": "31-12-2021",
-      "name": "Rose",
-      "price": 1.42
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "03-01-2022",
-      "name": "Rose",
-      "price": 0.31
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "26-12-2021",
-      "name": "Tulip",
-      "price": 2.11
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "31-12-2021",
-      "name": "Alstroemeria",
-      "price": 3.41
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "30-12-2021",
-      "name": "Alstroemeria",
-      "price": 1.18
-    },
-    {
-      "color": "White",
-      "stemLength": 50,
-      "cutDate": "27-12-2021",
-      "name": "Alstroemeria",
-      "price": 3.67
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 0.72
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "02-01-2022",
-      "name": "Rose",
-      "price": 4.40
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "27-12-2021",
-      "name": "Alstroemeria",
-      "price": 4.44
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "03-01-2022",
-      "name": "Tulip",
-      "price": 0.47
-    },
-    {
-      "color": "Red",
-      "stemLength": 40,
-      "cutDate": "03-01-2022",
-      "name": "Alstroemeria",
-      "price": 3.97
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "03-01-2022",
-      "name": "Tulip",
-      "price": 1.40
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "02-01-2022",
-      "name": "Rose",
-      "price": 1.58
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 3.55
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "31-12-2021",
-      "name": "Rose",
-      "price": 4.62
-    },
-    {
-      "color": "White",
-      "stemLength": 40,
-      "cutDate": "31-12-2021",
-      "name": "Alstroemeria",
-      "price": 0.26
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "26-12-2021",
-      "name": "Alstroemeria",
-      "price": 3.18
-    },
-    {
-      "color": "White",
-      "stemLength": 40,
-      "cutDate": "03-01-2022",
-      "name": "Tulip",
-      "price": 0.50
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "28-12-2021",
-      "name": "Tulip",
-      "price": 4.56
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "01-01-2022",
-      "name": "Alstroemeria",
-      "price": 0.01
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "01-01-2022",
-      "name": "Rose",
-      "price": 2.49
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "28-12-2021",
-      "name": "Alstroemeria",
-      "price": 4.05
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "02-01-2022",
-      "name": "Rose",
-      "price": 0.71
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 1.61
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "03-01-2022",
-      "name": "Tulip",
-      "price": 4.19
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "01-01-2022",
-      "name": "Alstroemeria",
-      "price": 3.78
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "28-12-2021",
-      "name": "Tulip",
-      "price": 4.30
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "31-12-2021",
       "name": "Tulip",
       "price": 2.69
     },
     {
       "color": "Red",
       "stemLength": 40,
+      "cutDate": "04-01-2022",
+      "name": "Tulip",
+      "price": 1.49
+    },
+    {
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "04-01-2022",
+      "name": "Tulip",
+      "price": 0.15
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 40,
+      "cutDate": "30-12-2021",
+      "name": "Tulip",
+      "price": 1.44
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "31-12-2021",
+      "name": "Rose",
+      "price": 4.45
+    },
+    {
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "29-12-2021",
+      "name": "Tulip",
+      "price": 4.40
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "31-12-2021",
+      "name": "Alstroemeria",
+      "price": 2.39
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "29-12-2021",
+      "name": "Alstroemeria",
+      "price": 1.44
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "02-01-2022",
+      "name": "Rose",
+      "price": 1.42
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
       "cutDate": "27-12-2021",
+      "name": "Alstroemeria",
+      "price": 0.06
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "27-12-2021",
+      "name": "Alstroemeria",
+      "price": 3.01
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "29-12-2021",
+      "name": "Alstroemeria",
+      "price": 4.46
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "30-12-2021",
+      "name": "Tulip",
+      "price": 2.80
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "29-12-2021",
+      "name": "Alstroemeria",
+      "price": 4.23
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "30-12-2021",
+      "name": "Alstroemeria",
+      "price": 2.03
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "29-12-2021",
+      "name": "Tulip",
+      "price": 0.20
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "27-12-2021",
+      "name": "Alstroemeria",
+      "price": 1.70
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
+      "cutDate": "02-01-2022",
+      "name": "Alstroemeria",
+      "price": 2.38
+    },
+    {
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "01-01-2022",
       "name": "Tulip",
       "price": 2.52
     },
     {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "26-12-2021",
+      "color": "Yellow",
+      "stemLength": 40,
+      "cutDate": "31-12-2021",
       "name": "Tulip",
+      "price": 1.21
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 40,
+      "cutDate": "31-12-2021",
+      "name": "Rose",
+      "price": 0.93
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "05-01-2022",
+      "name": "Rose",
       "price": 3.36
     },
     {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "31-12-2021",
-      "name": "Rose",
-      "price": 0.89
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "01-01-2022",
-      "name": "Alstroemeria",
-      "price": 4.90
-    },
-    {
-      "color": "Red",
-      "stemLength": 40,
-      "cutDate": "26-12-2021",
-      "name": "Rose",
-      "price": 3.37
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "03-01-2022",
-      "name": "Tulip",
-      "price": 2.95
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "03-01-2022",
-      "name": "Tulip",
-      "price": 2.02
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "26-12-2021",
-      "name": "Rose",
-      "price": 1.01
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "26-12-2021",
-      "name": "Rose",
-      "price": 2.02
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 4.92
-    },
-    {
       "color": "White",
-      "stemLength": 40,
-      "cutDate": "04-01-2022",
-      "name": "Tulip",
-      "price": 2.92
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "30-12-2021",
-      "name": "Rose",
-      "price": 0.58
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "30-12-2021",
-      "name": "Tulip",
-      "price": 0.90
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 60,
-      "cutDate": "30-12-2021",
-      "name": "Tulip",
-      "price": 0.33
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "31-12-2021",
-      "name": "Tulip",
-      "price": 2.31
-    },
-    {
-      "color": "White",
-      "stemLength": 50,
-      "cutDate": "31-12-2021",
-      "name": "Rose",
-      "price": 2.26
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "27-12-2021",
-      "name": "Tulip",
-      "price": 3.12
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "04-01-2022",
-      "name": "Rose",
-      "price": 4.84
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "02-01-2022",
-      "name": "Alstroemeria",
-      "price": 0.64
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "02-01-2022",
-      "name": "Rose",
-      "price": 2.18
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "31-12-2021",
-      "name": "Tulip",
-      "price": 0.83
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "29-12-2021",
-      "name": "Alstroemeria",
-      "price": 3.83
-    },
-    {
-      "color": "Red",
       "stemLength": 40,
       "cutDate": "27-12-2021",
       "name": "Rose",
-      "price": 0.08
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "02-01-2022",
-      "name": "Rose",
-      "price": 2.44
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "30-12-2021",
-      "name": "Rose",
-      "price": 0.33
+      "price": 1.73
     },
     {
       "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "01-01-2022",
+      "stemLength": 40,
+      "cutDate": "26-12-2021",
       "name": "Rose",
-      "price": 0.04
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "29-12-2021",
-      "name": "Rose",
-      "price": 0.94
-    },
-    {
-      "color": "Yellow",
-      "stemLength": 50,
-      "cutDate": "03-01-2022",
-      "name": "Alstroemeria",
-      "price": 3.98
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "30-12-2021",
-      "name": "Alstroemeria",
-      "price": 3.84
-    },
-    {
-      "color": "Red",
-      "stemLength": 50,
-      "cutDate": "03-01-2022",
-      "name": "Tulip",
-      "price": 0.79
-    },
-    {
-      "color": "Red",
-      "stemLength": 60,
-      "cutDate": "04-01-2022",
-      "name": "Alstroemeria",
-      "price": 0.47
+      "price": 2.43
     },
     {
       "color": "White",
-      "stemLength": 50,
-      "cutDate": "01-01-2022",
-      "name": "Tulip",
-      "price": 3.90
+      "stemLength": 40,
+      "cutDate": "03-01-2022",
+      "name": "Rose",
+      "price": 4.39
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "04-01-2022",
+      "name": "Rose",
+      "price": 1.75
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 40,
+      "cutDate": "02-01-2022",
+      "name": "Rose",
+      "price": 2.84
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
+      "cutDate": "27-12-2021",
+      "name": "Alstroemeria",
+      "price": 3.22
     },
     {
       "color": "Red",
       "stemLength": 40,
       "cutDate": "28-12-2021",
+      "name": "Alstroemeria",
+      "price": 3.81
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "29-12-2021",
+      "name": "Tulip",
+      "price": 2.32
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "04-01-2022",
+      "name": "Tulip",
+      "price": 1.86
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "03-01-2022",
+      "name": "Tulip",
+      "price": 3.62
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "05-01-2022",
+      "name": "Rose",
+      "price": 4.78
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 40,
+      "cutDate": "30-12-2021",
+      "name": "Alstroemeria",
+      "price": 0.18
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "26-12-2021",
+      "name": "Rose",
+      "price": 1.45
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "03-01-2022",
+      "name": "Tulip",
+      "price": 0.71
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "01-01-2022",
+      "name": "Tulip",
+      "price": 4.22
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "01-01-2022",
+      "name": "Alstroemeria",
+      "price": 1.47
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "29-12-2021",
+      "name": "Alstroemeria",
+      "price": 4.70
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "28-12-2021",
+      "name": "Tulip",
+      "price": 3.43
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
+      "cutDate": "29-12-2021",
+      "name": "Alstroemeria",
+      "price": 2.80
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "01-01-2022",
+      "name": "Alstroemeria",
+      "price": 2.72
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "01-01-2022",
+      "name": "Rose",
+      "price": 0.00
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "28-12-2021",
+      "name": "Tulip",
+      "price": 1.49
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "31-12-2021",
+      "name": "Alstroemeria",
+      "price": 1.97
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
+      "cutDate": "04-01-2022",
+      "name": "Rose",
+      "price": 0.16
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "02-01-2022",
+      "name": "Rose",
+      "price": 4.78
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "29-12-2021",
+      "name": "Tulip",
+      "price": 0.78
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "02-01-2022",
       "name": "Tulip",
       "price": 2.10
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "31-12-2021",
+      "name": "Alstroemeria",
+      "price": 0.62
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "26-12-2021",
+      "name": "Alstroemeria",
+      "price": 2.77
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "26-12-2021",
+      "name": "Alstroemeria",
+      "price": 2.57
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "04-01-2022",
+      "name": "Tulip",
+      "price": 1.95
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "03-01-2022",
+      "name": "Alstroemeria",
+      "price": 1.98
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "31-12-2021",
+      "name": "Tulip",
+      "price": 4.92
+    },
+    {
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "29-12-2021",
+      "name": "Tulip",
+      "price": 4.49
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "30-12-2021",
+      "name": "Rose",
+      "price": 2.13
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "30-12-2021",
+      "name": "Tulip",
+      "price": 1.52
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "04-01-2022",
+      "name": "Rose",
+      "price": 1.35
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "30-12-2021",
+      "name": "Rose",
+      "price": 1.10
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "01-01-2022",
+      "name": "Rose",
+      "price": 4.74
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
+      "cutDate": "28-12-2021",
+      "name": "Alstroemeria",
+      "price": 2.17
+    },
+    {
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "31-12-2021",
+      "name": "Alstroemeria",
+      "price": 3.46
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "03-01-2022",
+      "name": "Tulip",
+      "price": 4.26
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "02-01-2022",
+      "name": "Rose",
+      "price": 1.31
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
+      "cutDate": "02-01-2022",
+      "name": "Tulip",
+      "price": 3.49
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "02-01-2022",
+      "name": "Alstroemeria",
+      "price": 0.97
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "05-01-2022",
+      "name": "Tulip",
+      "price": 1.74
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "04-01-2022",
+      "name": "Tulip",
+      "price": 0.38
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "05-01-2022",
+      "name": "Alstroemeria",
+      "price": 0.23
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "27-12-2021",
+      "name": "Rose",
+      "price": 3.39
+    },
+    {
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "30-12-2021",
+      "name": "Alstroemeria",
+      "price": 3.24
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "02-01-2022",
+      "name": "Alstroemeria",
+      "price": 2.13
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "03-01-2022",
+      "name": "Alstroemeria",
+      "price": 2.76
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "01-01-2022",
+      "name": "Alstroemeria",
+      "price": 3.92
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "02-01-2022",
+      "name": "Tulip",
+      "price": 4.65
+    },
+    {
+      "color": "White",
+      "stemLength": 40,
+      "cutDate": "27-12-2021",
+      "name": "Rose",
+      "price": 4.37
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "30-12-2021",
+      "name": "Tulip",
+      "price": 2.41
     },
     {
       "color": "White",
       "stemLength": 60,
       "cutDate": "02-01-2022",
       "name": "Alstroemeria",
-      "price": 3.22
+      "price": 1.57
     },
     {
-      "color": "Yellow",
-      "stemLength": 40,
-      "cutDate": "31-12-2021",
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "28-12-2021",
       "name": "Alstroemeria",
-      "price": 4.64
-    },
-    {
-      "color": "White",
-      "stemLength": 40,
-      "cutDate": "26-12-2021",
-      "name": "Rose",
-      "price": 3.94
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "27-12-2021",
-      "name": "Tulip",
-      "price": 1.94
+      "price": 1.30
     },
     {
       "color": "Red",
       "stemLength": 60,
-      "cutDate": "27-12-2021",
-      "name": "Rose",
-      "price": 2.22
-    },
-    {
-      "color": "White",
-      "stemLength": 60,
-      "cutDate": "27-12-2021",
+      "cutDate": "29-12-2021",
       "name": "Alstroemeria",
-      "price": 2.59
+      "price": 0.05
     },
     {
       "color": "White",
       "stemLength": 40,
-      "cutDate": "26-12-2021",
+      "cutDate": "03-01-2022",
       "name": "Rose",
-      "price": 1.92
+      "price": 2.74
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "04-01-2022",
+      "name": "Alstroemeria",
+      "price": 4.53
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 60,
+      "cutDate": "02-01-2022",
+      "name": "Alstroemeria",
+      "price": 4.32
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "26-12-2021",
+      "name": "Tulip",
+      "price": 4.17
+    },
+    {
+      "color": "White",
+      "stemLength": 60,
+      "cutDate": "31-12-2021",
+      "name": "Alstroemeria",
+      "price": 4.56
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "28-12-2021",
+      "name": "Rose",
+      "price": 0.72
+    },
+    {
+      "color": "Red",
+      "stemLength": 50,
+      "cutDate": "30-12-2021",
+      "name": "Alstroemeria",
+      "price": 4.97
+    },
+    {
+      "color": "Yellow",
+      "stemLength": 50,
+      "cutDate": "29-12-2021",
+      "name": "Rose",
+      "price": 1.29
+    },
+    {
+      "color": "Red",
+      "stemLength": 60,
+      "cutDate": "28-12-2021",
+      "name": "Tulip",
+      "price": 4.35
+    },
+    {
+      "color": "White",
+      "stemLength": 50,
+      "cutDate": "28-12-2021",
+      "name": "Rose",
+      "price": 1.08
+    },
+    {
+      "color": "Red",
+      "stemLength": 40,
+      "cutDate": "30-12-2021",
+      "name": "Rose",
+      "price": 4.73
     }
   ],
   "accessories": [
     {
       "color": "Silver",
       "name": "Ribbon",
-      "price": 0.12
+      "price": 0.77
+    },
+    {
+      "color": "Silver",
+      "name": "PackingPaper",
+      "price": 0.07
     },
     {
       "color": "Craft",
       "name": "PackingPaper",
-      "price": 1.13
-    },
-    {
-      "color": "Golden",
-      "name": "Ribbon",
-      "price": 0.56
-    },
-    {
-      "color": "Silver",
-      "name": "GiftBox",
-      "price": 0.43
-    },
-    {
-      "color": "Golden",
-      "name": "Ribbon",
-      "price": 1.62
+      "price": 1.58
     },
     {
       "color": "Silver",
       "name": "Ribbon",
-      "price": 0.18
+      "price": 0.32
     },
     {
-      "color": "Red",
+      "color": "Golden",
+      "name": "GiftBox",
+      "price": 1.20
+    },
+    {
+      "color": "Silver",
       "name": "Ribbon",
-      "price": 0.16
+      "price": 0.58
     },
     {
-      "color": "Craft",
-      "name": "GiftBox",
-      "price": 1.87
-    },
-    {
-      "color": "Craft",
-      "name": "GiftBox",
-      "price": 1.08
-    },
-    {
-      "color": "Craft",
-      "name": "GiftBox",
-      "price": 0.65
+      "color": "Silver",
+      "name": "Ribbon",
+      "price": 0.05
     },
     {
       "color": "Silver",
       "name": "GiftBox",
-      "price": 0.10
-    },
-    {
-      "color": "Golden",
-      "name": "Ribbon",
-      "price": 1.00
-    },
-    {
-      "color": "Golden",
-      "name": "GiftBox",
-      "price": 1.97
-    },
-    {
-      "color": "Golden",
-      "name": "Ribbon",
-      "price": 1.63
+      "price": 0.07
     },
     {
       "color": "Craft",
       "name": "PackingPaper",
+      "price": 0.78
+    },
+    {
+      "color": "Craft",
+      "name": "GiftBox",
+      "price": 0.78
+    },
+    {
+      "color": "Craft",
+      "name": "PackingPaper",
+      "price": 0.71
+    },
+    {
+      "color": "Golden",
+      "name": "PackingPaper",
+      "price": 0.63
+    },
+    {
+      "color": "Silver",
+      "name": "PackingPaper",
+      "price": 0.74
+    },
+    {
+      "color": "Craft",
+      "name": "GiftBox",
       "price": 1.36
     },
     {
       "color": "Golden",
+      "name": "PackingPaper",
+      "price": 0.44
+    },
+    {
+      "color": "Silver",
+      "name": "GiftBox",
+      "price": 1.69
+    },
+    {
+      "color": "Golden",
       "name": "Ribbon",
-      "price": 0.36
+      "price": 0.71
     },
     {
       "color": "Silver",
-      "name": "GiftBox",
-      "price": 0.52
-    },
-    {
-      "color": "Silver",
-      "name": "GiftBox",
-      "price": 0.94
+      "name": "Ribbon",
+      "price": 1.06
     },
     {
       "color": "Craft",
       "name": "GiftBox",
-      "price": 1.49
+      "price": 0.70
     },
     {
       "color": "Golden",
-      "name": "GiftBox",
-      "price": 1.33
+      "name": "Ribbon",
+      "price": 0.85
     },
     {
-      "color": "Golden",
+      "color": "Silver",
+      "name": "Ribbon",
+      "price": 1.22
+    },
+    {
+      "color": "Craft",
       "name": "PackingPaper",
-      "price": 0.96
-    },
-    {
-      "color": "Silver",
-      "name": "GiftBox",
-      "price": 1.11
-    },
-    {
-      "color": "Silver",
-      "name": "PackingPaper",
-      "price": 0.66
-    },
-    {
-      "color": "Silver",
-      "name": "Ribbon",
-      "price": 0.24
-    },
-    {
-      "color": "Silver",
-      "name": "GiftBox",
-      "price": 0.27
-    },
-    {
-      "color": "Silver",
-      "name": "Ribbon",
-      "price": 1.44
-    },
-    {
-      "color": "Red",
-      "name": "Ribbon",
       "price": 0.73
     },
     {
-      "color": "Golden",
+      "color": "Craft",
       "name": "PackingPaper",
-      "price": 0.51
-    },
-    {
-      "color": "Silver",
-      "name": "GiftBox",
-      "price": 1.91
-    },
-    {
-      "color": "Red",
-      "name": "Ribbon",
-      "price": 1.37
-    },
-    {
-      "color": "Golden",
-      "name": "GiftBox",
-      "price": 0.79
+      "price": 0.84
     },
     {
       "color": "Craft",
       "name": "PackingPaper",
-      "price": 1.74
+      "price": 0.89
+    },
+    {
+      "color": "Golden",
+      "name": "Ribbon",
+      "price": 1.59
+    },
+    {
+      "color": "Silver",
+      "name": "GiftBox",
+      "price": 0.09
+    },
+    {
+      "color": "Golden",
+      "name": "PackingPaper",
+      "price": 1.91
+    },
+    {
+      "color": "Silver",
+      "name": "PackingPaper",
+      "price": 1.78
+    },
+    {
+      "color": "Golden",
+      "name": "Ribbon",
+      "price": 0.42
     },
     {
       "color": "Golden",
       "name": "GiftBox",
-      "price": 1.13
+      "price": 0.83
+    },
+    {
+      "color": "Craft",
+      "name": "PackingPaper",
+      "price": 0.48
+    },
+    {
+      "color": "Craft",
+      "name": "GiftBox",
+      "price": 0.28
+    },
+    {
+      "color": "Craft",
+      "name": "GiftBox",
+      "price": 1.18
+    },
+    {
+      "color": "Craft",
+      "name": "PackingPaper",
+      "price": 1.99
     },
     {
       "color": "Silver",
-      "name": "Ribbon",
-      "price": 0.64
+      "name": "PackingPaper",
+      "price": 0.97
+    },
+    {
+      "color": "Craft",
+      "name": "GiftBox",
+      "price": 0.55
+    },
+    {
+      "color": "Golden",
+      "name": "GiftBox",
+      "price": 1.89
     },
     {
       "color": "Golden",
       "name": "Ribbon",
-      "price": 0.96
+      "price": 1.79
+    },
+    {
+      "color": "Golden",
+      "name": "PackingPaper",
+      "price": 1.19
+    },
+    {
+      "color": "Silver",
+      "name": "PackingPaper",
+      "price": 1.01
+    },
+    {
+      "color": "Golden",
+      "name": "PackingPaper",
+      "price": 1.54
+    },
+    {
+      "color": "Craft",
+      "name": "GiftBox",
+      "price": 1.24
+    },
+    {
+      "color": "Silver",
+      "name": "PackingPaper",
+      "price": 1.51
+    },
+    {
+      "color": "Craft",
+      "name": "PackingPaper",
+      "price": 1.01
+    },
+    {
+      "color": "Red",
+      "name": "Ribbon",
+      "price": 0.87
+    },
+    {
+      "color": "Golden",
+      "name": "GiftBox",
+      "price": 0.29
+    },
+    {
+      "color": "Golden",
+      "name": "GiftBox",
+      "price": 0.05
+    },
+    {
+      "color": "Craft",
+      "name": "PackingPaper",
+      "price": 1.52
     },
     {
       "color": "Silver",
@@ -884,74 +949,9 @@
       "price": 1.27
     },
     {
-      "color": "Craft",
-      "name": "GiftBox",
-      "price": 1.25
-    },
-    {
-      "color": "Golden",
-      "name": "GiftBox",
-      "price": 0.76
-    },
-    {
-      "color": "Golden",
-      "name": "PackingPaper",
-      "price": 0.84
-    },
-    {
-      "color": "Craft",
-      "name": "PackingPaper",
-      "price": 1.64
-    },
-    {
-      "color": "Golden",
-      "name": "Ribbon",
-      "price": 0.48
-    },
-    {
-      "color": "Craft",
-      "name": "PackingPaper",
-      "price": 1.58
-    },
-    {
-      "color": "Craft",
-      "name": "PackingPaper",
-      "price": 0.37
-    },
-    {
-      "color": "Golden",
-      "name": "Ribbon",
-      "price": 0.53
-    },
-    {
-      "color": "Golden",
-      "name": "PackingPaper",
-      "price": 0.48
-    },
-    {
-      "color": "Golden",
-      "name": "GiftBox",
-      "price": 0.28
-    },
-    {
-      "color": "Golden",
-      "name": "GiftBox",
-      "price": 0.65
-    },
-    {
       "color": "Silver",
       "name": "PackingPaper",
-      "price": 1.59
-    },
-    {
-      "color": "Craft",
-      "name": "PackingPaper",
-      "price": 0.49
-    },
-    {
-      "color": "Craft",
-      "name": "GiftBox",
-      "price": 1.57
+      "price": 0.73
     }
   ]
 }

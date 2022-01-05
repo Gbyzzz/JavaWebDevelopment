@@ -11,6 +11,7 @@ import java.util.Locale;
 public class MakeBouquetByFlowerType implements MakeBouquetService {
     @Override
     public void makeBouquet (Bouquet bouquet,  String... str){
+        bouquet.setName(str[0].toLowerCase() + " bouquet");
         for(Flowers flower : AllGoods.getAllGoods().getFlowers()){
             if(flower.getName().toLowerCase(Locale.ROOT).equals(str[0].toLowerCase(Locale.ROOT))){
                 bouquet.add(flower);
