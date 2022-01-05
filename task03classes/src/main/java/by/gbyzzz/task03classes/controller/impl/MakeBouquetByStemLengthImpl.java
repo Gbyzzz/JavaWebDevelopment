@@ -1,5 +1,6 @@
 package by.gbyzzz.task03classes.controller.impl;
 
+import by.gbyzzz.task03classes.beans.AllGoods;
 import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.controller.command.Command;
 import by.gbyzzz.task03classes.services.factory.ServiceFactory;
@@ -20,7 +21,10 @@ public class MakeBouquetByStemLengthImpl implements Command {
         String accessory = String.valueOf(ioData.input().next());
         ioData.output(current.getString("accessoryColorStr"));
         String accessoryColor = String.valueOf(ioData.input().next());
-        serviceFactory.getMakeBouquetByStemLength().makeBouquet(bouquet, stemLength, accessory, accessoryColor);
+        bouquet.setName(stemLength + " cm bouquet");
+        bouquet.setFlowers(serviceFactory.getFindFlowerByStemLength().find(AllGoods.getAllGoods().getFlowers(),stemLength));
+        bouquet.setAccessories(serviceFactory.getFindAccessory().find(AllGoods.getAllGoods().getAccessories(), accessory, accessoryColor));
+
         ioData.output(bouquet);
     }
 }

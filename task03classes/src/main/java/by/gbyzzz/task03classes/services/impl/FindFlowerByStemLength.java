@@ -1,13 +1,12 @@
 package by.gbyzzz.task03classes.services.impl;
 
-import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.beans.Flowers;
-import by.gbyzzz.task03classes.services.BouquetFindService;
+import by.gbyzzz.task03classes.services.FindService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindFlowerByStemLength implements BouquetFindService {
+public class FindFlowerByStemLength implements FindService<Flowers> {
     @Override
     public List<Flowers> find(List<Flowers> flowers, String ... str){
     List<Flowers> foundFlowers = new ArrayList<>();

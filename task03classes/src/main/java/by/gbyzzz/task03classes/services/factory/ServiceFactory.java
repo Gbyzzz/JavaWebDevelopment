@@ -6,11 +6,12 @@ import by.gbyzzz.task03classes.services.impl.*;
 
 public final class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
-    private final MakeBouquetService makeBouquetByStemLength = new MakeBouquetByStemLength();
-    private final MakeBouquetService makeBouquetByFlowerType = new MakeBouquetByFlowerType();
-    private final MakeBouquetService makeBouquetByColor = new MakeBouquetByColor();
+
     private final BouquetSortService sortBouquetByCutDate = new SortBouquetByCutData();
-    private final BouquetFindService findFlowerByStemLength = new FindFlowerByStemLength();
+    private final FindService findFlowerByStemLength = new FindFlowerByStemLength();
+    private final FindService findFlowerByColor = new FindFlowerByColor();
+    private final FindService findFlowerByType = new FindFlowerByType();
+    private final FindService findAccessory = new FindAccessory();
     private final ParseJSONService parseJSON = new ParseJSON();
     private final ParseJSONService writeJSON = new WriteToJSON();
     private final ValidatorService validatorService = new ValidatorImpl();
@@ -26,19 +27,20 @@ public final class ServiceFactory {
         return sortBouquetByCutDate;
     }
 
-    public MakeBouquetService getMakeBouquetByStemLength() {
-        return makeBouquetByStemLength;
-    }
-    public MakeBouquetService getMakeBouquetByFlowerType() {
-        return makeBouquetByFlowerType;
-    }
-    public MakeBouquetService getMakeBouquetByColor() {
-        return makeBouquetByColor;
-    }
-
-    public BouquetFindService getFindFlowerByStemLength() {
+    public FindService getFindFlowerByStemLength() {
         return findFlowerByStemLength;
     }
+    public FindService getFindFlowerByColor() {
+        return findFlowerByColor;
+    }
+    public FindService getFindFlowerByType() {
+        return findFlowerByType;
+    }
+    public FindService getFindAccessory() {
+        return findAccessory;
+    }
+
+
     public ParseJSONService getParseJSON() {
         return parseJSON;
     }

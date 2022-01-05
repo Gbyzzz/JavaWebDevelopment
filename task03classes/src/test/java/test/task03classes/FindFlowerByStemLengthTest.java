@@ -14,8 +14,8 @@ public class FindFlowerByStemLengthTest {
     ServiceFactory serviceFactory = ServiceFactory.getInstance();
 
 @Test
-public void findFlowerByStemLengthTest(Bouquet bouquet, String min, String max, List<Flowers> expected) {
-    assertEquals(serviceFactory.getFindFlowerByStemLength().find(bouquet, min, max), expected);
+public void findFlowerByStemLengthTest(List<Flowers> flowers, String min, String max, List<Flowers> expected) {
+    assertEquals(serviceFactory.getFindFlowerByStemLength().find(flowers, min, max), expected);
 }
 
 }

@@ -51,8 +51,8 @@ public class Flowers extends Goods{
         return "\n" + "Flowers{" + "name: " + getName() +
                 ", color:" + getColor() +
                 ", price: " + getPrice() +
-                ", stemLength=" + stemLength +
-                ", cutDate=" + df.format(cutDate) +
+                ", stemLength: " + stemLength +
+                ", cutDate: " + df.format(cutDate) +
                 '}';
     }
 }

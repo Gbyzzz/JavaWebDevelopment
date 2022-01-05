@@ -34,7 +34,19 @@ public class Bouquet extends AllGoods {
 
 
     public void setFlowers(List<Flowers> flowers) {
-        this.flowers = flowers;
+        super.flowers = flowers;
+    }
+    public void setAccessories(List<Accessories> accessories) {
+        super.accessories = accessories;
+    }
+
+    public void setTotalPrice() {
+        for(Flowers flower : super.flowers){
+            totalPrice = totalPrice.add(flower.getPrice());
+        }
+        for(Accessories accessory : super.accessories){
+            totalPrice = totalPrice.add(accessory.getPrice());
+        }
     }
 
     @Override

@@ -3,6 +3,7 @@ package by.gbyzzz.task03classes.view.impl;
 
 import by.gbyzzz.task03classes.beans.Bouquet;
 import by.gbyzzz.task03classes.beans.Flowers;
+import by.gbyzzz.task03classes.beans.Goods;
 import by.gbyzzz.task03classes.view.IOData;
 
 import java.util.List;
@@ -76,8 +77,8 @@ public final class IODataImpl implements IOData {
     }
 
     @Override
-    public void output(List<Flowers> flowers) {
-        System.out.println(flowers);
+    public void output(List<? extends Goods> goods) {
+        System.out.println(goods);
     }
     @Override
     public void output(Bouquet bouquet) {
