@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * This class is a class which describes flowers entities.
@@ -54,5 +55,18 @@ public class Flowers extends Goods{
                 ", stemLength: " + stemLength +
                 ", cutDate: " + df.format(cutDate) +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Flowers flowers = (Flowers) o;
+        return Objects.deepEquals(getName(), flowers.getName()) && Objects.deepEquals(getPrice(), flowers.getPrice()) && stemLength == flowers.stemLength && Objects.deepEquals(color, flowers.color) && Objects.deepEquals(cutDate, flowers.cutDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getPrice(), color, stemLength, cutDate);
     }
 }

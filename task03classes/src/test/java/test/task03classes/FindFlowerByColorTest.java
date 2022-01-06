@@ -9,13 +9,13 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FindFlowerByStemLengthTest {
+public class FindFlowerByColorTest {
 
     ServiceFactory serviceFactory = ServiceFactory.getInstance();
 
-    public static Object[][] findFlowerByStemLengthData() {
+    public static Object[][] findFlowerByColorData() {
         return new Object[][]{
-                {DataProvider.list, "30", "40", DataProvider.foundStemLengthList}
+                {DataProvider.list, "red", DataProvider.foundColorList}
 //                {"30"},
 //                {"40"},
 //                {foundList}
@@ -23,8 +23,8 @@ public class FindFlowerByStemLengthTest {
     }
 
     @ParameterizedTest
-    @MethodSource("findFlowerByStemLengthData")
-public void findFlowerByStemLengthTest(List<Flowers> flowers, String min, String max, List<Flowers> expected) {
-    assertEquals(expected, serviceFactory.getFindFlowerByStemLength().find(flowers, min, max));
-}
+    @MethodSource("findFlowerByColorData")
+    public void findFlowerByColorTest(List<Flowers> flowers, String color, List<Flowers> expected) {
+        assertEquals(expected, serviceFactory.getFindFlowerByColor().find(flowers, color));
+    }
 }
