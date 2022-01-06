@@ -16,6 +16,9 @@ public final class ServiceFactory {
     private final JSONService writeJSON = new WriteToJSON();
     private final ValidatorService validatorService = new ValidatorImpl();
     private final DataGeneratorService dataGeneratorService = new GenerateData();
+    private final ValidateFlowersService validateFlowersService = new ValidateFlowers();
+    private final GetPriceService getFlowersTotalPrice = new GetFlowersTotalPrice();
+    private final GetPriceService getAccessoriesTotalPrice = new GetAccessoriesTotalPrice();
 
 
     private ServiceFactory() { }
@@ -52,4 +55,9 @@ public final class ServiceFactory {
     public ValidatorService getValidatorService() {return validatorService;}
 
     public DataGeneratorService getDateGeneratorService(){return dataGeneratorService;}
+
+    public ValidateFlowersService getValidateFlowersService(){return validateFlowersService;}
+
+    public GetPriceService getFlowersTotalPrice(){return getFlowersTotalPrice;}
+    public GetPriceService getAccessoriesTotalPrice(){return getAccessoriesTotalPrice;}
 }

@@ -10,15 +10,12 @@ import java.util.List;
  */
 
 public class Bouquet extends AllGoods {
-    private BigDecimal totalPrice = BigDecimal.ZERO;
 
     public void add(Flowers flower){
         super.flowers.add(flower);
-        totalPrice = totalPrice.add(flower.getPrice());
     }
     public void add(Accessories accessory){
         super.accessories.add(accessory);
-        totalPrice = totalPrice.add(accessory.getPrice());
     }
     public void setName(String name){
         super.setName(name);
@@ -40,15 +37,6 @@ public class Bouquet extends AllGoods {
         super.accessories = accessories;
     }
 
-    public void setTotalPrice() {
-        for(Flowers flower : super.flowers){
-            totalPrice = totalPrice.add(flower.getPrice());
-        }
-        for(Accessories accessory : super.accessories){
-            totalPrice = totalPrice.add(accessory.getPrice());
-        }
-    }
-
     @Override
     public String toString() {
         String bouquetString = new String();
@@ -58,7 +46,7 @@ public class Bouquet extends AllGoods {
             bouquetString += accessory.toString();
         return "Bouquet{" + "name: " + super.name + ",\n"
                 + "bouquet:" + bouquetString + "\n"
-                + "total price:" + totalPrice + '}';
+                + '}';
     }
 }
 
