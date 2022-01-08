@@ -15,10 +15,8 @@ public class FindFlowerByTypeTest {
 
     public static Object[][] findFlowerByTypeTest() {
         return new Object[][]{
-                {DataProvider.list, "rose", DataProvider.foundTypeList}
-//                {"30"},
-//                {"40"},
-//                {foundList}
+                {DataProvider.flowersList1, "rose", DataProvider.foundFlowersTypeList1},
+                {DataProvider.flowersList2, "alstroemeria", DataProvider.foundFlowersTypeList2}
         };
     }
 

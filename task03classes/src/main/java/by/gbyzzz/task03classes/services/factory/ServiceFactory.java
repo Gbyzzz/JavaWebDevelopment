@@ -7,7 +7,7 @@ import by.gbyzzz.task03classes.services.impl.*;
 public final class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 
-    private final BouquetSortService sortBouquetByCutDate = new SortBouquetByCutData();
+    private final SortService sortBouquetByCutDate = new SortFlowersByCutData();
     private final FindService findFlowerByStemLength = new FindFlowerByStemLength();
     private final FindService findFlowerByColor = new FindFlowerByColor();
     private final FindService findFlowerByType = new FindFlowerByType();
@@ -26,7 +26,7 @@ public final class ServiceFactory {
         return INSTANCE;
     }
 
-    public BouquetSortService getSortBouquetByCutDate() {
+    public SortService getSortBouquetByCutDate() {
         return sortBouquetByCutDate;
     }
 

@@ -15,10 +15,8 @@ public class FindFlowerByStemLengthTest {
 
     public static Object[][] findFlowerByStemLengthData() {
         return new Object[][]{
-                {DataProvider.list, "30", "40", DataProvider.foundStemLengthList}
-//                {"30"},
-//                {"40"},
-//                {foundList}
+                {DataProvider.flowersList1, "30", "40", DataProvider.foundFlowersStemLengthList1},
+                {DataProvider.flowersList2, "55", "60", DataProvider.foundFlowersStemLengthList2}
         };
     }
 

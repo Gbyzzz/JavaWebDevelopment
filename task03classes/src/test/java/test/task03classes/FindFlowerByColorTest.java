@@ -15,10 +15,8 @@ public class FindFlowerByColorTest {
 
     public static Object[][] findFlowerByColorData() {
         return new Object[][]{
-                {DataProvider.list, "red", DataProvider.foundColorList}
-//                {"30"},
-//                {"40"},
-//                {foundList}
+                {DataProvider.flowersList1, "red", DataProvider.foundFlowersColorList1},
+                {DataProvider.flowersList2, "yellow", DataProvider.foundFlowersColorList2}
         };
     }
 

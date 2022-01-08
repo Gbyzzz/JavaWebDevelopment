@@ -48,5 +48,6 @@ public class Bouquet extends AllGoods {
                 + "bouquet:" + bouquetString + "\n"
                 + '}';
     }
+
 }
 

@@ -24,6 +24,7 @@ public class FindFlowerByStemLengthImpl implements Command {
         ioData.output(current.getString("maxStemStr"));
         LOGGER.trace("Getting input from user");
         String max = String.valueOf(ioData.input().next());
+        LOGGER.trace("Looking for flowers according to stem length range and output them in console");
         ioData.output(serviceFactory.getFindFlowerByStemLength().find(bouquet.getFlowers(), min, max));
     }
 }
