@@ -2,12 +2,9 @@ package by.gbyzzz.task04figures.dal.repository;
 
 import by.gbyzzz.task04figures.beans.Pyramid;
 import by.gbyzzz.task04figures.dal.repository.specification.PyramidSpecification;
-import by.gbyzzz.task04figures.dal.repository.specification.find.FindPyramidByName;
-
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class PyramidRepository implements Repository <Pyramid>{
     private static final PyramidRepository repository = new PyramidRepository();
@@ -25,15 +22,21 @@ public class PyramidRepository implements Repository <Pyramid>{
 
     @Override
     public void createOrUpdate(Pyramid pyramid) {
+        Integer foundId = null;
         for(Integer key : storage.keySet()){
-            if(storage.get(key).getName().equals(pyramid.getName())){ //TODO не работает тут
-                storage.put(key, pyramid);
+            if(storage.get(key).getName().equals(pyramid.getName())) {
+                foundId = key;
             }
         }
-        idCounter++;
-        storage.put(idCounter, pyramid);
+        if(foundId == null) {
+            idCounter++;
+            storage.put(idCounter, pyramid);
+        } else {
+            storage.put(foundId, pyramid);
+        }
 
     }
+
 
     @Override
     public void remove(Pyramid pyramid) {
