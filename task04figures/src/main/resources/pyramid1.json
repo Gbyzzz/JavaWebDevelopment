@@ -1,6 +1,7 @@
 [ {
   "name": "Pyramid",
   "height": 60,
+  "heightParallelAxis": "y",
   "points": [
     {
       "x": 0,
@@ -19,6 +20,7 @@
   {
     "name": "Pyramid2",
     "height": 80,
+    "heightParallelAxis": "z",
     "points": [
       {
         "x": 0.7,

@@ -1,6 +1,7 @@
 package by.gbyzzz.task04figures.dal.repository;
 
 import by.gbyzzz.task04figures.beans.Figure;
+import by.gbyzzz.task04figures.beans.Pyramid;
 import by.gbyzzz.task04figures.beans.registrator.Registrator;
 import by.gbyzzz.task04figures.dal.repository.specification.PyramidSpecification;
 
@@ -14,11 +15,15 @@ public class RegistratorRepository implements Repository {
         return registratorRepository;
     }
 
-    private HashMap<Integer, Registrator> storage = new HashMap<>();
+    private HashMap<String, Registrator> storage = new HashMap<>();
 
     @Override
     public void createOrUpdate(Figure figure) {
-
+        Registrator registrator = new Registrator();
+        if (figure instanceof Pyramid) {
+            Pyramid pyramid = (Pyramid) figure;
+           storage.put(pyramid.getName(), registrator);
+        }
     }
 
     @Override

@@ -2,9 +2,10 @@ package by.gbyzzz.task04figures.services;
 
 import by.gbyzzz.task04figures.beans.Point;
 import by.gbyzzz.task04figures.beans.Pyramid;
+import by.gbyzzz.task04figures.beans.registrator.Registrator;
 
-public class ApothemSize {
-    public double getApothemSize(Pyramid pyramid){
+public class ApothemSize implements PyramidCalculations{
+    public void calc(Pyramid pyramid, Registrator registrator){
         double x;
         double y;
         double z;
@@ -19,14 +20,20 @@ public class ApothemSize {
        z = sideCenter.getZ()-Math.abs(pyramid.getPoints().get(0).getZ()-sideCenter.getZ());
        Point center = new Point(x,y,z);
 
-       x = center.getX();
-       y = center.getY();
-       z = center.getZ()+pyramid.getHeight();
+       if(pyramid.getHeightParallelAxis().equals("x")){
+           x = center.getX() + pyramid.getHeight();
+       } else if(pyramid.getHeightParallelAxis().equals("y")){
+           y = center.getY() + pyramid.getHeight();
+       } else {
+           z = center.getZ()+pyramid.getHeight();
+       }
+
        Point heightPoint = new Point(x,y,z);
 
         double res = Math.sqrt(Math.pow(heightPoint.getX() - sideCenter.getX(), 2)
                 + Math.pow(heightPoint.getY() - sideCenter.getY(), 2)
                 + Math.pow(heightPoint.getY() - sideCenter.getY(), 2));
-        return res;
+
+        registrator.setApothem(res);
     }
 }

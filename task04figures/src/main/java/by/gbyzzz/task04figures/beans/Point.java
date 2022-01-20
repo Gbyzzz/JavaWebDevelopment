@@ -3,9 +3,9 @@ package by.gbyzzz.task04figures.beans;
 import java.util.Objects;
 
 public class Point {
-    private double x;
-    private double y;
-    private double z;
+    private Double x;
+    private Double y;
+    private Double z;
 
     public Point(double x, double y, double z) {
         this.x = x;
@@ -13,7 +13,7 @@ public class Point {
         this.z = z;
     }
 
-    public double getX() {
+    public Double getX() {
         return x;
     }
 
@@ -21,7 +21,7 @@ public class Point {
         this.x = x;
     }
 
-    public double getY() {
+    public Double getY() {
         return y;
     }
 
@@ -29,7 +29,7 @@ public class Point {
         this.y = y;
     }
 
-    public double getZ() {
+    public Double getZ() {
         return z;
     }
 
@@ -49,7 +49,7 @@ public class Point {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Point point = (Point) o;
-        return Double.compare(point.x, x) == 0 && Double.compare(point.y, y) == 0 && Double.compare(point.z, z) == 0;
+        return Objects.equals(x, point.x) && Objects.equals(y, point.y) && Objects.equals(z, point.z);
     }
 
     @Override

@@ -1,19 +1,22 @@
 package by.gbyzzz.task04figures.beans;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 public class Pyramid extends Figure {
 private String name;
-private double height;
+private Double height;
+private String heightParallelAxis;
 
-    public Pyramid(String name, double height, List<Point> points) {
-        super.setPoints(points);
+    public Pyramid(String name, Double height, String heightParallelAxis, List<Point> points) {
         this.name = name;
         this.height = height;
+        this.heightParallelAxis = heightParallelAxis.toLowerCase(Locale.ROOT);
+        super.setPoints(points);
     }
 
-    public double getHeight() {
+    public Double getHeight() {
         return height;
     }
 
@@ -25,11 +28,16 @@ private double height;
         return super.getPoints();
     }
 
+    public String getHeightParallelAxis() {
+        return heightParallelAxis;
+    }
+
     @Override
     public String toString() {
         return "{" +
                 "name: " + name + '\'' +
                 ", height: " + height +
+                ", height is parallel '" + heightParallelAxis + "' axis" +
                 ", points: " + getPoints() +
                 '}';
     }
