@@ -1,15 +1,12 @@
 package by.gbyzzz.task04figures.beans.registrator;
 
 public class Registrator {
-    double perimeter;
-    double volume;
-    double area;
-    double baseSide;
-    double pyramidEdge;
-    double apothem;
-    double ratio;
+    private Double perimeter;
+    private Double volume;
+    private Double area;
+    private Double ratio;
 
-    public double getRatio() {
+    public Double getRatio() {
         return ratio;
     }
 
@@ -17,7 +14,7 @@ public class Registrator {
         this.ratio = ratio;
     }
 
-    public double getPerimeter() {
+    public Double getPerimeter() {
         return perimeter;
     }
 
@@ -25,7 +22,7 @@ public class Registrator {
         this.perimeter = perimeter;
     }
 
-    public double getVolume() {
+    public Double getVolume() {
         return volume;
     }
 
@@ -33,7 +30,7 @@ public class Registrator {
         this.volume = volume;
     }
 
-    public double getArea() {
+    public Double getArea() {
         return area;
     }
 
@@ -41,27 +38,4 @@ public class Registrator {
         this.area = area;
     }
 
-    public double getBaseSide() {
-        return baseSide;
-    }
-
-    public void setBaseSide(double baseSide) {
-        this.baseSide = baseSide;
-    }
-
-    public double getPyramidEdge() {
-        return pyramidEdge;
-    }
-
-    public void setPyramidEdge(double pyramidEdge) {
-        this.pyramidEdge = pyramidEdge;
-    }
-
-    public double getApothem() {
-        return apothem;
-    }
-
-    public void setApothem(double apothem) {
-        this.apothem = apothem;
-    }
 }
