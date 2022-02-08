@@ -1,12 +1,12 @@
 [ {
   "name": "Pyramid",
   "height": 60,
-  "heightParallelAxis": "y",
+  "heightParallelAxis": "x",
   "points": [
     {
       "x": 0,
-      "y": 0,
-      "z": 0
+      "y": 100,
+      "z": 50
 
     },
     {
@@ -25,12 +25,12 @@
       {
         "x": 0.7,
         "y": 5,
-        "z": 0.5
+        "z": -10
       },
       {
         "x": 0.7,
-        "y": 5,
-        "z": 4.8
+        "y": 40,
+        "z": -10
       }
     ]
   }

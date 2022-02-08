@@ -7,7 +7,7 @@ public class Point {
     private Double y;
     private Double z;
 
-    public Point(double x, double y, double z) {
+    public Point(final double x, final double y, final double z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -17,7 +17,7 @@ public class Point {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(final double x) {
         this.x = x;
     }
 
@@ -25,7 +25,7 @@ public class Point {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(final double y) {
         this.y = y;
     }
 
@@ -33,21 +33,23 @@ public class Point {
         return z;
     }
 
-    public void setZ(double z) {
+    public void setZ(final double z) {
         this.z = z;
     }
 
     @Override
     public String toString() {
-        return x +
-                ";" + y +
-                ";" + z;
+        return x + ";" + y + ";" + z;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Point point = (Point) o;
         return Objects.equals(x, point.x) && Objects.equals(y, point.y) && Objects.equals(z, point.z);
     }

@@ -1,0 +1,122 @@
+[ {
+      "name": "Pyramid",
+      "height": 60,
+      "heightParallelAxis": "x",
+      "points": [
+        {
+            "x": 0,
+            "y": 5,
+            "z": 7
+
+        },
+        {
+            "x": 0,
+            "y": 6,
+            "z": 4
+
+        }
+      ]
+    },
+    {
+      "name": "Pyramid1",
+      "height": 80,
+      "heightParallelAxis": "y",
+      "points": [
+        {
+            "x": 0.7,
+            "y": 5,
+            "z": 0.5
+        },
+        {
+            "x": 0.7,
+            "y": 5,
+            "z": 4.8
+        }
+      ]
+    },
+  {
+    "name": "Pyramid2",
+    "height": 90,
+    "heightParallelAxis": "x",
+    "points": [
+      {
+        "x": 30,
+        "y": 6,
+        "z": 0.5
+      },
+      {
+        "x": 30,
+        "y": 10,
+        "z": 4.8
+      }
+    ]
+  },
+  {
+    "name": "Pyramid3",
+    "height": 50,
+    "heightParallelAxis": "y",
+    "points": [
+      {
+        "x": 10,
+        "y": 8,
+        "z": 0.5
+      },
+      {
+        "x": 100,
+        "y": 8,
+        "z": 4.8
+      }
+    ]
+  },
+  {
+    "name": "Pyramid4",
+    "height": 10,
+    "heightParallelAxis": "z",
+    "points": [
+      {
+        "x": 80,
+        "y": -46,
+        "z": 0.5
+      },
+      {
+        "x": -90,
+        "y": 45,
+        "z": 0.5
+      }
+    ]
+  },
+  {
+    "name": "Pyramid8",
+    "height": 110,
+    "heightParallelAxis": "z",
+    "points": [
+      {
+        "x": 5.3,
+        "y": 9,
+        "z": -6
+      },
+      {
+        "x": 41,
+        "y": -5,
+        "z": -6
+      }
+    ]
+  },
+  {
+    "name": "Pyramid5",
+    "height": 140,
+    "heightParallelAxis": "z",
+    "points": [
+      {
+        "x": 5.3,
+        "y": 9,
+        "z": -6
+      },
+      {
+        "x": 41,
+        "y": -5,
+        "z": -6
+      }
+    ]
+  }
+  ]

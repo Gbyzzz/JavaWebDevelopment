@@ -1,10 +1,10 @@
 [ {
       "name": "Pyramid",
       "height": 60,
-      "heightParallelAxis": "X",
+      "heightParallelAxis": "x",
       "points": [
         {
-            "x": 0,
+            "x": j,
             "y": 5,
             "z": 7
 
