@@ -1,19 +1,19 @@
 package by.gbyzzz.task05multithreading.service.impl.matrixmultithreading;
 
 public class MatrixMTSetUp {
-    public int totalTasks(Number[][] arr){
+    public static int totalTasks(final Number[][] arr) {
         int tasks = 1;
-    if (arr.length >= arr[0].length){
-        tasks = arr.length;
-    } else if (arr.length < arr[0].length) {
-        tasks = arr[0].length;
-    }
-    return tasks;
+        if (arr.length >= arr[0].length) {
+            tasks = arr.length;
+        } else if (arr.length < arr[0].length) {
+            tasks = arr[0].length;
+        }
+        return tasks;
     }
 
-    public String taskTarget(Number[][] arr){
+    public static String taskTarget(final Number[][] arr) {
         String taskTarget = null;
-        if (arr.length >= arr[0].length){
+        if (arr.length >= arr[0].length) {
             taskTarget = "row";
         } else if (arr.length < arr[0].length) {
             taskTarget = "column";
@@ -21,7 +21,7 @@ public class MatrixMTSetUp {
         return taskTarget;
     }
 
-    public int tasksToThread (int tasks, int maxTreads) {
+    public static int tasksToThread(final int tasks, final int maxTreads) {
         int tasksToThread;
 
         if (tasks > maxTreads) {
@@ -30,7 +30,7 @@ public class MatrixMTSetUp {
                 tasksToThread++;
             }
         } else {
-            tasksToThread = tasks;
+            tasksToThread = 1;
         }
         return tasksToThread;
     }

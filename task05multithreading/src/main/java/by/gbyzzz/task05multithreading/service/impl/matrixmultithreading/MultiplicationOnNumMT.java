@@ -17,7 +17,7 @@ public class MultiplicationOnNumMT implements ArrayService, Callable<Number[]> {
     private static int numToMult;
 
     @Override
-    public MyArray execute(String... matrix) {
+    public MyArray execute(final String... matrix) {
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
@@ -48,16 +48,9 @@ public class MultiplicationOnNumMT implements ArrayService, Callable<Number[]> {
     public Number[] call() throws Exception {
         semaphore.acquire();
         Number[] arr;
-//        if (taskTarget.equals("row")) {
         arr = arr1[i];
         for (int r = 0; r < arr.length; r++) {
             arr[r] = (Integer) arr[r] * numToMult;
-//            }
-//        } else {
-//            arr = new Number[arr1[0].length];
-//            for(int c = 0; c < arr1[0].length; c++){
-//                arr[c] = (Integer) arr1[c][i] * numToMult;
-//            }
         }
         semaphore.release();
         return arr;
