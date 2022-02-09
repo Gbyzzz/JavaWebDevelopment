@@ -23,7 +23,6 @@ public class MatrixMTSetUp {
 
     public static int tasksToThread(final int tasks, final int maxTreads) {
         int tasksToThread;
-
         if (tasks > maxTreads) {
             tasksToThread = tasks / maxTreads;
             if (tasks % maxTreads > 0) {
