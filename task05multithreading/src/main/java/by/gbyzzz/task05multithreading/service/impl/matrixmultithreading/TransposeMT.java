@@ -5,12 +5,15 @@ import by.gbyzzz.task05multithreading.dal.FileIOFactory;
 import by.gbyzzz.task05multithreading.service.ArrayService;
 import by.gbyzzz.task05multithreading.service.ValidatorService;
 import by.gbyzzz.task05multithreading.service.factory.ServiceFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Phaser;
 
 public class TransposeMT implements ArrayService, Runnable {
+    private static final Logger LOGGER = LogManager.getLogger();
     private static Phaser phaser = new Phaser();
     private static Number[][] arr1;
     private static Number[][] res;
@@ -42,6 +45,7 @@ public class TransposeMT implements ArrayService, Runnable {
 
     @Override
     public void run() {
+        LOGGER.trace(Thread.currentThread().getName() + " is working");
         int i = Integer.parseInt(Thread.currentThread().getName().substring(14));
         phaser.register();
         for (int r = tasksToThread * (i - 1); r < tasksToThread * i; r++) {

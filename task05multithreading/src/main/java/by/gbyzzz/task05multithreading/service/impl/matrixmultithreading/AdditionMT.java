@@ -56,7 +56,7 @@ public class AdditionMT implements ArrayService, Runnable {
     @Override
     public void run() {
         int v = Integer.parseInt(Thread.currentThread().getName().substring(7));
-        LOGGER.trace("executing " + Thread.currentThread());
+        LOGGER.trace(Thread.currentThread().getName() + " is working");
         if (taskTarget.equals("row")) {
             for (int r = tasksToThread * v; r < tasksToThread * (v + 1); r++) {
                 for (int j = 0; j < arr1[r].length; j++) {

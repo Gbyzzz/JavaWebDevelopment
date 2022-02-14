@@ -5,10 +5,13 @@ import by.gbyzzz.task05multithreading.dal.FileIOFactory;
 import by.gbyzzz.task05multithreading.service.ArrayService;
 import by.gbyzzz.task05multithreading.service.ValidatorService;
 import by.gbyzzz.task05multithreading.service.factory.ServiceFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.*;
 
 public class SubtractionMT implements ArrayService, Runnable {
+    private static final Logger LOGGER = LogManager.getLogger();
     private static int tasks;
     private static String taskTarget = new String();
     private static int tasksToThread = 1;
@@ -51,6 +54,7 @@ public class SubtractionMT implements ArrayService, Runnable {
 
     @Override
     public void run() {
+        LOGGER.trace(Thread.currentThread().getName() + " is working");
         int a = Integer.parseInt(Thread.currentThread().getName().substring(14));
         if (taskTarget.equals("row")) {
             System.out.println("exec" + Thread.currentThread());
