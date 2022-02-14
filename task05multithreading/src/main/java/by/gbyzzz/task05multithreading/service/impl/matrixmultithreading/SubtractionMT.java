@@ -54,7 +54,7 @@ public class SubtractionMT implements ArrayService, Runnable {
         int a = Integer.parseInt(Thread.currentThread().getName().substring(14));
         if (taskTarget.equals("row")) {
             System.out.println("exec" + Thread.currentThread());
-            for (int r = tasksToThread * a; r < tasksToThread * (a + 1); r++) {
+            for (int r = tasksToThread * (a - 1); r < tasksToThread * a; r++) {
                 for (int j = 0; j < arr1[r].length; j++) {
                     res[r][j] = arr1[r][j].intValue() - arr2[r][j].intValue();
 
@@ -62,7 +62,7 @@ public class SubtractionMT implements ArrayService, Runnable {
             }
         } else if (taskTarget.equals("column")) {
             System.out.println("exec" + Thread.currentThread() + "  " + a);
-            for (int s = tasksToThread * a - 1; s < tasksToThread * a; s++) {
+            for (int s = tasksToThread * (a - 1); s < tasksToThread * a; s++) {
                 for (int j = 0; j < arr1.length; j++) {
                     res[j][s] = arr1[j][s].intValue() - arr2[j][s].intValue();
                 }

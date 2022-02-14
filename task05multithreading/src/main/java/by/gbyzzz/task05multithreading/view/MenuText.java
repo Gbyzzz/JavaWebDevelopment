@@ -29,6 +29,10 @@ public final class MenuText {
     public void matrixMenu() {
         io.output(current.getString("matrixMenuStr"));
         io.output(current.getString("correctInputMsg"));
+    }
+    public void matrixMTMenu() {
+        io.output(current.getString("matrixMTMenuStr"));
+        io.output(current.getString("correctInputMsg"));
 
     }
 

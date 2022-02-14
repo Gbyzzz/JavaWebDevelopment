@@ -21,9 +21,8 @@ public enum CommandName {
     MATRIX_TRANSPOSE(new int[]{2, 6}),
     MATRIX_ADDITION_MT(new int[]{3, 1}),
     MATRIX_SUBTRACTION_MT(new int[]{3, 2}),
-    MATRIX_MULTIPLICATION_MT(new int[]{3, 3}),
-    MATRIX_EXPONENTIATION_MT(new int[]{3, 4}),
-    MATRIX_MULTIPLICATION_NUM_MT(new int[]{3, 5});
+    MATRIX_TRANSPOSE_MT(new int[]{3, 3}),
+    MATRIX_MULTIPLICATION_NUM_MT(new int[]{3, 4});
     private final int[] value;
 
     CommandName(final int[] value1) {

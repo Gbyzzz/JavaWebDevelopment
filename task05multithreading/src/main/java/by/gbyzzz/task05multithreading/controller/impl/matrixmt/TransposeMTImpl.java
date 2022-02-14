@@ -9,22 +9,20 @@ import by.gbyzzz.task05multithreading.view.factory.ViewFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class MatrixMultiplicationOnNumMTImpl implements Command {
+public class TransposeMTImpl  implements Command {
     private static final Logger LOGGER = LogManager.getLogger();
     @Override
     public void execute() {
         ViewFactory viewFactory = ViewFactory.getInstance();
         IOData ioData =  viewFactory.getIoData();
         ArrayServiceFactory arrayServiceFactory = ArrayServiceFactory.getInstance();
-        ArrayService arrayService = arrayServiceFactory.getMultiplicationOnNumMT();
+        ArrayService arrayService = arrayServiceFactory.getTransposeMT();
         int threadNum = Runtime.getRuntime().availableProcessors();
         if (threadNum > 4){
             threadNum--;
         }
-        ioData.output("Please input a number to multiply:");
-        String num = ioData.input().next();
-        LOGGER.trace("Executing multiplication of matrix and a num in multithreading mode");
-        MyArray a = arrayService.execute("matrix1.txt", num, String.valueOf(threadNum));
+        LOGGER.trace("Executing transposing of matrix in multithreading mode");
+        MyArray a = arrayService.execute("matrix1.txt", String.valueOf(threadNum));
         ioData.outputArr(a.getArr());
     }
 }

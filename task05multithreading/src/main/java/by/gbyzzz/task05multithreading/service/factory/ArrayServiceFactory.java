@@ -6,6 +6,7 @@ import by.gbyzzz.task05multithreading.service.impl.matrix.*;
 import by.gbyzzz.task05multithreading.service.impl.matrixmultithreading.AdditionMT;
 import by.gbyzzz.task05multithreading.service.impl.matrixmultithreading.MultiplicationOnNumMT;
 import by.gbyzzz.task05multithreading.service.impl.matrixmultithreading.SubtractionMT;
+import by.gbyzzz.task05multithreading.service.impl.matrixmultithreading.TransposeMT;
 
 public final class ArrayServiceFactory {
     private static final ArrayServiceFactory INSTANCE = new ArrayServiceFactory();
@@ -26,8 +27,7 @@ public final class ArrayServiceFactory {
     private final ArrayService additionMT = new AdditionMT();
     private final ArrayService multiplicationOnNumMT = new MultiplicationOnNumMT();
     private final ArrayService subtractionMT = new SubtractionMT();
-
-
+    private final ArrayService transposeMT = new TransposeMT();
 
     private ArrayServiceFactory() { }
     public static ArrayServiceFactory getInstance() {
@@ -101,4 +101,9 @@ public final class ArrayServiceFactory {
     public ArrayService getSubtractionMT() {
         return subtractionMT;
     }
+
+    public ArrayService getTransposeMT() {
+        return transposeMT;
+    }
+
 }

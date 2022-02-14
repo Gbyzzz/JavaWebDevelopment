@@ -12,7 +12,7 @@ public final class Controller {
         if (select[0] == menuSelection.getValue(MenuSelection.SELECT_FIVE) && select[1] == 0
                 || select[0] == menuSelection.getValue(MenuSelection.SELECT_ONE) && select[1] == menuSelection.getValue(MenuSelection.SELECT_NINE)
                 || select[0] == menuSelection.getValue(MenuSelection.SELECT_TWO) && select[1] == menuSelection.getValue(MenuSelection.SELECT_SEVEN)
-                || select[0] == menuSelection.getValue(MenuSelection.SELECT_THREE) && select[1] == menuSelection.getValue(MenuSelection.SELECT_SEVEN)) {
+                || select[0] == menuSelection.getValue(MenuSelection.SELECT_THREE) && select[1] == menuSelection.getValue(MenuSelection.SELECT_FIVE)) {
             LOGGER.trace("Exiting application");
             System.exit(0);
         }
