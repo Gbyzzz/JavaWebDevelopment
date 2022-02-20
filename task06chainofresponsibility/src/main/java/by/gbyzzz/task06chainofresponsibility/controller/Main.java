@@ -7,6 +7,8 @@ import by.gbyzzz.task06chainofresponsibility.dal.FileIOFactory;
 import by.gbyzzz.task06chainofresponsibility.service.*;
 import by.gbyzzz.task06chainofresponsibility.service.interpreter.ExpressionCalculator;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         ReversePolishNotationConverter rpn = new ReversePolishNotationConverter();
@@ -26,25 +28,32 @@ public class Main {
 //        System.out.println(ppn.calcExpr(s));
 //
         String s1 = "~(8^5|1&2<<(2|5>>2&71))|1200>>>3";
-        System.out.println(s1);
+//        System.out.println(s1);
         s1 = rpn.convert(s1);
-        System.out.println(s1);
+//        System.out.println(s1);
 //        calculator.addOperation(s1);
         s1 = calculator.calcExpression(s1);
-        System.out.println(s1);
-        System.out.println();
-        System.out.println(~(8^5|1&2<<(2|5>>2&71))|1200>>>3);
+//        System.out.println(s1);
+//        System.out.println();
+//        System.out.println(~(8^5|1&2<<(2|5>>2&71))|1200>>>3);
         String str = fileIO.getFileIO().readText("text.txt");
-        System.out.println(str);
+//        System.out.println(str);
         parser.setNextTextParser(sParser);
         sParser.setNextTextParser(lParser);
         lParser.setNextTextParser(wParser);
         wParser.setNextTextParser(symParser);
         parser.parse(text, str);
         System.out.println(text);
+        ArrayList<Component> arr = operation.sortParagraphsBySentences(text);
+        for(Component component : arr) {
+            System.out.println(component);
+        }
+        System.out.println();
 
-        text1 = text;
-        text1 = operation.sortParagraphsBySentences(text1);
+        ArrayList<String> arr1 = operation.sortSentencesByLexemes(text);
+        for(String component : arr1) {
+            System.out.println(component);
+        }
 
 //        System.out.println(text1);
 //        text2 = operation.sortSentencesByLexemes(text);
@@ -54,6 +63,6 @@ public class Main {
 //
 //        System.out.println(text3);
 
-        System.out.println(text);
+//        System.out.println(text);
     }
 }

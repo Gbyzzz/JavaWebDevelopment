@@ -11,35 +11,39 @@ import java.util.Comparator;
 
 public class TextSorter {
 
-    public Component sortParagraphsBySentences(Component component) {
+    public ArrayList sortParagraphsBySentences(Component component) {
         Comparator<Component> comparator = (o1, o2) -> {
             int first = o1.getParts().size();
             int second = o2.getParts().size();
             return Integer.compare(first, second);
         };
-        Component temp = new Composite(PartLevel.TEXT);
-        temp = component;
-        ArrayList<Component> paragraphs = temp.getParts();
+        ArrayList<Component> paragraphs = new ArrayList<>();
+        paragraphs.addAll(component.getParts());
         Collections.sort(paragraphs, comparator);
-        return temp;
+        return paragraphs;
     }
 
 
-    public Component sortSentencesByLexemes(Component component) {
-        Component temp = component;
+    public ArrayList sortSentencesByLexemes(Component component) {
         ArrayList<Component> words = new ArrayList<>();
+        ArrayList<String> sentences = new ArrayList<>();
         Comparator<Component> comparator = (o1, o2) -> {
             int first = o1.toString().length();
             int second = o2.toString().length();
             return Integer.compare(first, second);
         };
-        for (Component paragraph : temp.getParts()) {
+        for (Component paragraph : component.getParts()) {
             for (Component sentence : paragraph.getParts()) {
-                words.addAll(sentence.getParts());
-                Collections.sort(words, comparator);
+                    words = sentence.getParts();
+                    Collections.sort(words, comparator);
+                    StringBuilder stringBuilder = new StringBuilder();
+                    for (Component component1 : words){
+                        stringBuilder.append(component1.toString() + " ");
+                    }
+                    sentences.add(stringBuilder.toString());
             }
         }
-        return temp;
+        return sentences;
     }
 
     public Component sortLexemes(Component component, char c) {
