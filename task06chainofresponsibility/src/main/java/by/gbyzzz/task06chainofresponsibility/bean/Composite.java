@@ -19,11 +19,6 @@ public class Composite implements Component{
     }
 
     @Override
-    public void operation() {
-
-    }
-
-    @Override
     public void add(Component component) {
         parts.add(component);
         LOGGER.info("Adding new component to composite");
