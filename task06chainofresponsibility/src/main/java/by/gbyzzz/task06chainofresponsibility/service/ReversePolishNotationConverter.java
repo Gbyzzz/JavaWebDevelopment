@@ -1,15 +1,19 @@
 package by.gbyzzz.task06chainofresponsibility.service;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class ReversePolishNotationConverter {
+    private static final Logger LOGGER = LogManager.getLogger();
 
     final private String NUMBER = "\\d+";
-    final private String SYMBOL = "[^0-9)]";
     final String REGEX="(?<=\\d)(?=\\D)|(?=\\d)(?<=\\D)|(((?=([~|^&()]))|(?<=([~|^&()]))))";
 
     public String convert(String expression) {
+        LOGGER.info("Converting expression from text to reverse polish notation to make calculations");
         StringBuilder resultStr = new StringBuilder();
         Deque<String> stack = new ArrayDeque<>();
         String [] arr = expression.split(REGEX);

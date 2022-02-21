@@ -1,12 +1,19 @@
 package by.gbyzzz.task06chainofresponsibility.service;
 
 import by.gbyzzz.task06chainofresponsibility.bean.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Locale;
 
 public class WordParser extends TextParser {
+    private static final Logger LOGGER = LogManager.getLogger();
+
     final String WORD_REGEX = "(?=\\p{Punct})|(?<=\\p{Punct})";
 
     @Override
     void parseText(Component component, String lexeme) {
+        LOGGER.info("Parsing " + component.getPartLevel().toString().toLowerCase(Locale.ROOT) + " to words");
         String[] words = lexeme.split(WORD_REGEX);
         for(String word : words){
             if (word.length() == 1) {

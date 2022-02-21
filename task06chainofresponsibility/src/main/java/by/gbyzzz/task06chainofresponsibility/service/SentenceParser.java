@@ -4,25 +4,31 @@ import by.gbyzzz.task06chainofresponsibility.bean.Component;
 import by.gbyzzz.task06chainofresponsibility.bean.Composite;
 import by.gbyzzz.task06chainofresponsibility.bean.PartLevel;
 import by.gbyzzz.task06chainofresponsibility.bean.StringLeaf;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SentenceParser extends TextParser {
+    private static final Logger LOGGER = LogManager.getLogger();
+
     final String SENTENCE_REGEX = "(?=(\\.|\\?|\\!|\\;))|(?<=(\\.|\\?|\\!|\\;))";
 
     @Override
-    public void parseText(Component textComposite , String text) {
+    public void parseText(Component component , String text) {
+        LOGGER.info("Parsing " + component.getPartLevel().toString().toLowerCase(Locale.ROOT) + " to sentences");
         String[] sentences = text.split(SENTENCE_REGEX);
         for (int i = 0; i < sentences.length; i++) {
             sentences[i] = sentences[i] + sentences[i+1].trim();
             if (super.nextTextParser != null) {
                 Component paragraphComposite=new Composite(PartLevel.SENTENCE);
                 super.nextTextParser.parse(paragraphComposite, sentences[i]);
-                textComposite.add(paragraphComposite);
+                component.add(paragraphComposite);
             } else {
                 Component paragraphComposite=new StringLeaf(sentences[i], PartLevel.SENTENCE);
-                textComposite.add(paragraphComposite);
+                component.add(paragraphComposite);
             }
             i++;
         }

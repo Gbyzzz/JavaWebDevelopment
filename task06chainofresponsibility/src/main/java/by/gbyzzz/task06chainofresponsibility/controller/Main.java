@@ -20,40 +20,38 @@ public class Main {
         TextParser wParser = new WordParser();
         TextParser symParser = new SymbolParser();
         Component text = new Composite(PartLevel.TEXT);
-        Component text1;
-        Component text2;
+        Component text1 = new Composite(PartLevel.TEXT);
+        Component text2 = new Composite(PartLevel.TEXT);
         Component text3 = new Composite(PartLevel.TEXT);
         TextSorter operation = new TextSorter();
-//        String s = "((71-(2*i--*(3*(2-1/2*2)2)-10/2))++i)";
-//        System.out.println(ppn.calcExpr(s));
-//
-        String s1 = "~(8^5|1&2<<(2|5>>2&71))|1200>>>3";
-//        System.out.println(s1);
-        s1 = rpn.convert(s1);
-//        System.out.println(s1);
-//        calculator.addOperation(s1);
-        s1 = calculator.calcExpression(s1);
-//        System.out.println(s1);
-//        System.out.println();
-//        System.out.println(~(8^5|1&2<<(2|5>>2&71))|1200>>>3);
+
+
         String str = fileIO.getFileIO().readText("text.txt");
-//        System.out.println(str);
         parser.setNextTextParser(sParser);
         sParser.setNextTextParser(lParser);
         lParser.setNextTextParser(wParser);
         wParser.setNextTextParser(symParser);
         parser.parse(text, str);
+        parser.parse(text1, str);
+        parser.parse(text2, str);
         System.out.println(text);
         ArrayList<Component> arr = operation.sortParagraphsBySentences(text);
         for(Component component : arr) {
             System.out.println(component);
         }
+
         System.out.println();
 
-        ArrayList<String> arr1 = operation.sortSentencesByLexemes(text);
+        ArrayList<String> arr1 = operation.sortWordsInSentences(text1);
         for(String component : arr1) {
             System.out.println(component);
         }
+
+        System.out.println();
+
+       StringBuilder arr2 = operation.sortLexemes(text2, 'c');
+
+            System.out.println(arr2);
 
 //        System.out.println(text1);
 //        text2 = operation.sortSentencesByLexemes(text);
@@ -64,5 +62,8 @@ public class Main {
 //        System.out.println(text3);
 
 //        System.out.println(text);
+
+//        String s1 = rpn.convert((~71&(2&3|(3|(2&1>>2|2)&2)|10&2))|78);
+        System.out.println(5>>>7);
     }
 }

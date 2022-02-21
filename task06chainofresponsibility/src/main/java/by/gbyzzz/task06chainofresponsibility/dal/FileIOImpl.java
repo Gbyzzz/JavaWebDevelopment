@@ -19,6 +19,7 @@ public final class FileIOImpl implements FileIO {
 
     @Override
     public String readText(String file) {
+        LOGGER.trace("Reading text from txt file " + file);
         String txt = null;
         try {
             FileInputStream reader = new FileInputStream(filePath(file));

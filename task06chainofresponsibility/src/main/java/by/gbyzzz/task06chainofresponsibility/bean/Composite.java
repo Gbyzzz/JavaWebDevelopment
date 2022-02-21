@@ -1,14 +1,19 @@
 package by.gbyzzz.task06chainofresponsibility.bean;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Composite implements Component{
+    private static final Logger LOGGER = LogManager.getLogger();
 
     private ArrayList<Component> parts;
     private PartLevel partLevel;
 
     public Composite(PartLevel partLevel) {
+        LOGGER.info("Creating new Composite, level " + partLevel);
         this.parts = new ArrayList<>();
         this.partLevel = partLevel;
     }
@@ -21,11 +26,13 @@ public class Composite implements Component{
     @Override
     public void add(Component component) {
         parts.add(component);
+        LOGGER.info("Adding new component to composite");
     }
 
     @Override
     public void remove(Component component) {
         parts.remove(component);
+        LOGGER.info("Removing component from composite");
     }
 
     @Override

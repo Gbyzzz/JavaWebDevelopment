@@ -1,14 +1,18 @@
 package by.gbyzzz.task06chainofresponsibility.service.interpreter;
 
 import by.gbyzzz.task06chainofresponsibility.service.Service;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
 public class ExpressionCalculator implements Service {
+    private static final Logger LOGGER = LogManager.getLogger();
 
-    public String calcExpression(String str) {
+    public String calculate(String str) {
         Context context = new Context();
         BitOperation bitOperation;
+        LOGGER.info("Calculating expression in text");
 
         String[] expressions = str.split("\\s");
         for (String expression : expressions) {
@@ -71,6 +75,7 @@ public class ExpressionCalculator implements Service {
                         BitOperation num = (context1) -> context1.pushValue(Integer.parseInt(expression));
                         num.interpret(context);
                     } else {
+                        LOGGER.error("Incorrect symbol find");
                         throw new IllegalArgumentException("Incorrect symbol find");
                     }
             }
