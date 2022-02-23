@@ -1,4 +1,4 @@
-package by.gbyzzz.task05multithreading.service.impl.matrixmultithreading;
+package by.gbyzzz.task05multithreading.service.impl;
 
 public class MatrixMTSetUp {
     public static int totalTasks(final Number[][] arr) {

@@ -4,11 +4,11 @@ import by.gbyzzz.task05multithreading.beans.MyArray;
 import by.gbyzzz.task05multithreading.dal.FileIOFactory;
 import by.gbyzzz.task05multithreading.service.ArrayService;
 import by.gbyzzz.task05multithreading.service.factory.ServiceFactory;
+import by.gbyzzz.task05multithreading.service.impl.MatrixMTSetUp;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.*;
-import java.util.concurrent.locks.Lock;
 
 public class MultiplicationOnNumMT implements ArrayService, Callable<Number[]> {
     private static final Logger LOGGER = LogManager.getLogger();

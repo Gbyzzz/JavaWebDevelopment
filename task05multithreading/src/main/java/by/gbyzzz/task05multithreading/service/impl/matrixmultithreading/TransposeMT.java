@@ -15,14 +15,16 @@ import java.util.concurrent.Phaser;
 public class TransposeMT implements ArrayService, Runnable {
     private static final Logger LOGGER = LogManager.getLogger();
     private static Phaser phaser = new Phaser();
+    private static Phaser phaserCheck = new Phaser();
     private static Number[][] arr1;
     private static Number[][] res;
     private static int tasksToThread;
-
+    private static int threads;
 
     @Override
     public MyArray execute(final String... matrix) {
         phaser.register();
+        phaserCheck.register();
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
@@ -33,12 +35,14 @@ public class TransposeMT implements ArrayService, Runnable {
 
         int maxThreads = Integer.parseInt(matrix[1]);
         tasksToThread = (maxThreads >= tasks) ? 1 : ((tasks % maxThreads == 0) ? tasks / maxThreads : tasks / maxThreads + 1);
-        int threads = (tasks >= maxThreads) ? maxThreads : tasks;
+        threads = (tasks >= maxThreads) ? maxThreads : tasks;
+        threads ++;
         ExecutorService executorService = Executors.newFixedThreadPool(threads);
         for (int i = 0; i <= threads; i++) {
             executorService.execute(new TransposeMT());
         }
         phaser.arriveAndAwaitAdvance();
+        phaserCheck.arriveAndAwaitAdvance();
         matrixOne.setArr(res);
         return matrixOne;
     }
@@ -46,13 +50,25 @@ public class TransposeMT implements ArrayService, Runnable {
     @Override
     public void run() {
         LOGGER.trace(Thread.currentThread().getName() + " is working");
-        int i = Integer.parseInt(Thread.currentThread().getName().substring(14));
-        phaser.register();
-        for (int r = tasksToThread * (i - 1); r < tasksToThread * i; r++) {
-            for (int j = 0; j < arr1[r].length; j++) {
-                res[j][r] = arr1[r][j].intValue();
+        int v = Integer.parseInt(Thread.currentThread().getName().substring(14));
+        if (v < threads) {
+            phaser.register();
+            for (int i = tasksToThread * (v - 1); i < tasksToThread * v; i++) {
+                for (int j = 0; j < arr1[i].length; j++) {
+                    res[j][i] = arr1[i][j].intValue();
+                }
             }
+            phaser.arriveAndAwaitAdvance();
+        } else {
+            phaserCheck.register();
+            for(int i = 0; i < res.length; i++){
+                for (int j = 0; j < res[i].length; j++){
+                    if(res[i][j] == null){
+                        res[i][j] = arr1[j][i];
+                    }
+                }
+            }
+            phaserCheck.arriveAndAwaitAdvance();
         }
-        phaser.arriveAndAwaitAdvance();
     }
 }

@@ -5,6 +5,7 @@ import by.gbyzzz.task05multithreading.dal.FileIOFactory;
 import by.gbyzzz.task05multithreading.service.ArrayService;
 import by.gbyzzz.task05multithreading.service.ValidatorService;
 import by.gbyzzz.task05multithreading.service.factory.ServiceFactory;
+import by.gbyzzz.task05multithreading.service.impl.MatrixMTSetUp;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
