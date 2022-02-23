@@ -32,6 +32,7 @@ public class SubtractionMT implements ArrayService, Runnable {
         tasks = MatrixMTSetUp.totalTasks(arr1);
         int maxTreads = Integer.parseInt(matrix[2]);
         int threadsToWork = (maxTreads > tasks) ? tasks : maxTreads;
+        countDownLatch = new CountDownLatch(threadsToWork);
         tasksToThread = MatrixMTSetUp.tasksToThread(tasks, maxTreads);
         arr2 = matrixTwo.getArr();
         res = matrixTwo.getArr();

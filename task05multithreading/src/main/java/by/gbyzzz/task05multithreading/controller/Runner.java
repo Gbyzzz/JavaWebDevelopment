@@ -33,10 +33,10 @@ public class Runner {
         menuText.mainMenu();
             LOGGER.trace("getting input from user in main menu");
 
-        select[0] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_FIVE));
-            if (select[0] == 4) {
+             if (select[0] == 4) {
+                select[0] = validatorService.rangeInt(ioData.input(), menuSelection.getValue(MenuSelection.SELECT_ONE), menuSelection.getValue(MenuSelection.SELECT_FIVE));
                 ExecutorService executorService = Executors.newFixedThreadPool(4);
-                for(int i = 0; i < 1000; i++) {
+                for(int i = 0; i < 10; i++) {
                     executorService.execute(new UserInput());
                 }
                 executorService.shutdown();

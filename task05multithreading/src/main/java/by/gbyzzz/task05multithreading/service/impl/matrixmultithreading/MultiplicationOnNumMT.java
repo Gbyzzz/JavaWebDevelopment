@@ -13,7 +13,6 @@ import java.util.concurrent.*;
 public class MultiplicationOnNumMT implements ArrayService, Callable<Number[]> {
     private static final Logger LOGGER = LogManager.getLogger();
     private static Semaphore semaphore = new Semaphore(3);
-    private static String taskTarget;
     private static Number[][] arr1;
     private static int tasks = 1;
     private static int i = 0;
@@ -29,7 +28,6 @@ public class MultiplicationOnNumMT implements ArrayService, Callable<Number[]> {
         MatrixMTSetUp setUp = new MatrixMTSetUp();
         tasks = arr1.length;
         numToMult = Integer.parseInt(matrix[1]);
-        taskTarget = setUp.taskTarget(arr1);
         taskToThread = setUp.tasksToThread(tasks, Integer.parseInt(matrix[2]));
         ExecutorService executorService = Executors.newFixedThreadPool(Integer.parseInt(matrix[2]));
         try {
