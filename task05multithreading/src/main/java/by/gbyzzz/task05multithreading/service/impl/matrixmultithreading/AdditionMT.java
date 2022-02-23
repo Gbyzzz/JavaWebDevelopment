@@ -26,31 +26,32 @@ public class AdditionMT implements ArrayService, Runnable {
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
         MyArray matrixTwo = fileIOFactory.getFileIO().readFileToArray(matrix[1]);
         ValidatorService validatorService = serviceFactory.getValidatorService();
-
          arr1 = matrixOne.getArr();
          arr2 = matrixTwo.getArr();
          res = matrixTwo.getArr();
-        tasks = MatrixMTSetUp.totalTasks(arr1);
-        taskTarget = MatrixMTSetUp.taskTarget(arr1);
-        int maxTreads = Integer.parseInt(matrix[2]);
-        tasksToThread = MatrixMTSetUp.tasksToThread(tasks, maxTreads);
-        if (tasks > maxTreads) {
-            threads = new Thread[maxTreads];
-        } else {
-            threads = new Thread[tasks];
-        }
-        for (int i = 0; i < threads.length; i++) {
-            try {
-            threads[i] = new Thread(new AdditionMT());
-            threads[i].start();
-            threads[i].setPriority(10);
-            threads[i].join();
+        if (validatorService.matrixSizeEquals(matrixOne, matrixTwo)) {
+            tasks = MatrixMTSetUp.totalTasks(arr1);
+            taskTarget = MatrixMTSetUp.taskTarget(arr1);
+            int maxTreads = Integer.parseInt(matrix[2]);
+            tasksToThread = MatrixMTSetUp.tasksToThread(tasks, maxTreads);
+            if (tasks > maxTreads) {
+                threads = new Thread[maxTreads];
+            } else {
+                threads = new Thread[tasks];
+            }
+            for (int i = 0; i < threads.length; i++) {
+                try {
+                    threads[i] = new Thread(new AdditionMT());
+                    threads[i].start();
+                    threads[i].setPriority(10);
+                    threads[i].join();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-        }
+            }
 
-        matrixOne.setArr(res);
+            matrixOne.setArr(res);
+        }
         return matrixOne;
     }
 

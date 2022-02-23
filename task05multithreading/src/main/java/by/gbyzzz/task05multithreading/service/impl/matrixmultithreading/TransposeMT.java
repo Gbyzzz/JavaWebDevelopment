@@ -26,9 +26,7 @@ public class TransposeMT implements ArrayService, Runnable {
         phaser.register();
         phaserCheck.register();
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
-        ValidatorService validatorService = serviceFactory.getValidatorService();
         arr1 = matrixOne.getArr();
         res = new Number[arr1[0].length][arr1.length];
         int tasks = arr1.length;

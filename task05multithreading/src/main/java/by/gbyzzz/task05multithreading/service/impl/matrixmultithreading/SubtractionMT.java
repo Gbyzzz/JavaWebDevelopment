@@ -37,19 +37,20 @@ public class SubtractionMT implements ArrayService, Runnable {
         res = matrixTwo.getArr();
         taskTarget = MatrixMTSetUp.taskTarget(arr1);
 
+        if (validatorService.matrixSizeEquals(matrixOne, matrixTwo)) {
+            ExecutorService executorService = Executors.newFixedThreadPool(maxTreads);
 
-        ExecutorService executorService = Executors.newFixedThreadPool(maxTreads);
+            for (int i = 0; i < threadsToWork; i++) {
+                executorService.execute(new SubtractionMT());
+            }
 
-        for (int i = 0; i < threadsToWork; i++) {
-            executorService.execute(new SubtractionMT());
+            try {
+                countDownLatch.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            matrixOne.setArr(res);
         }
-
-        try {
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        matrixOne.setArr(res);
         return matrixOne;
     }
 

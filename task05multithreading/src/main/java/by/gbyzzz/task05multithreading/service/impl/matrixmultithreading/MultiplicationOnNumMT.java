@@ -23,7 +23,6 @@ public class MultiplicationOnNumMT implements ArrayService, Callable<Number[]> {
     @Override
     public MyArray execute(final String... matrix) {
         FileIOFactory fileIOFactory = FileIOFactory.getInstance();
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
         MyArray matrixOne = fileIOFactory.getFileIO().readFileToArray(matrix[0]);
         arr1 = matrixOne.getArr();
         Number[][] arr2 = arr1;
