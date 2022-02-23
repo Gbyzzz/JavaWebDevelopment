@@ -18,11 +18,6 @@ public class StringLeaf implements Component {
     }
 
     @Override
-    public void operation() {
-
-    }
-
-    @Override
     public void add(Component c) {
         LOGGER.error("You can't add a child to a leaf component");
     }
