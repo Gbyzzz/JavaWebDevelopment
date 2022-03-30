@@ -1,6 +1,7 @@
 package by.gbyzzz.task07webxmlparsing.dao;
 
 import by.gbyzzz.task07webxmlparsing.entity.User;
+import by.gbyzzz.task07webxmlparsing.entity.Users;
 import org.apache.commons.io.IOUtils;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,7 +26,7 @@ public class DOMParserTest {
     public void testParseXML() throws XMLStreamException, ParserConfigurationException, IOException, ParseException, SAXException {
         DAOFactory factory = DAOFactory.getInstance();
 
-        List<User> actual = new ArrayList<>();
+        List<Users> actual = new ArrayList<>();
 
         factory.getParser("DOM").parseXML(getClass().getClassLoader().getResource("users.xml").getPath(), actual);
 

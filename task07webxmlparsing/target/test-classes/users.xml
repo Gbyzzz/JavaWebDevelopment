@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xlmns="http://gbyzzz.by/task07webxmlparsing"
-         xsi:schemaLocation="http://gbyzzz.by/task07webxmlparsing users.xsd">
-        <user id = "1" role = "Admin" name = "Tom" surname = "Smith">
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+         xlmns="http://gbyzzz.by/task07webxmlparsing/entity"
+         xsi:schemaLocation="http://gbyzzz.by/task07webxmlparsing/ users1.xsd">
+        <admin id = "1" name = "Tom" surname = "Smith">
             <username>Admin</username>
             <phone>08763856313</phone>
             <email>admin@bar.com</email>
             <is_active>true</is_active>
             <reg_date>2002-03-23</reg_date>
-        </user>
-        <user id = "2" role="Admin" name = "John" surname = "Cole">
+        </admin>
+        <admin id = "2" name = "John" surname = "Cole">
             <username>Admin1</username>
             <phone>0689984689</phone>
             <email>admin1@bar.com</email>
             <is_active>true</is_active>
             <reg_date>2002-03-23</reg_date>
-        </user>
-        <user id = "3" role="Bartender" name = "Sam" surname = "Green">
+        </admin>
+        <bartender id = "3" name = "Sam" surname = "Green">
             <username>LuckyBartender</username>
             <email>samgreen@bar.com</email>
             <is_active>true</is_active>
             <reg_date>2002-03-23</reg_date>
-        </user>
-        <user id = "4" role="User">
+        </bartender>
+        <user id = "4">
             <username>Jspm</username>
             <email>alcoholfan2010@gmail.com</email>
             <is_active>true</is_active>
             <reg_date>2002-03-23</reg_date>
         </user>
-        <user id = "5" role="Bartender" name = "John">
+        <bartender id = "5" name = "John">
             <username>JDaniels</username>
             <name>John</name>
             <email>jdaniels1985@yahoo.com</email>
             <is_active>true</is_active>
             <reg_date>2002-03-23</reg_date>
-        </user>
-        <user id = "6" role="User" name="Gabe">
-            <username>Gmaster</username>
-            <email>gmaster@gmail.com</email>
-            <is_active>false</is_active>
-            <reg_date>2002-03-23</reg_date>
-        </user>
+        </bartender>
     </users>

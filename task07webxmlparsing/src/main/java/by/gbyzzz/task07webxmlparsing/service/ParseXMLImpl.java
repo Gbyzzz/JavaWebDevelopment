@@ -1,7 +1,7 @@
 package by.gbyzzz.task07webxmlparsing.service;
 
 import by.gbyzzz.task07webxmlparsing.dao.DAOFactory;
-import by.gbyzzz.task07webxmlparsing.entity.User;
+import by.gbyzzz.task07webxmlparsing.entity.Users;
 import by.gbyzzz.task07webxmlparsing.entity.repository.Repository;
 import by.gbyzzz.task07webxmlparsing.entity.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
@@ -24,19 +24,19 @@ public class ParseXMLImpl implements ParseXML {
 
     @Override
     public void parse(String xmlFile, String parser) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
-        List<User> users = new ArrayList<>();
-        if(validator.validate(xmlFile)) {
+        List<Users> users = new ArrayList<>();
+//        if(validator.validate(xmlFile)) {
         DAOFactory factory = DAOFactory.getInstance();
-        Repository<User> repository = UserRepository.getRepository();
+        Repository<Users> repository = UserRepository.getRepository();
         LOGGER.info("Parsing xml file using DOM parser");
         factory.getParser(parser).parseXML(xmlFile, users);
-        for (User user : users) {
+        for (Users user : users) {
             repository.createOrUpdate(user);
         }
-        } else {
-            System.out.println("file not valid");
-            LOGGER.error("XML file is not valid");
-        }
+//        } else {
+//            System.out.println("file not valid");
+//            LOGGER.error("XML file is not valid");
+//        }
 
     }
 }

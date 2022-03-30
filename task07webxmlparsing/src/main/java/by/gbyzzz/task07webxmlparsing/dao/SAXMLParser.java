@@ -1,6 +1,7 @@
 package by.gbyzzz.task07webxmlparsing.dao;
 
 import by.gbyzzz.task07webxmlparsing.entity.User;
+import by.gbyzzz.task07webxmlparsing.entity.Users;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -13,7 +14,7 @@ import java.util.List;
  */
 public class SAXMLParser implements XMLParser{
     @Override
-    public void parseXML(String xmlFile, List<User> users) throws ParserConfigurationException, IOException, SAXException {
+    public void parseXML(String xmlFile, List<Users> users) throws ParserConfigurationException, IOException, SAXException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
             SAXParser saxParser = factory.newSAXParser();

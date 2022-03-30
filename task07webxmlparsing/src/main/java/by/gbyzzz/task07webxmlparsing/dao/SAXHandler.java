@@ -1,6 +1,9 @@
 package by.gbyzzz.task07webxmlparsing.dao;
 
+import by.gbyzzz.task07webxmlparsing.entity.Admin;
+import by.gbyzzz.task07webxmlparsing.entity.Bartender;
 import by.gbyzzz.task07webxmlparsing.entity.User;
+import by.gbyzzz.task07webxmlparsing.entity.Users;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -15,12 +18,12 @@ import java.util.List;
 public class SAXHandler extends DefaultHandler {
 
     private StringBuilder currentValue = new StringBuilder();
-    List<User> result;
-    User user;
+    List<Users> result;
+    Users user;
     private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
 
-    public List<User> getResult() {
+    public List<Users> getResult() {
         return result;
     }
 
@@ -37,18 +40,32 @@ public class SAXHandler extends DefaultHandler {
             Attributes attributes) {
         currentValue.setLength(0);
 
-        if (qName.equalsIgnoreCase("user")) {
-            user = new User();
-
+        if (qName.equalsIgnoreCase("admin")) {
+            user = new Admin("Admin");
             String id = attributes.getValue("id");
             user.setUserId(Long.valueOf(id));
-            String role = attributes.getValue("role");
-            user.setRole(role);
+            String name = attributes.getValue("name");
+            user.setName(name);
+            String surname = attributes.getValue("surname");
+            user.setSurname(surname);
+        } else if (qName.equalsIgnoreCase("bartender")) {
+            user = new Bartender("Bartender");
+            String id = attributes.getValue("id");
+            user.setUserId(Long.valueOf(id));
+            String name = attributes.getValue("name");
+            user.setName(name);
+            String surname = attributes.getValue("surname");
+            user.setSurname(surname);
+        } else if (qName.equalsIgnoreCase("user")) {
+            user = new User("User");
+            String id = attributes.getValue("id");
+            user.setUserId(Long.valueOf(id));
             String name = attributes.getValue("name");
             user.setName(name);
             String surname = attributes.getValue("surname");
             user.setSurname(surname);
         }
+
 
     }
 
@@ -81,10 +98,10 @@ public class SAXHandler extends DefaultHandler {
             }
         }
 
-        if (qName.equalsIgnoreCase("user")) {
+        if (qName.equalsIgnoreCase("user") || qName.equalsIgnoreCase("bartender") ||
+                qName.equalsIgnoreCase("admin")) {
             result.add(user);
         }
-
     }
 
     @Override

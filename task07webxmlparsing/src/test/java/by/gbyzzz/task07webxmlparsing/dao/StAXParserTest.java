@@ -1,6 +1,6 @@
 package by.gbyzzz.task07webxmlparsing.dao;
 
-import by.gbyzzz.task07webxmlparsing.entity.User;
+import by.gbyzzz.task07webxmlparsing.entity.Users;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.xml.sax.SAXException;
@@ -27,7 +27,7 @@ public class StAXParserTest {
     public void testParseXML() throws XMLStreamException, ParserConfigurationException, IOException, ParseException, SAXException {
         DAOFactory factory = DAOFactory.getInstance();
 
-        List<User> actual = new ArrayList<>();
+        List<Users> actual = new ArrayList<>();
         factory.getParser("STAX").parseXML(getClass().getClassLoader().getResource("users.xml").getPath(), actual);
         assertEquals(actual, DataProvider.users);
     }

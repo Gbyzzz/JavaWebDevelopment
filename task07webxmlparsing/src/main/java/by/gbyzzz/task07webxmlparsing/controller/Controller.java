@@ -2,7 +2,7 @@ package by.gbyzzz.task07webxmlparsing.controller;
 
 import by.gbyzzz.task07webxmlparsing.controller.command.Command;
 import by.gbyzzz.task07webxmlparsing.controller.command.impl.ParseXML;
-import by.gbyzzz.task07webxmlparsing.entity.User;
+import by.gbyzzz.task07webxmlparsing.entity.Users;
 import by.gbyzzz.task07webxmlparsing.entity.repository.Repository;
 import by.gbyzzz.task07webxmlparsing.entity.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
@@ -66,10 +66,10 @@ public class Controller extends HttpServlet {
             request.setAttribute(COMMAND, request.getParameter(COMMAND));
             executionCommand.execute(request);
 
-        Repository<User> repository = UserRepository.getRepository();
-        HashMap<Long, User> usersHM =  repository.read();
-        List<User> users = new ArrayList<>();
-        for(Map.Entry<Long,User> entry : usersHM.entrySet()){
+        Repository<Users> repository = UserRepository.getRepository();
+        HashMap<Long, Users> usersHM =  repository.read();
+        List<Users> users = new ArrayList<>();
+        for(Map.Entry<Long,Users> entry : usersHM.entrySet()){
             users.add(entry.getValue());
         }
         request.setAttribute("users", users);

@@ -1,6 +1,9 @@
 package by.gbyzzz.task07webxmlparsing.dao;
 
+import by.gbyzzz.task07webxmlparsing.entity.Admin;
+import by.gbyzzz.task07webxmlparsing.entity.Bartender;
 import by.gbyzzz.task07webxmlparsing.entity.User;
+import by.gbyzzz.task07webxmlparsing.entity.Users;
 import org.xml.sax.SAXException;
 import javax.xml.namespace.QName;
 import javax.xml.parsers.ParserConfigurationException;
@@ -22,32 +25,61 @@ import java.util.List;
  */
 public class StAXParser implements XMLParser{
     @Override
-    public void parseXML(String xmlFile, List<User> users) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
+    public void parseXML(String xmlFile, List<Users> users) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         xmlInputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
         XMLEventReader reader = xmlInputFactory.createXMLEventReader(new FileInputStream(xmlFile));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        User user = null;
+        Users user = null;
+        Attribute id;
+        Attribute name;
+        Attribute surname;
         while (reader.hasNext()) {
             XMLEvent nextEvent = reader.nextEvent();
             if (nextEvent.isStartElement()) {
                 StartElement startElement = nextEvent.asStartElement();
                 switch (startElement.getName().getLocalPart()) {
-                    case "user":
-                        user = new User();
-                        Attribute id = startElement.getAttributeByName(new QName("id"));
+                    case "admin":
+                        user = new Admin("Admin");
+                        id = startElement.getAttributeByName(new QName("id"));
                         if (id != null) {
                             user.setUserId(Long.valueOf(id.getValue()));
                         }
-                        Attribute role = startElement.getAttributeByName(new QName("role"));
-                        if (role != null) {
-                            user.setRole(role.getValue());
-                        }
-                        Attribute name = startElement.getAttributeByName(new QName("name"));
+                        name = startElement.getAttributeByName(new QName("name"));
                         if (name != null) {
                             user.setName(name.getValue());
                         }
-                        Attribute surname = startElement.getAttributeByName(new QName("surname"));
+                        surname = startElement.getAttributeByName(new QName("surname"));
+                        if (surname != null) {
+                            user.setSurname(surname.getValue());
+                        }
+                        break;
+                    case "bartender":
+                        user = new Bartender("Bartender");
+                        id = startElement.getAttributeByName(new QName("id"));
+                        if (id != null) {
+                            user.setUserId(Long.valueOf(id.getValue()));
+                        }
+                        name = startElement.getAttributeByName(new QName("name"));
+                        if (name != null) {
+                            user.setName(name.getValue());
+                        }
+                        surname = startElement.getAttributeByName(new QName("surname"));
+                        if (surname != null) {
+                            user.setSurname(surname.getValue());
+                        }
+                        break;
+                    case "user":
+                        user = new User("User");
+                        id = startElement.getAttributeByName(new QName("id"));
+                        if (id != null) {
+                            user.setUserId(Long.valueOf(id.getValue()));
+                        }
+                        name = startElement.getAttributeByName(new QName("name"));
+                        if (name != null) {
+                            user.setName(name.getValue());
+                        }
+                        surname = startElement.getAttributeByName(new QName("surname"));
                         if (surname != null) {
                             user.setSurname(surname.getValue());
                         }
@@ -76,7 +108,8 @@ public class StAXParser implements XMLParser{
             }
             if (nextEvent.isEndElement()) {
                 EndElement endElement = nextEvent.asEndElement();
-                if (endElement.getName().getLocalPart().equals("user")) {
+                String endEl = endElement.getName().getLocalPart();
+                if (endEl.equals("user") || endEl.equals("admin") || endEl.equals("bartender")) {
                     users.add(user);
                 }
             }
