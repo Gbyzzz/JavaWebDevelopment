@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema"
          xlmns="http://gbyzzz.by/task07webxmlparsing/entity"
-         xsi:schemaLocation="http://gbyzzz.by/task07webxmlparsing/ users.xsd">
+         xsi:schemaLocation="http://gbyzzz.by/task07webxmlparsing/ users1.xsd">
         <user id = "1" role = "Admin" name = "Tom" surname = "Smith">
             <username>Admin</username>
             <phone>08763856313</phone>

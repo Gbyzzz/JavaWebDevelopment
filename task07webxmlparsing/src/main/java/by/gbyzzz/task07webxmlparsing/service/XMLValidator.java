@@ -32,7 +32,7 @@ public class XMLValidator {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public boolean validate(String xmlPath) throws SAXNotSupportedException, SAXNotRecognizedException {
-        File schemaFile = new File("xsdPath");
+        File schemaFile = new File(getClass().getClassLoader().getResource("users.xsd").getPath());
         boolean valid = false;
         Source xmlFile = new StreamSource(new File(xmlPath));
         SchemaFactory schemaFactory = SchemaFactory

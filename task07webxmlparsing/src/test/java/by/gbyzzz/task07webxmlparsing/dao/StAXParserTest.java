@@ -28,7 +28,7 @@ public class StAXParserTest {
         DAOFactory factory = DAOFactory.getInstance();
 
         List<User> actual = new ArrayList<>();
-//        factory.getStaxParser().parseXML(getClass().getClassLoader().getResource("users.xml").getPath(), actual);
+        factory.getParser("STAX").parseXML(getClass().getClassLoader().getResource("users.xml").getPath(), actual);
         assertEquals(actual, DataProvider.users);
     }
 }
