@@ -19,7 +19,8 @@ public class ParseXML implements Command {
 
     @Override
     public void execute(HttpServletRequest request) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
-        LOGGER.info("Parsing xml file using %s parser", String.valueOf(request.getAttribute("command")));
-        new ParseXMLImpl().parse(String.valueOf(request.getAttribute("file")), String.valueOf(request.getAttribute("command")));
+        String parser = String.valueOf(request.getAttribute("command"));
+        LOGGER.info("Parsing xml file using %s parser", parser);
+        new ParseXMLImpl().parse(String.valueOf(request.getAttribute("file")), parser);
     }
 }

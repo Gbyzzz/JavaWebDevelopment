@@ -20,13 +20,13 @@ import java.util.List;
 
 public class DOMParser implements XMLParser {
     @Override
-    public void parseXML(String XMLFile, List<User> users) throws ParserConfigurationException, IOException, SAXException, ParseException {
+    public void parseXML(String xmlFile, List<User> users) throws ParserConfigurationException, IOException, SAXException, ParseException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
         DocumentBuilder db = dbf.newDocumentBuilder();
-        Document doc = db.parse(new File(XMLFile));
+        Document doc = db.parse(new File(xmlFile));
         doc.getDocumentElement().normalize();
         doc.getDocumentElement().getNodeName();
         NodeList list = doc.getElementsByTagName("user");

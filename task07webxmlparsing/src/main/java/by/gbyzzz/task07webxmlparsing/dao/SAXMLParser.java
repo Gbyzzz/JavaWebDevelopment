@@ -13,13 +13,13 @@ import java.util.List;
  */
 public class SAXMLParser implements XMLParser{
     @Override
-    public void parseXML(String XMLFile, List<User> users) throws ParserConfigurationException, IOException, SAXException {
+    public void parseXML(String xmlFile, List<User> users) throws ParserConfigurationException, IOException, SAXException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
             SAXParser saxParser = factory.newSAXParser();
 
             SAXHandler handler = new SAXHandler();
-            saxParser.parse(XMLFile, handler);
+            saxParser.parse(xmlFile, handler);
 
             users.addAll(handler.getResult());
     }

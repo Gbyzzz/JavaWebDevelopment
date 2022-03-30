@@ -31,6 +31,7 @@ import java.util.*;
 )
 public class Controller extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
+    private static final String COMMAND = "command";
 
 
     @Override
@@ -62,7 +63,7 @@ public class Controller extends HttpServlet {
     public void executeTask(HttpServletRequest request, HttpServletResponse response) {
         try {
             Command executionCommand = new ParseXML();
-            request.setAttribute("command", request.getParameter("command"));
+            request.setAttribute(COMMAND, request.getParameter(COMMAND));
             executionCommand.execute(request);
 
         Repository<User> repository = UserRepository.getRepository();
@@ -72,7 +73,7 @@ public class Controller extends HttpServlet {
             users.add(entry.getValue());
         }
         request.setAttribute("users", users);
-        request.setAttribute("parser", request.getParameter("command"));
+        request.setAttribute("parser", request.getParameter(COMMAND));
             getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
         } catch (ServletException | ParseException | IOException | ParserConfigurationException | SAXException | XMLStreamException e) {
             LOGGER.error(e);

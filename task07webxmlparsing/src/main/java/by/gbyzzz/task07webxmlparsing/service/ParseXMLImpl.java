@@ -23,13 +23,13 @@ public class ParseXMLImpl implements ParseXML {
     XMLValidator validator = XMLValidator.getInstance();
 
     @Override
-    public void parse(String XMLFile, String parser) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
+    public void parse(String xmlFile, String parser) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
         List<User> users = new ArrayList<>();
 //        if(validator.validate(XMLFile)) {
         DAOFactory factory = DAOFactory.getInstance();
         Repository<User> repository = UserRepository.getRepository();
         LOGGER.info("Parsing xml file using DOM parser");
-        factory.getParser(parser).parseXML(XMLFile, users);
+        factory.getParser(parser).parseXML(xmlFile, users);
         for (User user : users) {
             repository.createOrUpdate(user);
         }

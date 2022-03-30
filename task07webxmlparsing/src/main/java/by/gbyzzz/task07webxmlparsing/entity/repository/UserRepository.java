@@ -57,7 +57,7 @@ public final class UserRepository implements Repository<User> {
         LOGGER.trace("Looking for Id of user with name %s", user.getName());
         Long foundId = null;
         for (Long id : storage.keySet()) {
-                if (id == user.getUserId()) {
+                if (id.equals(user.getUserId())) {
                     foundId = id;
             }
         }

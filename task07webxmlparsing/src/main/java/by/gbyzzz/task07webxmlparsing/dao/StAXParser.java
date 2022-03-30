@@ -22,10 +22,10 @@ import java.util.List;
  */
 public class StAXParser implements XMLParser{
     @Override
-    public void parseXML(String XMLFile, List<User> users) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
+    public void parseXML(String xmlFile, List<User> users) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         xmlInputFactory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
-        XMLEventReader reader = xmlInputFactory.createXMLEventReader(new FileInputStream(XMLFile));
+        XMLEventReader reader = xmlInputFactory.createXMLEventReader(new FileInputStream(xmlFile));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         User user = null;
         while (reader.hasNext()) {
