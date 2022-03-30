@@ -18,23 +18,25 @@ import java.util.List;
 /**
  * @author Anton Pinchuk
  */
-public class ParseXMLStAXImpl implements ParseXML{
+public class ParseXMLImpl implements ParseXML {
     private static final Logger LOGGER = LogManager.getLogger();
+    XMLValidator validator = XMLValidator.getInstance();
 
     @Override
-    public void parse(String XMLFile) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
+    public void parse(String XMLFile, String parser) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
         List<User> users = new ArrayList<>();
 //        if(validator.validate(XMLFile)) {
         DAOFactory factory = DAOFactory.getInstance();
         Repository<User> repository = UserRepository.getRepository();
-        LOGGER.info("Parsing xml file using StAX parser");
-        factory.getStaxParser().parseXML(XMLFile, users);
-        for(User user : users){
+        LOGGER.info("Parsing xml file using DOM parser");
+        factory.getParser(parser).parseXML(XMLFile, users);
+        for (User user : users) {
             repository.createOrUpdate(user);
         }
-        //        } else {
+//        } else {
 //            System.out.println("file not valid");
 ////            LOGGER.error("XML file is not valid");
 //        }
+
     }
 }

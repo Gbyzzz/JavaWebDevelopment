@@ -8,5 +8,5 @@ import java.io.IOException;
 import java.text.ParseException;
 
 public interface ParseXML {
-    void parse(String args) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException;
+    void parse(String args, String parser) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException;
 }

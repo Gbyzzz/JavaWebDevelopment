@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
-
     <Properties>
-        <property name="LOG_DIR">task07webxmlparsing\logs</property>
-        <property name="pattern_file">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{5} - %msg%n
-        </property>
-        <property name="pattern_short">%d{HH:mm:ss} %-5level %logger{5} - %msg%n
-        </property>
+        <property name="LOG_DIR">logs</property>
+        <property name="pattern_file">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{5} - %msg%n</property>
+        <property name="pattern_short">%d{HH:mm:ss} %-5level %logger{5} - %msg%n</property>
     </Properties>
 
     <Appenders>
@@ -25,7 +22,7 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Root level = "trace" >
+        <Root level = "TRACE" >
             <AppenderRef ref="FileRolling" />
             <AppenderRef ref="Console" level="error" />
         </Root>

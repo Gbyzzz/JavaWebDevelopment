@@ -1,54 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://gbyzzz.by/task07webxmlparsing"
+        targetNamespace="http://gbyzzz.by/task07webxmlparsing/entity"
         xmlns:tns="http://gbyzzz.by/task07webxmlparsing"
         elementFormDefault="qualified" attributeFormDefault="qualified">
     <element name = "users" abstract="true">
         <complexType>
             <sequence>
-                <element name = "user" type="tns:User"/>
+                <element name = "user" type="tns:User" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
-        <unique name="unique-id">
-            <selector xpath="user"/>
-            <field xpath="@id"/>
-        </unique>
-        <unique name="unique-email">
-            <selector xpath="user"/>
-            <field xpath="@email"/>
-        </unique>
-        <unique name="unique-username">
-            <selector xpath="user"/>
-            <field xpath="@username"/>
-        </unique>
-        <unique name="unique-phone">
-            <selector xpath="user"/>
-            <field xpath="@phone"/>
-        </unique>
     </element>
-
-    <simpleType name="roles">
-        <restriction base="string">
-            <enumeration value="User"/>
-            <enumeration value="Bartender"/>
-            <enumeration value="Admin"/>
-        </restriction>
-    </simpleType>
-
     <complexType name="User" mixed="true">
         <sequence>
-            <element name="username" type="string"/>
-            <element name="phone" type="string" minOccurs="0"/>
+            <element name="username">
+                <simpleType>
+                <restriction base="ID">
+                    <pattern value="([a-zA-Z])[a-zA-Z0-9]{7,19}"/>
+                </restriction>
+                </simpleType>
+            </element>
+            <element name="phone" minOccurs="0">
+                <simpleType>
+                    <restriction base="ID">
+                        <pattern value="([0-9]){12}"/>
+                    </restriction>
+                </simpleType>
+            </element>
             <element name="email">
                 <simpleType>
                     <restriction base="string">
                         <pattern value="[^@]+@[^\.]+\..+"/>
                     </restriction>
-                </simpleType>            </element>
+                </simpleType>
+            </element>
             <element name="is_active" type="boolean"/>
         </sequence>
-        <attribute name="id" type="long" use="required"/>
-        <attribute name="role" type="tns:roles" default="User"/>
+        <attribute name="id" use="required">
+            <simpleType>
+                <restriction base="ID">
+                    <pattern value="([0-9])"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="role"  default="User">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="User"/>
+                    <enumeration value="Bartender"/>
+                    <enumeration value="Admin"/>
+                </restriction>
+            </simpleType>
+        </attribute>
         <attribute name="name" type="string"/>
         <attribute name="surname" type="string"/>
     </complexType>

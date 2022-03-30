@@ -1,7 +1,9 @@
 package by.gbyzzz.task07webxmlparsing.controller.command.impl;
 
 import by.gbyzzz.task07webxmlparsing.controller.command.Command;
-import by.gbyzzz.task07webxmlparsing.service.ParseXMLDOMImpl;
+import by.gbyzzz.task07webxmlparsing.service.ParseXMLImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.parsers.ParserConfigurationException;
@@ -12,9 +14,12 @@ import java.text.ParseException;
 /**
  * @author Anton Pinchuk
  */
-public class DOMImpl implements Command {
+public class ParseXML implements Command {
+    private static final Logger LOGGER = LogManager.getLogger();
+
     @Override
     public void execute(HttpServletRequest request) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
-        new ParseXMLDOMImpl().parse(String.valueOf(request.getAttribute("file")));
+        LOGGER.info("Parsing xml file using %s parser", String.valueOf(request.getAttribute("command")));
+        new ParseXMLImpl().parse(String.valueOf(request.getAttribute("file")), String.valueOf(request.getAttribute("command")));
     }
 }

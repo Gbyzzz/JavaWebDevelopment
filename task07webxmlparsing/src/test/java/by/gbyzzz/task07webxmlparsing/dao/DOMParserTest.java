@@ -27,7 +27,7 @@ public class DOMParserTest {
 
         List<User> actual = new ArrayList<>();
 
-        factory.getDOMParser().parseXML(getClass().getClassLoader().getResource("users.xml").getPath(), actual);
+//        factory.getDOMParser().parseXML(getClass().getClassLoader().getResource("users.xml").getPath(), actual);
 
         assertEquals(actual, DataProvider.users);
     }

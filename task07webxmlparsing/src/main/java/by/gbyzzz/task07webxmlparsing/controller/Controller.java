@@ -1,7 +1,7 @@
 package by.gbyzzz.task07webxmlparsing.controller;
 
 import by.gbyzzz.task07webxmlparsing.controller.command.Command;
-import by.gbyzzz.task07webxmlparsing.controller.command.CommandProvider;
+import by.gbyzzz.task07webxmlparsing.controller.command.impl.ParseXML;
 import by.gbyzzz.task07webxmlparsing.entity.User;
 import by.gbyzzz.task07webxmlparsing.entity.repository.Repository;
 import by.gbyzzz.task07webxmlparsing.entity.repository.UserRepository;
@@ -31,7 +31,7 @@ import java.util.*;
 )
 public class Controller extends HttpServlet {
     private static final Logger LOGGER = LogManager.getLogger();
-    private final CommandProvider provider = new CommandProvider();
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -60,10 +60,9 @@ public class Controller extends HttpServlet {
 
 
     public void executeTask(HttpServletRequest request, HttpServletResponse response) {
-        Command executionCommand = provider.getCommand(request.getParameter("command"));
-
-        LOGGER.trace("Executing parsing using %s", executionCommand);
         try {
+            Command executionCommand = new ParseXML();
+            request.setAttribute("command", request.getParameter("command"));
             executionCommand.execute(request);
 
         Repository<User> repository = UserRepository.getRepository();
