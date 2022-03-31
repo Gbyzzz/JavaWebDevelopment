@@ -1,29 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://gbyzzz.by/task07webxmlparsing/entity/users"
         xmlns:tns="http://gbyzzz.by/task07webxmlparsing/entity/users"
         elementFormDefault="qualified" attributeFormDefault="unqualified">
-    <element name = "users" >
-        <complexType>
-            <choice maxOccurs="unbounded">
-                <element name = "user" type="tns:avg_user" maxOccurs="unbounded"/>
-                <element name = "admin" type="tns:avg_user" maxOccurs="unbounded"/>
-                <element name = "bartender" type="tns:avg_user" maxOccurs="unbounded"/>
-            </choice>
-        </complexType>
-        <unique name="unique_id">
-            <selector xpath="tns:avg_user"/>
-            <field xpath="@id"/>
-        </unique>
-        <unique name="unique-email">
-            <selector xpath="tns:avg_user"/>
-            <field xpath="@email"/>
-        </unique>
-        <unique name="unique-phone">
-            <selector xpath="users"/>
-            <field xpath="@phone"/>
-        </unique>
-    </element>
     <complexType name="avg_user">
         <sequence>
             <element name="username">
@@ -55,4 +34,25 @@
         <attribute name="name" type="string"/>
         <attribute name="surname" type="string"/>
     </complexType>
+    <element name = "users" >
+        <complexType>
+            <choice maxOccurs="unbounded">
+                <element name = "user" type="tns:avg_user" maxOccurs="unbounded"/>
+                <element name = "admin" type="tns:avg_user" maxOccurs="unbounded"/>
+                <element name = "bartender" type="tns:avg_user" maxOccurs="unbounded"/>
+            </choice>
+        </complexType>
+        <unique name="unique_id">
+            <selector xpath="tns:avg_user"/>
+            <field xpath="@id"/>
+        </unique>
+        <unique name="unique-email">
+            <selector xpath="tns:avg_user"/>
+            <field xpath="@email"/>
+        </unique>
+        <unique name="unique-phone">
+            <selector xpath="tns:avg_user"/>
+            <field xpath="@phone"/>
+        </unique>
+    </element>
 </schema>
