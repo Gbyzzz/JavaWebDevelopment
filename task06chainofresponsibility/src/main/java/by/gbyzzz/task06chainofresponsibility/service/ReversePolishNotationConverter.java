@@ -57,7 +57,7 @@ public class ReversePolishNotationConverter {
                 }
             }
         }
-        while (stack.size() > 0) {
+        while (!stack.isEmpty()) {
             resultStr.append(" ");
             resultStr.append(stack.pop());
         }
@@ -68,9 +68,7 @@ public class ReversePolishNotationConverter {
         switch (operation) {
             case "~":
                 return 5;
-            case "<<":
-            case ">>":
-            case ">>>":
+            case "<<", ">>", ">>>":
                 return 4;
             case "&":
                 return 3;

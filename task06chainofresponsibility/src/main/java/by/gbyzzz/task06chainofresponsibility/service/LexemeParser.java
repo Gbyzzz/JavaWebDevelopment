@@ -27,9 +27,9 @@ public class LexemeParser extends TextParser {
             lexeme = lexeme.trim();
             Matcher matcher = pattern.matcher(lexeme);
             if (matcher.find()) {
-                lexeme = rpn.convert(lexeme);
-                lexeme = calculator.calculate(lexeme);
-            } if (lexeme.length() == 1) {
+                lexeme = calculator.calculate(rpn.convert(lexeme));
+            }
+            if (lexeme.length() == 1) {
                 Component leaf = new Leaf(lexeme.charAt(0), PartLevel.LEXEME);
                 component.add(leaf);
             } else {

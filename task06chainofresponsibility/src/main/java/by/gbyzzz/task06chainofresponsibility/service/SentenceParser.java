@@ -19,7 +19,7 @@ public class SentenceParser extends TextParser {
         String mesArg =  component.getPartLevel().toString().toLowerCase(Locale.ROOT);
         LOGGER.info("Parsing %s to sentences", mesArg);
         String[] sentences = text.split(SENTENCE_REGEX);
-        for (int i = 0; i < sentences.length; i++) {
+        for (int i = 0; i < sentences.length; i+=2) {
             sentences[i] = sentences[i] + sentences[i+1].trim();
             if (super.nextTextParser != null) {
                 Component paragraphComposite=new Composite(PartLevel.SENTENCE);
@@ -29,7 +29,6 @@ public class SentenceParser extends TextParser {
                 Component paragraphComposite=new StringLeaf(sentences[i], PartLevel.SENTENCE);
                 component.add(paragraphComposite);
             }
-            i++;
         }
     }
 }
