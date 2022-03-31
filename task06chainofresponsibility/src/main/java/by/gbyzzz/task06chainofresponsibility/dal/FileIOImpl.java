@@ -19,16 +19,13 @@ public final class FileIOImpl implements FileIO {
 
     @Override
     public String readText(String file) {
-        LOGGER.trace("Reading text from txt file " + file);
+        LOGGER.trace("Reading text from txt file %s", file);
         String txt = null;
-        try {
-            FileInputStream reader = new FileInputStream(filePath(file));
+        try(FileInputStream reader = new FileInputStream(filePath(file))) {
             byte[] str = new byte[reader.available()];
             reader.read(str);
             txt = new String(str);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        }  catch (IOException e) {
             e.printStackTrace();
         }
         return txt;

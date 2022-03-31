@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Composite implements Component{
     private static final Logger LOGGER = LogManager.getLogger();
@@ -13,7 +12,7 @@ public class Composite implements Component{
     private PartLevel partLevel;
 
     public Composite(PartLevel partLevel) {
-        LOGGER.info("Creating new Composite, level " + partLevel);
+        LOGGER.info("Creating new Composite, level %s", partLevel);
         this.parts = new ArrayList<>();
         this.partLevel = partLevel;
     }

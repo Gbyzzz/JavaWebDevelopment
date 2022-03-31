@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Leaf implements Component {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -31,7 +30,7 @@ public class Leaf implements Component {
     @Override
     public ArrayList<Component> getParts() {
         LOGGER.error("You can't get children components from a leaf component, as it doesn't has them");
-        return null;
+        return new ArrayList<>();
     }
 
     @Override
