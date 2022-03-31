@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<devices xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://training.by/xmlparser/entity/devices"
+         xsi:schemaLocation="http://training.by/xmlparser/entity//devices devices.xsd">
+
+    <device critical="false" >
+        <name>LogitechG102</name>
+        <inputSpec>
+            <portType>COM</portType>
+            <inputType>keyboard</inputType>
+        </inputSpec>
+        <origin>gb</origin>
+        <price>20.5</price>
+        <manufactureDate>2015-09-24Z</manufactureDate>
+    </device>
+    <device  energyUsage="45" critical="true">
+        <name>GigabyteZ370P</name>
+        <outputSpec>
+            <portType>LPT</portType>
+            <outputType>videocard</outputType>
+        </outputSpec>
+        <origin>cn</origin>
+        <price>41.2</price>
+        <manufactureDate>2018-09-24Z</manufactureDate>
+    </device>
+    <device critical="false">
+        <name>CanyonCNE-CMSW1G</name>
+        <inputSpec>
+            <portType>USB</portType>
+            <inputType>mouse</inputType>
+        </inputSpec>
+        <origin>cn</origin>
+        <price>10</price>
+        <manufactureDate>2016-09-24Z</manufactureDate>
+    </device>
+    <device energyUsage="120" critical="true" >
+        <name>NVIDIA-RTX2080Ti</name>
+        <outputSpec>
+            <portType>LPT</portType>
+            <outputType>videocard</outputType>
+        </outputSpec>
+        <price>1000</price>
+        <origin>de</origin>
+        <manufactureDate>2019-09-24Z</manufactureDate>
+    </device>
+    <device critical="false">
+        <name>HyperXPulseFireSurge</name>
+        <inputSpec>
+            <portType>USB</portType>
+            <inputType>biometrics</inputType>
+        </inputSpec>
+        <origin>by</origin>
+        <price>100</price>
+        <manufactureDate>2010-09-24Z</manufactureDate>
+    </device>
+    <device critical="false">
+        <name>YamahaV8M</name>
+        <inputSpec>
+            <portType>COM</portType>
+            <inputType>midi</inputType>
+        </inputSpec>
+        <origin>id</origin>
+        <price>54.75</price>
+        <manufactureDate>2013-09-24Z</manufactureDate>
+    </device>
+    <device critical="true">
+        <name>GPS10V2</name>
+        <outputSpec>
+            <portType>COM</portType>
+            <outputType>gps</outputType>
+        </outputSpec>
+        <origin>it</origin>
+        <price>25</price>
+        <manufactureDate>2015-09-24Z</manufactureDate>
+    </device>
+    <device critical="true" energyUsage="50">
+        <name>Scarlet435J</name>
+        <outputSpec>
+            <portType>USB</portType>
+            <outputType>soundcard</outputType>
+        </outputSpec>
+        <origin>be</origin>
+        <price>199</price>
+        <manufactureDate>2014-09-24Z</manufactureDate>
+    </device>
+    <device critical="false">
+        <name>DUALSHOCK4</name>
+        <inputSpec>
+            <portType>USB</portType>
+            <inputType>gamepad</inputType>
+        </inputSpec>
+        <origin>cn</origin>
+        <price>55.55</price>
+        <manufactureDate>2018-09-24Z</manufactureDate>
+    </device>
+    <device critical="true" energyUsage="120">
+        <name>BeyerDynamic124v</name>
+        <outputSpec>
+            <portType>LPT</portType>
+            <outputType>headphones</outputType>
+        </outputSpec>
+        <origin>fr</origin>
+        <price>99.98</price>
+        <manufactureDate>2016-09-24Z</manufactureDate>
+    </device>
+    <device critical="false">
+        <name>XeroxG102</name>
+        <inputSpec>
+            <portType>USB</portType>
+            <inputType>scanner</inputType>
+        </inputSpec>
+        <origin>cn</origin>
+        <price>5.99</price>
+        <manufactureDate>2007-09-24Z</manufactureDate>
+    </device>
+    <device critical="false">
+        <name>PLT4c02</name>
+        <outputSpec>
+            <portType>COM</portType>
+            <outputType>plotter</outputType>
+        </outputSpec>
+        <origin>jp</origin>
+        <price>21.2</price>
+        <manufactureDate>2014-09-24Z</manufactureDate>
+    </device>
+    <device critical="true" energyUsage="12">
+        <name>ROODMic12</name>
+        <inputSpec>
+            <portType>USB</portType>
+            <inputType>audioCapture</inputType>
+        </inputSpec>
+        <origin>de</origin>
+        <price>26.77</price>
+        <manufactureDate>2015-04-02Z</manufactureDate>
+    </device>
+    <device critical="false" energyUsage="120">
+        <name>LG-FXW192</name>
+        <outputSpec>
+            <portType>COM</portType>
+            <outputType>monitor</outputType>
+        </outputSpec>
+        <origin>id</origin>
+        <price>344.57</price>
+        <manufactureDate>2018-01-16Z</manufactureDate>
+    </device>
+    <device critical="false">
+        <name>LogitechM170</name>
+        <inputSpec>
+            <portType>USB</portType>
+            <inputType>mouse</inputType>
+        </inputSpec>
+        <origin>cn</origin>
+        <price>19.99</price>
+        <manufactureDate>2016-06-13Z</manufactureDate>
+    </device>
+    <device critical="true" energyUsage="240">
+        test
+        <name>MSI-GTX1060</name>
+        <outputSpec>
+            <portType>LPT</portType>
+            <outputType>videocard</outputType>
+        </outputSpec>
+        <origin>us</origin>
+        <price>400</price>
+        <manufactureDate>2016-10-24Z <!-- это комментарий --></manufactureDate>
+    </device>
+</devices>

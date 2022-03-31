@@ -40,8 +40,8 @@ public class XMLValidator {
         schemaFactory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
         try {
             Schema schema = schemaFactory.newSchema(schemaFile);
-            Validator validator = schema.newValidator();
-            validator.validate(xmlFile);
+            Validator xmlValidator = schema.newValidator();
+            xmlValidator.validate(xmlFile);
             valid = true;
         } catch (SAXException | IOException e) {
             LOGGER.error("file is not valid");

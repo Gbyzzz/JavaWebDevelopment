@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users xmlns:xsi="http://www.w3.org/2001/XMLSchema"
-         xlmns="http://gbyzzz.by/task07webxmlparsing/entity"
-         xsi:schemaLocation="http://gbyzzz.by/task07webxmlparsing/ users1.xsd">
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://gbyzzz.by/task07webxmlparsing/entity/users"
+         xsi:schemaLocation="http://gbyzzz.by/task07webxmlparsing/entity/users  users.xsd">
         <admin id = "1" name = "Tom" surname = "Smith">
             <username>Admin</username>
-            <phone>08763856313</phone>
+            <phone>7876867845</phone>
             <email>admin@bar.com</email>
             <is_active>true</is_active>
             <reg_date>2002-03-23</reg_date>
@@ -30,7 +30,6 @@
         </user>
         <bartender id = "5" name = "John">
             <username>JDaniels</username>
-            <name>John</name>
             <email>jdaniels1985@yahoo.com</email>
             <is_active>true</is_active>
             <reg_date>2002-03-23</reg_date>

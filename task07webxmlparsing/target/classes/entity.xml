@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<names xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xlmns="http://gbyzzz.by/task07webxmlparsing/entity"
+        xsi:schemaLocation="http://gbyzzz.by/task07webxmlparsing/entity entity.xsd">
+    <name>Tony</name>
+</names>

@@ -1,0 +1,10 @@
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="names">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="name"/>
+      </xs:sequence>
+      <xs:attribute type="xs:anyURI" name="xlmns"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

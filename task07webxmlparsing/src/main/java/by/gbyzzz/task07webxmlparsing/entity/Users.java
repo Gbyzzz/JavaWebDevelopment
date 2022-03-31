@@ -24,7 +24,8 @@ public class Users {
         this.role = role;
     }
 
-    public Users(Long userId, String username, String name, String surname, String phone, String email, String role, Boolean isActive, Date regDate) {
+    public Users(Long userId, String username, String name, String surname,String phone,
+                 String email, String role, Boolean isActive, Date regDate) {
         this.userId = userId;
         this.username = username;
         this.name = name;

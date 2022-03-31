@@ -25,7 +25,7 @@ public class ParseXMLImpl implements ParseXML {
     @Override
     public void parse(String xmlFile, String parser) throws ParserConfigurationException, IOException, SAXException, XMLStreamException, ParseException {
         List<Users> users = new ArrayList<>();
-//        if(validator.validate(xmlFile)) {
+        if(validator.validate(xmlFile)) {
         DAOFactory factory = DAOFactory.getInstance();
         Repository<Users> repository = UserRepository.getRepository();
         LOGGER.info("Parsing xml file using DOM parser");
@@ -33,10 +33,10 @@ public class ParseXMLImpl implements ParseXML {
         for (Users user : users) {
             repository.createOrUpdate(user);
         }
-//        } else {
-//            System.out.println("file not valid");
-//            LOGGER.error("XML file is not valid");
-//        }
+        } else {
+            System.out.println("file not valid");
+            LOGGER.error("XML file is not valid");
+        }
 
     }
 }

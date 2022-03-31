@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://gbyzzz.by/task07webxmlparsing/entity/users" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="users" type="user:usersType" xmlns:user="http://gbyzzz.by/task07webxmlparsing/entity/users"/>
+  <xs:complexType name="adminType">
+    <xs:sequence>
+      <xs:element name="username">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Admin"/>
+            <xs:enumeration value="Admin1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="phone">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="78768"/>
+            <xs:enumeration value="0689984689"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="email">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="admin@bar.com"/>
+            <xs:enumeration value="admin1@bar.com"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="is_active"/>
+      <xs:element type="xs:string" name="reg_date"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="surname" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="bartenderType">
+    <xs:sequence>
+      <xs:element name="username">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="LuckyBartender"/>
+            <xs:enumeration value="JDaniels"/>
+            <xs:enumeration value="DNegroni"/>
+            <xs:enumeration value="TipsyBartender"/>
+            <xs:enumeration value="Jspm"/>
+            <xs:enumeration value="Gmaster"/>
+            <xs:enumeration value="SweetAndSour"/>
+            <xs:enumeration value="WhiskeySour"/>
+            <xs:enumeration value="RayWJ"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="email">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="samgreen@bar.com"/>
+            <xs:enumeration value="jdaniels1985@yahoo.com"/>
+            <xs:enumeration value="dnegroni@gmail.com"/>
+            <xs:enumeration value="tipsybartender@gmail.com"/>
+            <xs:enumeration value="alcoholfan2010@gmail.com"/>
+            <xs:enumeration value="gmaster@gmail.com"/>
+            <xs:enumeration value="juli95@gmail.com"/>
+            <xs:enumeration value="wa1984@gmail.com"/>
+            <xs:enumeration value="raywj@gmail.com"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="is_active">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="true"/>
+            <xs:enumeration value="false"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="reg_date"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="surname" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="userType">
+    <xs:sequence>
+      <xs:element name="username">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Jspm"/>
+            <xs:enumeration value="Gmaster"/>
+            <xs:enumeration value="SweetAndSour"/>
+            <xs:enumeration value="WhiskeySour"/>
+            <xs:enumeration value="RayWJ"/>
+            <xs:enumeration value="LuckyBartender"/>
+            <xs:enumeration value="JDaniels"/>
+            <xs:enumeration value="DNegroni"/>
+            <xs:enumeration value="TipsyBartender"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="email">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="alcoholfan2010@gmail.com"/>
+            <xs:enumeration value="gmaster@gmail.com"/>
+            <xs:enumeration value="juli95@gmail.com"/>
+            <xs:enumeration value="wa1984@gmail.com"/>
+            <xs:enumeration value="raywj@gmail.com"/>
+            <xs:enumeration value="samgreen@bar.com"/>
+            <xs:enumeration value="jdaniels1985@yahoo.com"/>
+            <xs:enumeration value="dnegroni@gmail.com"/>
+            <xs:enumeration value="tipsybartender@gmail.com"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="is_active">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="true"/>
+            <xs:enumeration value="false"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="reg_date"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="surname" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="usersType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="user:adminType" name="admin" maxOccurs="unbounded" minOccurs="0" xmlns:user="http://gbyzzz.by/task07webxmlparsing/entity/users"/>
+      <xs:element type="user:bartenderType" name="bartender" xmlns:user="http://gbyzzz.by/task07webxmlparsing/entity/users"/>
+      <xs:element type="user:userType" name="user" xmlns:user="http://gbyzzz.by/task07webxmlparsing/entity/users"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>
