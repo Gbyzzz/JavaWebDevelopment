@@ -13,7 +13,8 @@ public class SymbolParser extends TextParser{
 
     @Override
     void parseText(Component component, String str) {
-        LOGGER.info("Parsing " + component.getPartLevel().toString().toLowerCase(Locale.ROOT) + " to symbols");
+        String mesArg = component.getPartLevel().toString().toLowerCase(Locale.ROOT);
+        LOGGER.info("Parsing %s to symbols", mesArg);
         for (int i = 0; i < str.length(); i++) {
             String s = String.valueOf(str.charAt(i));
                 Component leaf=new Leaf(s.charAt(0),PartLevel.SYMBOL);

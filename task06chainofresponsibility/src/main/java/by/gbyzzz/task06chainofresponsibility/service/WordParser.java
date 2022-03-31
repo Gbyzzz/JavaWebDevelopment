@@ -9,11 +9,12 @@ import java.util.Locale;
 public class WordParser extends TextParser {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    final String WORD_REGEX = "(?=\\p{Punct})|(?<=\\p{Punct})";
+    private static final String WORD_REGEX = "(?=\\p{Punct})|(?<=\\p{Punct})";
 
     @Override
     void parseText(Component component, String lexeme) {
-        LOGGER.info("Parsing " + component.getPartLevel().toString().toLowerCase(Locale.ROOT) + " to words");
+        String mesArg = component.getPartLevel().toString().toLowerCase(Locale.ROOT);
+        LOGGER.info("Parsing %s to words", mesArg);
         String[] words = lexeme.split(WORD_REGEX);
         for(String word : words){
             if (word.length() == 1) {
@@ -30,13 +31,5 @@ public class WordParser extends TextParser {
                 }
             }
         }
-//        while (matcher.find()) {
-//            if (super.nextTextParser != null) {
-//                lexeme = matcher.group().replaceAll("\\s+", " ").trim();
-//                Component wordComposite = new Composite(PartLevel.SENTENCE);
-//                super.nextTextParser.parse(sentenceComposite, lexeme);
-//                component.add(sentenceComposite);
-//            }
-//        }
     }
 }

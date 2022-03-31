@@ -13,7 +13,7 @@ import java.util.Locale;
 public class TextSorter {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public ArrayList sortParagraphsBySentences(Component component) {
+    public ArrayList<Component> sortParagraphsBySentences(Component component) {
         LOGGER.info("Sorting paragraphs by sentences quantity");
         Comparator<Component> comparator = (o1, o2) -> {
             int first = o1.getParts().size();
@@ -27,9 +27,9 @@ public class TextSorter {
     }
 
 
-    public ArrayList sortWordsInSentences(Component component) {
+    public ArrayList<String> sortWordsInSentences(Component component) {
         LOGGER.info("Sorting words in sentences by length");
-        ArrayList<Component> words = new ArrayList<>();
+        ArrayList<Component> words;
         ArrayList<String> sentences = new ArrayList<>();
         Comparator<Component> comparator = (o1, o2) -> {
             int first = o1.toString().length();
