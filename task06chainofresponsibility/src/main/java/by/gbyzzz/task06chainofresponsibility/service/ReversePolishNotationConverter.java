@@ -9,8 +9,8 @@ import java.util.Deque;
 public class ReversePolishNotationConverter {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    final private String NUMBER = "\\d+";
-    final String REGEX="(?<=\\d)(?=\\D)|(?=\\d)(?<=\\D)|(((?=([~|^&()]))|(?<=([~|^&()]))))";
+    private static final String NUMBER = "\\d+";
+    private static final String REGEX="(?<=\\d)(?=\\D)|(?=\\d)(?<=\\D)|(((?=([~|^&()]))|(?<=([~|^&()]))))";
 
     public String convert(String expression) {
         LOGGER.info("Converting expression from text to reverse polish notation to make calculations");
@@ -22,7 +22,6 @@ public class ReversePolishNotationConverter {
             if (value.matches(NUMBER)) {
                 resultStr.append(" ");
                 resultStr.append(value);
-                int chainOfNumbers = 0;
             } else if (value.equals("(")) {
                 stack.push(value);
             } else if (value.equals(")")) {

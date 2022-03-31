@@ -12,12 +12,13 @@ import java.util.regex.Pattern;
 public class LexemeParser extends TextParser {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    final String LEXEME_REGEX="\\s";
-    final String POLISH_POSTFIX_NOTATION_REGEX="~|\\^|\\&|\\<<|\\>>|\\>>>|\\|";
+    private static final String LEXEME_REGEX="\\s";
+    private static final String POLISH_POSTFIX_NOTATION_REGEX="~|\\^|\\&|\\<<|\\>>|\\>>>|\\|";
 
     @Override
     public void parseText(Component component , String text) {
-        LOGGER.info("Parsing " + component.getPartLevel().toString().toLowerCase(Locale.ROOT) + " to lexemes");
+        String mesArg = component.getPartLevel().toString().toLowerCase(Locale.ROOT);
+        LOGGER.info("Parsing %s to lexemes", mesArg);
         ExpressionCalculator calculator = new ExpressionCalculator();
         ReversePolishNotationConverter rpn = new ReversePolishNotationConverter();
         String[] lexemes = text.split(LEXEME_REGEX);
@@ -43,34 +44,4 @@ public class LexemeParser extends TextParser {
             }
         }
     }
-
-//    @Override
-//    void parseText(Component component, String str) {
-//        ExpressionCalculator calculator;
-//        Component lexemeComposite;
-//        ReversePolishNotationConverter rpn = new ReversePolishNotationConverter();
-//        Pattern pattern = Pattern.compile(POLISH_POSTFIX_NOTATION_REGEX);
-//        String[] lexemes = str.split(LEXEME_REGEX);
-//        for (String lexeme : lexemes) {
-//            Matcher matcher = pattern.matcher(lexeme);
-//            if (matcher.find()) {
-//                try {
-//                    lexeme = rpn.convert(lexeme);
-//                    calculator = new ExpressionCalculator();
-//                    lexeme = calculator.calcExpression(lexeme);
-//                    lexemeComposite = new Composite(PartLevel.LEXEME);
-//                    super.nextTextParser.parse(lexemeComposite, lexeme);
-//                    component.add(lexemeComposite);
-//                } catch (IllegalArgumentException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//            else
-//            {
-//                lexemeComposite = new Composite(PartLevel.LEXEME);
-//                super.nextTextParser.parse(lexemeComposite,lexeme);
-//                component.add(lexemeComposite);
-//            }
-//        }
-//    }
 }

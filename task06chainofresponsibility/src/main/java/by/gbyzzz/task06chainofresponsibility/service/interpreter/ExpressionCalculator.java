@@ -18,7 +18,7 @@ public class ExpressionCalculator implements Service {
         for (String expression : expressions) {
             switch (expression) {
                 case "~":
-                    bitOperation = (context1) -> context1.pushValue(~context1.popValue());
+                    bitOperation = context1 -> context1.pushValue(~context1.popValue());
                     bitOperation.interpret(context);
                     break;
                 case "&":
@@ -72,17 +72,17 @@ public class ExpressionCalculator implements Service {
                 default:
                     Scanner sc = new Scanner(expression);
                     if (sc.hasNextInt()) {
-                        BitOperation num = (context1) -> context1.pushValue(Integer.parseInt(expression));
+                        BitOperation num = context1 -> context1.pushValue(Integer.parseInt(expression));
                         num.interpret(context);
                     } else {
                         LOGGER.error("Incorrect symbol find");
                         throw new IllegalArgumentException("Incorrect symbol find");
                     }
+                    sc.close();
             }
 
         }
-        String res = String.valueOf(context.popValue());
-        return res;
+        return String.valueOf(context.popValue());
     }
 }
 
