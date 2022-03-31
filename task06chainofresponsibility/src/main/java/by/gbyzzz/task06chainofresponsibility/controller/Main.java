@@ -64,6 +64,7 @@ public class Main {
 //        System.out.println(text);
 
 //        String s1 = rpn.convert((~71&(2&3|(3|(2&1>>2|2)&2)|10&2))|78);
+
         System.out.println(5>>>7);
     }
 }
